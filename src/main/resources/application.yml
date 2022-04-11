@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://taf-db.mysql.database.azure.com:3306/tafdb
+    username: mhilali
+    password: P@ssword
+  
