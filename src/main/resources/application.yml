@@ -4,4 +4,13 @@ spring:
     url: jdbc:mysql://taf-db.mysql.database.azure.com:3306/tafdb
     username: mhilali
     password: P@ssword
+  jpa:
+    hibernate:
+      ddl-auto: create
+  thymeleaf:
+    template-loader-path: classpath:/templates
+    suffix: .html
+    cache: false
+  messages:
+    basename: validation
   

@@ -8,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,23 +15,15 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "user")
-public class User {
+@Table(name = "role")
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
+    private String name;
 
-    private String password;
+    @ManyToMany(mappedBy = "roles")
+    private Set<User> users;
 
-    @Transient
-    private String passwordConfirm;
-	
-    private String fullName;
-    
-    private String email;
-    
-    @ManyToMany
-    private Set<Role> roles;
 }
