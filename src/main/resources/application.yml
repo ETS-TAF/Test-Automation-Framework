@@ -6,11 +6,13 @@ spring:
     password: P@ssword
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
   thymeleaf:
-    template-loader-path: classpath:/templates
     suffix: .html
     cache: false
   messages:
     basename: validation
+    encoding: ISO-8859-1
+    
+
   
