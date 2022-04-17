@@ -41,6 +41,7 @@ body {
 
 .form-signin button {
     margin-top: 10px;
+    background-color: red;
 }
 
 .has-error {
