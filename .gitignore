@@ -33,3 +33,6 @@ build/
 .vscode/
 
 bin
+
+# local config
+application-local.yml
