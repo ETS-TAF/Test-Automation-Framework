@@ -22,15 +22,12 @@ import lombok.Setter;
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
-@Table(name = "t_test_case")
-public class TestCase {
+@Table(name = "t_test_suite")
+public class TestSuite {
 	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    @ManyToOne
-    private TestSuite testSuite;
     
     @ManyToOne
     private TestPlan testPlan;
