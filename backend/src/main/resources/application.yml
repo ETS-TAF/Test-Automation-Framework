@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/taf-db
-    username: mhilali
-    password: P@ssword
+    url: jdbc:mysql://nostrasoft.com:3306/nostr321_taf-db
+    username: nostr321_taf
+    password: JKaVLX75iHwtrHc
   jpa:
     hibernate:
       ddl-auto: create

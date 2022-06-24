@@ -6,9 +6,7 @@
 		<artifactId>taf</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<groupId>ca.etsmtl</groupId>
 	<artifactId>backend</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
 	<dependencies>
 		<dependency>
 			<groupId>ca.etsmtl</groupId>

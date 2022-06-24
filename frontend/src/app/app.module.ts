@@ -9,6 +9,16 @@ import { AddPlanComponent } from './test-plan/add-plan/add-plan.component';
 import { AddCaseComponent } from './test-case/add-case/add-case.component';
 import { TestExecutionComponent } from './test-execution/test-execution.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+// used to create fake backend
+import { fakeBackendProvider } from './_helpers';
+
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+import { AlertComponent } from './_components';
 
 @NgModule({
   declarations: [
@@ -18,13 +28,19 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AddPlanComponent,
     AddCaseComponent,
     TestExecutionComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+        // provider used to create fake backend
+        fakeBackendProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
