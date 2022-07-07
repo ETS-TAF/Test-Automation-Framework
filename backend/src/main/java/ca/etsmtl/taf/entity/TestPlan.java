@@ -30,7 +30,7 @@ public class TestPlan {
     private Long id;
     
     @ManyToOne
-    private Project project;
+    private Project project; //plusieurs projets possibles.
     
     private String name;
     
