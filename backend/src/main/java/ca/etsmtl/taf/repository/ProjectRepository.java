@@ -5,10 +5,9 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import ca.etsmtl.taf.entity.ERole;
-import ca.etsmtl.taf.entity.Role;
+import ca.etsmtl.taf.entity.Project;
 
 @Repository
-public interface RoleRepository extends JpaRepository<Role, Long> {
-  Optional<Role> findByName(ERole name);
+public interface ProjectRepository extends JpaRepository<Project, Long> {
+  Optional<Project> findByName(String name);
 }

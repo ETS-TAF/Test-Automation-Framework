@@ -13,6 +13,15 @@
       novalidate
     >
       <div class="form-group">
+        <label for="fullName">Nom Complet</label>
+        <input
+          type="text"
+          class="form-control"
+          name="fullName"
+          [(ngModel)]="form.fullName"
+          required
+          #fullName="ngModel"
+        />
         <label for="username">Nom d'utilisateur</label>
         <input
           type="text"

@@ -8,11 +8,8 @@
       <li class="nav-item" *ngIf="showAdminBoard">
         <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
       </li>
-      <li class="nav-item" *ngIf="showModeratorBoard">
-        <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
-      </li>
       <li class="nav-item">
-        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+        <a href="/project" class="nav-link" *ngIf="isLoggedIn" routerLink="project">Nouveau Projet</a>
       </li>
     </ul>
 
@@ -30,7 +27,7 @@
         <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
       </li>
       <li class="nav-item">
-        <a href class="nav-link" (click)="logout()">DÃ©connexion</a>
+        <a href class="nav-link" (click)="logout()">Déconnexion</a>
       </li>
     </ul>
   </nav>

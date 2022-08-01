@@ -17,6 +17,7 @@
     <properties>
 		<java.version>11</java.version>
 		<lombok.version>1.18.2</lombok.version>
+        <spring-boot.version>2.6.6</spring-boot.version>
     </properties>
     <packaging>pom</packaging>
 
@@ -24,5 +25,18 @@
         <module>backend</module>
         <module>frontend</module>
     </modules>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!-- Permettre de lancer mvn spring-boot:run à partir du dossier parent -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
