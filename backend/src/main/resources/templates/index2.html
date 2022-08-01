@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Test Automation Framework</title>
+
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">Test FrameWork Automation</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a  onclick="document.forms['logoutForm'].submit()">Déconnexion</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <ul class="nav nav-tabs mt-5" id="tabOptions">
+                <li class="nav-item"><a href="#dashboard" data-url="/dashboard" class="nav-link active">Tableau de Bord</a></li>
+                <li class="nav-item"><a href="#testrun" data-url="/testrun" class="nav-link">Exécution</a></li>
+                <li class="nav-item"><a href="#edition" data-url="/edition" class="nav-link">Édition</a></li>
+            </ul>
+
+            <div class="tab-content pt-3">
+                <div class="tab-pane active" id="dashboard">Active panel</div>
+                <div class="tab-pane" id="testrun"></div>
+                <div class="tab-pane" id="edition"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+<script>
+    $('#tabOptions a').click(function (e) {
+        e.preventDefault();
+
+        var url = $(this).attr("data-url");
+        var href = this.hash;
+        var pane = $(this);
+
+        // ajax load from data-url
+        $(href).load(url, function (result) {
+            pane.tab('show');
+        });
+    });
+
+    // load first tab content
+    $('#dashboard').load($('.nav-link.active').attr("data-url"), function (result) {
+    });
+</script>
+
+</body>
+</html>

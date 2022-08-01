@@ -1,0 +1,56 @@
+<h2>Créer un projet</h2>
+<form 
+name="creationForm"
+(ngSubmit)="onSubmit()"> 
+<div class="form-group">
+<label for="projectName">Nom Projet</label>
+<input
+  type="text"
+  class="form-control"
+  name="projectName"
+  [(ngModel)]="creationForm.projectName"
+  required
+  minlength="6"
+  #projectName="ngModel"
+/>
+</div>
+<div class="form-group">
+<label for="responsable">Responsable du  Projet</label>
+<input
+  type="text"
+  class="form-control"
+  name="responsable"
+  [(ngModel)]="creationForm.responsable"
+  required
+  minlength="6"
+  #responsable="ngModel"
+/>
+</div>
+<div class="form-group">
+<label for="startDate">Date du Début</label>
+<input
+  type="text"
+  class="form-control"
+  name="startDate"
+  [(ngModel)]="creationForm.startDate"
+  required
+  minlength="6"
+  #startDate="ngModel"
+/>
+</div>
+<div class="form-group">
+<label for="endDate">Date de Fin</label>
+<input
+  type="text"
+  class="form-control"
+  name="endDate"
+  [(ngModel)]="creationForm.endDate"
+  required
+  minlength="6"
+  #endDate="ngModel"
+/>
+</div>
+<div class="form-group">
+  <button class="btn btn-primary btn-block">Soumettre</button>
+</div>
+</form>

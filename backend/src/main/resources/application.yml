@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://nostrasoft.com:3306/nostr321_taf-db
+    username: nostr321_taf
+    password: JKaVLX75iHwtrHc
+  jpa:
+    hibernate:
+      ddl-auto: create
+      dialect : ${spring.jpa.properties.hibernate.dialect}
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  messages:
+    basename: validation
+    encoding: ISO-8859-1
+       
+taf:
+  app:
+    jwtSecret: bezKoderSecretKey
+    jwtExpirationMs: 86400000
+  
