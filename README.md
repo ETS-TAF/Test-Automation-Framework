@@ -20,6 +20,7 @@ permettera de lancer toute l'application.
 
 
 Branches :
-la branche principale de développement est dev, elle sert à faire les merges de toutes les branches de travail en cours.
-Chacun, part sa propre branche à partir de la branche dev.
-Mohammed Hilali, s'occupe de faire les merges à partir des Pull Request que vous allez adresser à partir de votre branche chacun vers la branche dev.
+la branche principale de développement est develop, elle sert à faire les merges de toutes les branches de travail en cours.
+Chacun, part sa propre branche à partir de la branche develop.
+Aucun commit ne doit être fait directement dans la branche develop.
+Mohammed Hilali, s'occupe de faire les merges à partir des Pull Request que vous allez adresser à partir de votre branche chacun vers la branche develop.
