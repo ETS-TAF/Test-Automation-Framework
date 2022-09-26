@@ -12,6 +12,14 @@ Build et lancement :
 Backend : build maven (mvn clean install), configurez l'application springboot dans votre ide (Eclipse, IntelliJ).
 Des outils sont disponibles dans ces ide pour lancer l'application.
 
+Il faut lancer l'application springboot avec le profile local et avoir un fichier application-local.yml (sous src/main/resources).
+
+Le fichier application-local.yml doit obligatoirement contenir les lignes suivantes:
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
 Frontend: lancer l'application avec automatique de la page d'accueil dans une fenêtre du brower, avec la ligne de commande
 ng serve --o
 
