@@ -7,10 +7,13 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Index;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "roles")
+@Table(name = "roles", indexes = {
+		  @Index(name = "uniqueRoleName", columnList = "name", unique = true)
+		})
 public class Role {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
