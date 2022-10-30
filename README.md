@@ -9,6 +9,15 @@ frontend est la partie UI, c'est une application Angular.
 
 Build et lancement :
 
+Important :
+Installer un client pour la visualisation de la base de données (Ex : Dbeaver,  <a href="https://dbeaver.io/download/">lien pour l'installation</a>) <br>
+
+Vérifier le contenu de la table "roles", si c'est vide (Aucune donnée) : <br>
+Exécuter le script SQL suivant : <br>
+INSERT INTO roles (name) VALUES('ROLE_USER'); <br>
+INSERT INTO roles (name) VALUES('ROLE_ADMIN'); <br>
+
+
 <b>Backend :</b> build maven (mvn clean install), configurez l'application springboot dans votre ide (Eclipse, IntelliJ).
 Des outils sont disponibles dans ces ide pour lancer l'application.
 
