@@ -10,7 +10,7 @@ export class AppComponent {
   private roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;
-  username?: string;
+  fullName?: string;
 
   constructor(private tokenStorageService: TokenStorageService) { }
 
@@ -23,7 +23,7 @@ export class AppComponent {
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
 
-      this.username = user.username;
+      this.fullName = user.fullName;
     }
   }
 

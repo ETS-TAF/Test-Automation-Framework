@@ -24,10 +24,10 @@
 
     <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
       <li class="nav-item">
-        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+        <a href="/profile" class="nav-link" routerLink="profile">{{ fullName }}</a>
       </li>
       <li class="nav-item">
-        <a href class="nav-link" (click)="logout()">Déconnexion</a>
+        <a href class="nav-link" (click)="logout()">DÃ©connexion</a>
       </li>
     </ul>
   </nav>
