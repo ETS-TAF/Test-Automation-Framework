@@ -12,7 +12,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import ca.etsmtl.taf.entity.User;
+import lombok.Getter;
 
+@Getter
 public class UserDetailsImpl implements UserDetails {
   private static final long serialVersionUID = 1L;
 
@@ -29,11 +31,11 @@ public class UserDetailsImpl implements UserDetails {
 
   private Collection<? extends GrantedAuthority> authorities;
 
-  public UserDetailsImpl(Long id, String fullName, String username, String email, String password,
+  public UserDetailsImpl(Long id, String fullName, String userName, String email, String password,
       Collection<? extends GrantedAuthority> authorities) {
     this.id = id;
     this.fullName = fullName;
-    this.username = username;
+    this.username = userName;
     this.email = email;
     this.password = password;
     this.authorities = authorities;
@@ -47,7 +49,7 @@ public class UserDetailsImpl implements UserDetails {
     return new UserDetailsImpl(
         user.getId(), 
         user.getFullName(),
-        user.getUsername(), 
+        user.getUserName(), 
         user.getEmail(),
         user.getPassword(), 
         authorities);
@@ -56,28 +58,6 @@ public class UserDetailsImpl implements UserDetails {
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
     return authorities;
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public String getFullName() {
-	return fullName;
-}
-
-public String getEmail() {
-    return email;
-  }
-
-  @Override
-  public String getPassword() {
-    return password;
-  }
-
-  @Override
-  public String getUsername() {
-    return username;
   }
 
   @Override

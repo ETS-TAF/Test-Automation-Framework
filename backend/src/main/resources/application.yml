@@ -4,6 +4,7 @@ spring:
     url: jdbc:mysql://nostrasoft.com:3306/nostr321_taf-db
     username: nostr321_taf
     password: JKaVLX75iHwtrHc
+      
   jpa:
     defer-datasource-initialization: true
     hibernate:
@@ -23,4 +24,3 @@ taf:
   app:
     jwtSecret: bezKoderSecretKey
     jwtExpirationMs: 86400000
-  

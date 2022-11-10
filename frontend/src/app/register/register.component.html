@@ -22,23 +22,23 @@
           required
           #fullName="ngModel"
         />
-        <label for="username">Nom d'utilisateur</label>
+        <label for="userName">Nom d'utilisateur</label>
         <input
           type="text"
           class="form-control"
-          name="username"
-          [(ngModel)]="form.username"
+          name="userName"
+          [(ngModel)]="form.userName"
           required
           minlength="3"
           maxlength="20"
-          #username="ngModel"
+          #userName="ngModel"
         />
-        <div class="alert-danger" *ngIf="username.errors && f.submitted">
-          <div *ngIf="username.errors['required']">Nom d'utilisateur requis</div>
-          <div *ngIf="username.errors['minlength']">
+        <div class="alert-danger" *ngIf="userName.errors && f.submitted">
+          <div *ngIf="userName.errors['required']">Nom d'utilisateur requis</div>
+          <div *ngIf="userName.errors['minlength']">
             Le nom d'utilisateur doit contenir au moins 3 cractères
           </div>
-          <div *ngIf="username.errors['maxlength']">
+          <div *ngIf="userName.errors['maxlength']">
             Le nom d'utilisateur ne doit pas dépasser 20 caractères
           </div>
         </div>

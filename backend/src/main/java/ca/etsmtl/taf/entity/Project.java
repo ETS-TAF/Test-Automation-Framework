@@ -35,7 +35,7 @@ public class Project {
 	private Date endDate;
 	
 	@ManyToOne
-	private TestUser owner;
+	private User owner;
 	
 	@Column(name = "created_date", nullable = false, updatable = false)
     @CreatedDate

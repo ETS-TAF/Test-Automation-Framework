@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProjectService } from '../_services/project.service';
+import { User } from '../_model/user.model';
 
 @Component({
   selector: 'app-project',
@@ -7,24 +9,36 @@ import { Router } from '@angular/router';
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent implements OnInit {
+ 
+ //For demo purpose only, should be fetched from database. 
+ users = [
+    { fullName: 'Mohammed Hilali', userName: 'mhilali' },
+    { fullName: 'Samuel Joe', userName: 'sjoe' },
+    { fullName: 'Alan Poe', userName: 'apoe' },
+    { fullName: 'Suzanne Old', userName: 'sold' },
+    { fullName: 'Marianne Bold', userName: 'mbold' }
+  ];  
 
   creationForm: any = {
-    projectName: null,
-    responsable: null,
+    name: null,
+    owner: new User(),
     startDate: null,
     endDate: null
   };  
 
     loading = false;
     submitted = false;
-
+  	errorMessage = '';
+    
     constructor(
-        private router: Router
+        private router: Router,
+        private prjService: ProjectService
     ) {
 
     }
 
     ngOnInit(): void {
+	
     }
 
     // convenience getter for easy access to form fields
@@ -38,6 +52,13 @@ export class ProjectComponent implements OnInit {
             return;
         }
 
-        this.loading = true;
+        this.loading = true;    this.prjService.saveProject(this.creationForm).subscribe({
+      next: data => {
+        console.log(data);
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+      }
+    });
     }
 }

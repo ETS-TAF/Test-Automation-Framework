@@ -8,7 +8,7 @@ name="creationForm"
   type="text"
   class="form-control"
   name="projectName"
-  [(ngModel)]="creationForm.projectName"
+  [(ngModel)]="creationForm.name"
   required
   minlength="6"
   #projectName="ngModel"
@@ -16,20 +16,19 @@ name="creationForm"
 </div>
 <div class="form-group">
 <label for="responsable">Responsable du  Projet</label>
-<input
-  type="text"
-  class="form-control"
-  name="responsable"
-  [(ngModel)]="creationForm.responsable"
-  required
-  minlength="6"
-  #responsable="ngModel"
-/>
+
+    <div class="col-lg-2">
+		<select [(ngModel)]="creationForm.owner.userName" [ngModelOptions]="{standalone: true}">
+		      <option *ngFor="let usr of users" [ngValue]="usr.userName" >
+		           {{ usr.fullName }}
+		      </option>
+		</select>
+    </div>
 </div>
 <div class="form-group">
 <label for="startDate">Date du Début</label>
 <input
-  type="text"
+  type="date"
   class="form-control"
   name="startDate"
   [(ngModel)]="creationForm.startDate"
@@ -41,7 +40,7 @@ name="creationForm"
 <div class="form-group">
 <label for="endDate">Date de Fin</label>
 <input
-  type="text"
+  type="date"
   class="form-control"
   name="endDate"
   [(ngModel)]="creationForm.endDate"
