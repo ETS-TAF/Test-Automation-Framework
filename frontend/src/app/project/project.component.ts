@@ -55,6 +55,7 @@ export class ProjectComponent implements OnInit {
         this.loading = true;    this.prjService.saveProject(this.creationForm).subscribe({
       next: data => {
         console.log(data);
+        this.router.navigate(['/home']);
       },
       error: err => {
         this.errorMessage = err.error.message;

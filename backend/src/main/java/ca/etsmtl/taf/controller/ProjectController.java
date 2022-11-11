@@ -1,7 +1,10 @@
 package ca.etsmtl.taf.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +36,12 @@ public class ProjectController {
 		User currentOwner = userRepository.findByUserName(newProject.getOwner().getUserName()).get();
 		newProject.setOwner(currentOwner);
 		return repository.save(newProject);
+	}	
+
+	@GetMapping("/projects")
+//	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	List<Project> getProjects() {
+		return repository.findAll();
 	}
 
 }

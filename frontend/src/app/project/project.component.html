@@ -13,6 +13,18 @@ name="creationForm"
   minlength="6"
   #projectName="ngModel"
 />
+</div> 
+<div class="form-group">
+<label for="description">Description</label>
+<input
+  type="text"
+  class="form-control"
+  name="description"
+  [(ngModel)]="creationForm.description"
+  required
+  minlength="6"
+  #projectName="ngModel"
+/>
 </div>
 <div class="form-group">
 <label for="responsable">Responsable du  Projet</label>

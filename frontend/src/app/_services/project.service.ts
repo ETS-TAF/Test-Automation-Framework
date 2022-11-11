@@ -13,4 +13,8 @@ export class ProjectService {
   saveProject(project: any): Observable<any> {
     return this.http.post(API_URL, project, { responseType: 'text' });
   }
+
+  getProjects(): Observable<any> {
+    return this.http.get(API_URL, { responseType: 'json' });
+  }
 }
