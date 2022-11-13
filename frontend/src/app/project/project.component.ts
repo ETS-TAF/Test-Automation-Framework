@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProjectService } from '../_services/project.service';
+import { UserService } from '../_services/user.service';
 import { User } from '../_model/user.model';
 
 @Component({
@@ -10,14 +11,7 @@ import { User } from '../_model/user.model';
 })
 export class ProjectComponent implements OnInit {
  
- //For demo purpose only, should be fetched from database. 
- users = [
-    { fullName: 'Mohammed Hilali', userName: 'mhilali' },
-    { fullName: 'Samuel Joe', userName: 'sjoe' },
-    { fullName: 'Alan Poe', userName: 'apoe' },
-    { fullName: 'Suzanne Old', userName: 'sold' },
-    { fullName: 'Marianne Bold', userName: 'mbold' }
-  ];  
+ users : User[] = [];  
 
   creationForm: any = {
     name: null,
@@ -32,13 +26,21 @@ export class ProjectComponent implements OnInit {
     
     constructor(
         private router: Router,
-        private prjService: ProjectService
+        private prjService: ProjectService,
+        private userService: UserService
     ) {
 
     }
 
     ngOnInit(): void {
-	
+		this.userService.getUsers().subscribe({
+		      next: data => {
+		        this.users=data;
+		      },
+		      error: err => {
+		        this.errorMessage = err.error.message;
+		      }
+		    });	
     }
 
     // convenience getter for easy access to form fields

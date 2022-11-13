@@ -1,4 +1,4 @@
-<h2>Créer un projet</h2>
+<h2>Cr&eacute;er un Projet</h2>
 <form 
 name="creationForm"
 (ngSubmit)="onSubmit()"> 
@@ -30,7 +30,8 @@ name="creationForm"
 <label for="responsable">Responsable du  Projet</label>
 
     <div class="col-lg-2">
-		<select [(ngModel)]="creationForm.owner.userName" [ngModelOptions]="{standalone: true}">
+		<select [(ngModel)]="creationForm.owner.userName" [ngModelOptions]="{standalone: true}" >
+			  <option [ngValue]="null" disabled>Choisir un Responsable</option>
 		      <option *ngFor="let usr of users" [ngValue]="usr.userName" >
 		           {{ usr.fullName }}
 		      </option>
