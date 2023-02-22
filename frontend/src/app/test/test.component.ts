@@ -16,8 +16,8 @@ export class TestComponent implements OnInit {
   }
 
   execute() {
-    this.microService.executeTest().subscribe();
-
-    this.value = 'Valeur.'
+    this.microService.executeTest().subscribe(data => {
+      this.value=data;
+    });
   }
 }

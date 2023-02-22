@@ -43,4 +43,10 @@ public class TestController {
 	public List<User> getUsers() {
 		return repository.findAll();
 	}
+
+	// TO-DO: Communiquer avec le micro-service
+	@GetMapping("/executeTest")
+	public String executeTest() {
+		return "Tests exécutés!";
+	}
 }
