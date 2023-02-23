@@ -27,7 +27,8 @@ import { TestComponent } from './test/test.component';
     ProfileComponent,
     BoardAdminComponent,
     BoardUserComponent,
-    ProjectComponent
+    ProjectComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

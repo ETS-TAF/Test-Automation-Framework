@@ -4,11 +4,12 @@ import { MicroService } from '../_services/micro.service';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
-  styleUrls: ['./test.component.less']
+  styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
 
   value: String | undefined = undefined;
+  userUrl : string|undefined;
 
   constructor(private microService: MicroService) { }
 
@@ -16,8 +17,12 @@ export class TestComponent implements OnInit {
   }
 
   execute() {
-    this.microService.executeTest().subscribe(data => {
+  if(this.userUrl){
+    this.microService.executeTest(this.userUrl).subscribe(data => {
       this.value=data;
     });
+    }
+
+
   }
 }

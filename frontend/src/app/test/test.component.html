@@ -1,2 +1,6 @@
-<button (click)="execute()">Exécuter</button>
-<p>{{ value }}</p>
+
+<div class="buttonContainer">
+  <button (click)="execute()">GO</button>
+  <input [(ngModel)]="userUrl" type="text" required name="userUrl" placeholder="Entrez l'url de votre site">
+  <p>{{ value }}</p>
+</div>
