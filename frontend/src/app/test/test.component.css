@@ -1,0 +1,21 @@
+.buttonContainer {
+display:flex;
+margin-top: 10rem;
+justify-content: flex-start;
+align-items:baseline;
+gap:10px;
+width:100%;
+}
+input {
+background-color: #f2f2f2;
+border: none;
+padding: 10px;
+border-radius: 5px;
+}
+button {
+background-color: #343a40!important;
+color:white;
+border:none;
+padding:5px;
+border-radius:5px;
+}
