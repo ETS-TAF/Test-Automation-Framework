@@ -1,21 +1,84 @@
+.page {
+  margin-left: -50px;
+}
+
+@media (max-width: 1000px) {
+  .page {
+    margin-left: -20px;
+  }
+}
 .buttonContainer {
-display:flex;
-margin-top: 10rem;
-justify-content: flex-start;
-align-items:baseline;
-gap:10px;
-width:100%;
+  display: flex;
+  margin-top: 2rem;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+  width: 100%;
 }
 input {
-background-color: #f2f2f2;
-border: none;
-padding: 10px;
-border-radius: 5px;
+  background-color: #f2f2f2;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
 }
 button {
-background-color: #343a40!important;
-color:white;
-border:none;
-padding:5px;
-border-radius:5px;
+  border-radius: 5px;
+}
+
+.menuContainer {
+  margin-top: 10px;
+}
+
+.executeButton {
+  background-color: #69f0ae;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content {
+  height: 150px;
+}
+
+mat-card {
+  width: 400px;
+  height: fit-content;
+  margin: 16px;
+  position: relative;
+}
+.text-left {
+  text-align: left;
+}
+.header-left {
+  padding: 0;
+}
+
+.custom-card-header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #343a40;
+}
+.actions {
+  text-align: right;
+}
+
+#input-card {
+  margin: 10px 0;
+  width: 100%;
+}
+.mat-button-toggle-checked {
+  color: white;
+  background-color: #343a40;
+}
+
+.card-hover-animation {
+  transition: transform 0.3s ease-out;
+  transform: translateY(0);
+}
+
+.card-hover-animation:hover {
+  transform: translateY(-10px);
 }
