@@ -11,8 +11,8 @@ export class TestComponent implements OnInit {
   userUrl: string | undefined;
   selectedButton: string = 'fe';
   disabled: boolean = false;
-  buttonName : string | undefined;
-  selectedText : string | undefined;
+  buttonName: string | undefined;
+  selectedText: string | undefined;
 
   cards = [
     {
@@ -21,8 +21,6 @@ export class TestComponent implements OnInit {
       content: `Si l'utilisateur clique sur le boutton nommé: `,
       content2: `On devrait voir l'élément suivant: `,
     },
-    { title: 'Cas #2', subtitle: 'Un autre test', content: 'un autre test' },
-    { title: 'Cas #3', subtitle: 'Un autre test', content: 'un autre test' },
   ];
 
   constructor(private microService: MicroService) {}
@@ -30,13 +28,14 @@ export class TestComponent implements OnInit {
   ngOnInit(): void {}
 
   execute() {
-//     if (this.userUrl) {
-//       this.microService.executeTest(this.userUrl).subscribe((data) => {
-//         this.value = data;
-//       });
-//     }
+    //     if (this.userUrl) {
+    //       this.microService.executeTest(this.userUrl).subscribe((data) => {
+    //         this.value = data;
+    //       });
+    //     }
     if (this.userUrl && this.buttonName && this.selectedText) {
-      this.microService.executeTestCasButton(this.userUrl, this.buttonName, this.selectedText)
+      this.microService
+        .executeTestCasButton(this.userUrl, this.buttonName, this.selectedText)
         .subscribe((data) => {
           this.value = data;
         });
