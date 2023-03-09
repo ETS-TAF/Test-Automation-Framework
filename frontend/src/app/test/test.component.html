@@ -27,9 +27,9 @@
         </div>
         <mat-card-content class="content">
           {{ card.content }}
-          <input id="input-card" type="text" placeholder="Nom du bouton" />
+          <input [(ngModel)]="buttonName" id="input-card" type="text" placeholder="Nom du bouton" />
           {{ card.content2 }}
-          <input id="input-card" type="text" placeholder="Nom de l'élément" />
+          <input [(ngModel)]="selectedText" id="input-card" type="text" placeholder="Nom de l'élément"  />
         </mat-card-content>
 
         <mat-card-actions class="actions">

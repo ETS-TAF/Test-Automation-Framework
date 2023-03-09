@@ -61,4 +61,16 @@ public class TestController {
 		return response;
 	}
 
+	@GetMapping("/executeTestCasButton")
+	public ResponseEntity<String> executeTestCasButton(@RequestParam("userUrl") String userUrl, @RequestParam("buttonName") String buttonName, @RequestParam("selectedText") String selectedText){
+
+		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString("http://localhost:9595/executeTestCasButton")
+				.queryParam("userUrl", userUrl)
+				.queryParam("buttonName", buttonName)
+				.queryParam("selectedText", selectedText);
+		ResponseEntity<String> response = restTemplate.getForEntity(builder.toUriString(), String.class);
+
+		return response;
+	}
+
 }

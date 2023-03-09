@@ -14,4 +14,8 @@ export class MicroService {
     executeTest(userUrl: string): Observable<any> {
       return this.http.get(API_URL + '/executeTest',{params: {userUrl}, responseType:'text'});
     }
+    executeTestCasButton(userUrl: string, buttonName: string, selectedText: string): Observable<any> {
+      const params = { userUrl, buttonName, selectedText };
+      return this.http.get(API_URL + '/executeTestCasButton', { params: {userUrl,buttonName,selectedText}, responseType: 'text' });
+    }
 }
