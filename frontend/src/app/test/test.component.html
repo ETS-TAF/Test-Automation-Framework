@@ -1,60 +1,18 @@
 <div class="page">
-  <div class="menuContainer">
-    <mat-button-toggle-group appearance="legacy" [(ngModel)]="selectedButton">
-      <mat-button-toggle value="fe">Front-End</mat-button-toggle>
-      <mat-button-toggle value="be">Back-End</mat-button-toggle>
-      <mat-button-toggle value="button3">Autre</mat-button-toggle>
-    </mat-button-toggle-group>
+  <div class="title">Sélectionner un type de test</div>
+
+  <div class="card-container">
+    <mat-card class="card-hover-animation">
+      <mat-card-title class="card-title">UI Testing</mat-card-title>
+      <mat-card-content class="content">
+        <mat-icon aria-hidden="false" class="icon">desktop_mac</mat-icon>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-hover-animation">
+      <mat-card-title class="card-title">Back-End Testing</mat-card-title>
+      <mat-card-content class="content">
+        <mat-icon aria-hidden="false" class="icon">storage</mat-icon>
+      </mat-card-content>
+    </mat-card>
   </div>
-
-  <div *ngIf="selectedButton === 'fe'">
-    <div class="buttonContainer">
-      <input
-        [(ngModel)]="userUrl"
-        type="text"
-        required
-        name="userUrl"
-        placeholder="Entrez l'url de votre site"
-      />
-      <p>{{ value }}</p>
-    </div>
-
-    <div class="card-container">
-      <mat-card *ngFor="let card of cards" class="card-hover-animation">
-        <div class="custom-card-header">
-          <mat-card-title>{{ card.title }}</mat-card-title>
-          <mat-card-subtitle>{{ card.subtitle }}</mat-card-subtitle>
-        </div>
-        <mat-card-content class="content">
-          {{ card.content }}
-          <input
-            [(ngModel)]="buttonName"
-            id="input-card"
-            type="text"
-            placeholder="Nom du bouton"
-          />
-          {{ card.content2 }}
-          <input
-            [(ngModel)]="selectedText"
-            id="input-card"
-            type="text"
-            placeholder="Nom de l'élément"
-          />
-        </mat-card-content>
-
-        <mat-card-actions class="actions">
-          <button
-            mat-raised-button
-            [disabled]="disabled"
-            class="executeButton"
-            (click)="execute()"
-          >
-            Go
-          </button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-  </div>
-  <div *ngIf="selectedButton === 'be'">Content for Button 2</div>
-  <div *ngIf="selectedButton === 'button3'">Content for Button 3</div>
 </div>
