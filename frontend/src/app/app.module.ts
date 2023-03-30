@@ -17,6 +17,8 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { ProjectComponent } from './project/project.component';
 import { TestComponent } from './test/test.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UiTestCasesComponent } from './ui-test-cases/ui-test-cases.component';
+import { UiTestCasesPageComponent } from './ui-test-cases-page/ui-test-cases-page.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BoardAdminComponent,
     BoardUserComponent,
     ProjectComponent,
-    TestComponent
+    TestComponent,
+    UiTestCasesComponent,
+    UiTestCasesPageComponent
   ],
   imports: [
     BrowserModule,

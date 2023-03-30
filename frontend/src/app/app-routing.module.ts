@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { TestComponent } from './test/test.component';
+import { UiTestCasesPageComponent } from './ui-test-cases-page/ui-test-cases-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,11 +20,12 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: 'test', component: TestComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: 'testCases', component: UiTestCasesPageComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

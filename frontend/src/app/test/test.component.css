@@ -34,6 +34,7 @@ mat-card {
   height: 300px;
   margin: 16px;
   background-color: #343a40;
+  cursor: pointer;
 }
 
 .mat-button-toggle-checked {
