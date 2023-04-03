@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MicroService } from '../_services/micro.service';
 
 @Component({
   selector: 'app-ui-test-cases',
@@ -18,7 +19,7 @@ export class UiTestCasesComponent implements OnInit {
   displayedColumns: string[] = ['action', 'object', 'input', 'output'];
   cardTitle = '';
 
-  constructor() {}
+  constructor(private microService: MicroService) {}
 
   ngOnInit(): void {}
   addRow() {
@@ -73,6 +74,16 @@ export class UiTestCasesComponent implements OnInit {
   }
 
   run() {
-    console.log(this.dataSource);
+    console.log("ici");
+
+    let browser = 'chrome';
+
+    this.dataSource.forEach((data: any) => {
+      if (data.actions == 'Open in Browser') {
+        browser = data.object;
+      }
+    });
+
+    this.microService.executeTest(browser, this.dataSource).subscribe();
   }
 }
