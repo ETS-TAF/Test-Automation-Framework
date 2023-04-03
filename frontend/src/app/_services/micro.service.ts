@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders,HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const API_URL = 'http://localhost:8080/api/test';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MicroService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+  executeTest(browser: string, body: any): Observable<any> {
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
 
-    executeTest(userUrl: string): Observable<any> {
-      return this.http.get(API_URL + '/executeTest',{params: {userUrl}, responseType:'text'});
-    }
-    executeTestCasButton(userUrl: string, buttonName: string, selectedText: string): Observable<any> {
-      const params = { userUrl, buttonName, selectedText };
-      return this.http.get(API_URL + '/executeTestCasButton', { params: {userUrl,buttonName,selectedText}, responseType: 'text' });
-    }
+    return this.http.post(API_URL + '/executeTest', body, {
+      params: { browser },
+      headers: headers,
+      responseType: 'text',
+    });
+  }
 }

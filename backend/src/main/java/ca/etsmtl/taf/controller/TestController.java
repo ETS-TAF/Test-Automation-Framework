@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -51,26 +51,17 @@ public class TestController {
 	}
 
 
-	@GetMapping("/executeTest")
+	@PostMapping("/executeTest")
+	public ResponseEntity<String> executeTest(@RequestParam("browser") String browser, @RequestBody String requestBody) {
+		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString("http://localhost:9595/" + browser + "/test");
 
-	public ResponseEntity<String> executeTest(@RequestParam("userUrl") String userUrl) {
-		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString("http://localhost:9595/firstTest")
-		.queryParam("userUrl", userUrl);
-		ResponseEntity<String> response = restTemplate.getForEntity(builder.toUriString(), String.class);
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
 
-		return response;
+		HttpEntity<String> requete = new HttpEntity<>(requestBody, headers);
+
+		ResponseEntity<String> response = restTemplate.exchange(builder.toUriString(), HttpMethod.POST, requete, String.class);
+
+		return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
 	}
-
-	@GetMapping("/executeTestCasButton")
-	public ResponseEntity<String> executeTestCasButton(@RequestParam("userUrl") String userUrl, @RequestParam("buttonName") String buttonName, @RequestParam("selectedText") String selectedText){
-
-		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString("http://localhost:9595/executeTestCasButton")
-				.queryParam("userUrl", userUrl)
-				.queryParam("buttonName", buttonName)
-				.queryParam("selectedText", selectedText);
-		ResponseEntity<String> response = restTemplate.getForEntity(builder.toUriString(), String.class);
-
-		return response;
-	}
-
 }
