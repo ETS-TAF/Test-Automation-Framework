@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MicroService } from '../_services/micro.service';
 
 @Component({
   selector: 'app-ui-test-cases',
@@ -13,13 +14,13 @@ export class UiTestCasesComponent implements OnInit {
       action: '',
       object: '',
       input: '',
-      output: '',
+      target: '',
     },
   ];
-  displayedColumns: string[] = ['action', 'object', 'input', 'output'];
+  displayedColumns: string[] = ['action', 'object', 'input', 'target'];
   cardTitle = '';
 
-  constructor() {}
+  constructor(private microService: MicroService) {}
 
   ngOnInit(): void {}
 
@@ -28,7 +29,7 @@ export class UiTestCasesComponent implements OnInit {
       action: '',
       object: '',
       input: '',
-      output: '',
+      target: '',
     };
     this.dataSource.push(newRow);
     this.dataSource = [...this.dataSource];
@@ -43,13 +44,13 @@ export class UiTestCasesComponent implements OnInit {
     return action === 'GoToUrl' || action === 'FillField';
   }
 
-  isOutputEditable(action: string): boolean {
+  isTargetEditable(action: string): boolean {
     //Les conditions vont changer lorsque d'autre action seront implementees.
-    return false;
+    return action === 'GetAttribute' || action === 'GetPageTitle';
   }
 
   isObjectEditable(action: string): boolean {
-    return action === 'Clear' || action === 'Click' || action === 'FillField' || action === 'IsDisplayed' || action === 'IsSelected' || action === 'IsEnabled';
+    return action === 'Clear' || action === 'Click' || action === 'FillField' || action === 'IsDisplayed' || action === 'IsSelected' || action === 'IsEnabled' || action === 'GetAttribute';
   }
 
   getLabelsForAction(action: string) {
@@ -58,55 +59,62 @@ export class UiTestCasesComponent implements OnInit {
         return {
           objectLabel: 'Enter a browser',
           inputLabel: '',
-          outputLabel: '',
+          targetLabel: '',
         };
       case 'Click':
         return {
           objectLabel: 'Enter a browser',
           inputLabel: '',
-          outputLabel: '',
+          targetLabel: '',
         };
       case 'GetAttribute':
         return {
           objectLabel: '',
           inputLabel: 'Input',
-          outputLabel: '',
+          targetLabel: '',
         };
       case 'GetPageTitle':
         return {
           objectLabel: '',
           inputLabel: '',
-          outputLabel: 'Output',
+          targetLabel: 'Target',
         };
       case 'GoToUrl':
         return {
           objectLabel: '',
           inputLabel: 'Input',
-          outputLabel: '',
+          targetLabel: '',
         };
       case 'Quit':
         return {
           objectLabel: '',
           inputLabel: '',
-          outputLabel: '',
+          targetLabel: '',
         };
       case 'Submit':
         return {
           objectLabel: '',
           inputLabel: '',
-          outputLabel: '',
+          targetLabel: '',
         };
       default:
         return {
           objectLabel: 'Object',
           inputLabel: 'Input',
-          outputLabel: 'Output',
+          targetLabel: 'Target',
         };
     }
   }
 
   run() {
-    console.log(this.dataSource);
-    this.createJson()
+    let browser = 'chrome';
+
+    this.dataSource.forEach((data: any) => {
+      if (data.actions == 'Open in Browser') {
+        browser = data.object;
+      }
+    });
+
+    this.microService.executeTest(browser, this.createJson()).subscribe();
   }
 }

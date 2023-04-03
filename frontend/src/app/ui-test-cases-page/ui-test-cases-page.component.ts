@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UiTestCasesComponent } from '../ui-test-cases/ui-test-cases.component';
+import { MicroService } from '../_services/micro.service';
 
 @Component({
   selector: 'app-ui-test-cases-page',
@@ -8,10 +9,10 @@ import { UiTestCasesComponent } from '../ui-test-cases/ui-test-cases.component';
 })
 export class UiTestCasesPageComponent implements OnInit {
   testCases: UiTestCasesComponent[] = [];
-  constructor() {}
+  constructor(private microService: MicroService) {}
 
   ngOnInit(): void {}
   addTestCase() {
-    this.testCases.push(new UiTestCasesComponent());
+    this.testCases.push(new UiTestCasesComponent(this.microService));
   }
 }
