@@ -5,8 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './ui-test-cases.component.html',
   styleUrls: ['./ui-test-cases.component.css'],
 })
+
 export class UiTestCasesComponent implements OnInit {
-  actions: string[] = ['Open in Browser', 'Navigate to url', 'Click'];
+  actions: string[] = ['Clear', 'Click', 'GoToUrl', 'FillField', 'GetAttribute', 'GetPageTitle', 'IsDisplayed', 'IsEnabled', 'IsSelected', 'Quit'];
   dataSource: any[] = [
     {
       action: '',
@@ -21,6 +22,7 @@ export class UiTestCasesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
   addRow() {
     const newRow = {
       action: '',
@@ -32,34 +34,65 @@ export class UiTestCasesComponent implements OnInit {
     this.dataSource = [...this.dataSource];
   }
 
+  createJson() {
+    console.log({name:this.cardTitle, actions:this.dataSource})
+    return {name:this.cardTitle, actions:this.dataSource}
+  }
+
   isInputEditable(action: string): boolean {
-    return action === 'Navigate to url';
+    return action === 'GoToUrl' || action === 'FillField';
   }
 
   isOutputEditable(action: string): boolean {
     //Les conditions vont changer lorsque d'autre action seront implementees.
     return false;
   }
+
   isObjectEditable(action: string): boolean {
-    return action === 'Open in Browser' || action === 'Click';
+    return action === 'Clear' || action === 'Click' || action === 'FillField' || action === 'IsDisplayed' || action === 'IsSelected' || action === 'IsEnabled';
   }
+
   getLabelsForAction(action: string) {
     switch (action) {
-      case 'Open in Browser':
+      case 'Clear':
         return {
           objectLabel: 'Enter a browser',
           inputLabel: '',
           outputLabel: '',
         };
-      case 'Navigate to url':
-        return {
-          objectLabel: '',
-          inputLabel: 'www.a-url.com',
-          outputLabel: '',
-        };
       case 'Click':
         return {
-          objectLabel: 'X Path',
+          objectLabel: 'Enter a browser',
+          inputLabel: '',
+          outputLabel: '',
+        };
+      case 'GetAttribute':
+        return {
+          objectLabel: '',
+          inputLabel: 'Input',
+          outputLabel: '',
+        };
+      case 'GetPageTitle':
+        return {
+          objectLabel: '',
+          inputLabel: '',
+          outputLabel: 'Output',
+        };
+      case 'GoToUrl':
+        return {
+          objectLabel: '',
+          inputLabel: 'Input',
+          outputLabel: '',
+        };
+      case 'Quit':
+        return {
+          objectLabel: '',
+          inputLabel: '',
+          outputLabel: '',
+        };
+      case 'Submit':
+        return {
+          objectLabel: '',
           inputLabel: '',
           outputLabel: '',
         };
@@ -74,5 +107,6 @@ export class UiTestCasesComponent implements OnInit {
 
   run() {
     console.log(this.dataSource);
+    this.createJson()
   }
 }
