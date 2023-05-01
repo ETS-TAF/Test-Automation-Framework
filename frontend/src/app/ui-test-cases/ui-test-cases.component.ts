@@ -6,76 +6,107 @@ import { MicroService } from '../_services/micro.service';
   templateUrl: './ui-test-cases.component.html',
   styleUrls: ['./ui-test-cases.component.css'],
 })
+
 export class UiTestCasesComponent implements OnInit {
-  actions: string[] = ['Open in Browser', 'Navigate to url', 'Click'];
+  actions: string[] = ['Clear', 'Click', 'GoToUrl', 'FillField', 'GetAttribute', 'GetPageTitle', 'IsDisplayed', 'IsEnabled', 'IsSelected', 'Quit'];
   dataSource: any[] = [
     {
       action: '',
       object: '',
       input: '',
-      output: '',
+      target: '',
     },
   ];
-  displayedColumns: string[] = ['action', 'object', 'input', 'output'];
+  displayedColumns: string[] = ['action', 'object', 'input', 'target'];
   cardTitle = '';
 
   constructor(private microService: MicroService) {}
 
   ngOnInit(): void {}
+
   addRow() {
     const newRow = {
       action: '',
       object: '',
       input: '',
-      output: '',
+      target: '',
     };
     this.dataSource.push(newRow);
     this.dataSource = [...this.dataSource];
   }
 
-  isInputEditable(action: string): boolean {
-    return action === 'Navigate to url';
+  createJson() {
+    console.log({name:this.cardTitle, actions:this.dataSource})
+    return {name:this.cardTitle, actions:this.dataSource}
   }
 
-  isOutputEditable(action: string): boolean {
+  isInputEditable(action: string): boolean {
+    return action === 'GoToUrl' || action === 'FillField';
+  }
+
+  isTargetEditable(action: string): boolean {
     //Les conditions vont changer lorsque d'autre action seront implementees.
-    return false;
+    return action === 'GetAttribute' || action === 'GetPageTitle';
   }
+
   isObjectEditable(action: string): boolean {
-    return action === 'Open in Browser' || action === 'Click';
+    return action === 'Clear' || action === 'Click' || action === 'FillField' || action === 'IsDisplayed' || action === 'IsSelected' || action === 'IsEnabled' || action === 'GetAttribute';
   }
+
   getLabelsForAction(action: string) {
     switch (action) {
-      case 'Open in Browser':
+      case 'Clear':
         return {
           objectLabel: 'Enter a browser',
           inputLabel: '',
-          outputLabel: '',
-        };
-      case 'Navigate to url':
-        return {
-          objectLabel: '',
-          inputLabel: 'www.a-url.com',
-          outputLabel: '',
+          targetLabel: '',
         };
       case 'Click':
         return {
-          objectLabel: 'X Path',
+          objectLabel: 'Enter a browser',
           inputLabel: '',
-          outputLabel: '',
+          targetLabel: '',
+        };
+      case 'GetAttribute':
+        return {
+          objectLabel: '',
+          inputLabel: 'Input',
+          targetLabel: '',
+        };
+      case 'GetPageTitle':
+        return {
+          objectLabel: '',
+          inputLabel: '',
+          targetLabel: 'Target',
+        };
+      case 'GoToUrl':
+        return {
+          objectLabel: '',
+          inputLabel: 'Input',
+          targetLabel: '',
+        };
+      case 'Quit':
+        return {
+          objectLabel: '',
+          inputLabel: '',
+          targetLabel: '',
+        };
+      case 'Submit':
+        return {
+          objectLabel: '',
+          inputLabel: '',
+          targetLabel: '',
         };
       default:
         return {
           objectLabel: 'Object',
           inputLabel: 'Input',
-          outputLabel: 'Output',
+          targetLabel: 'Target',
         };
     }
   }
 
   run() {
-    console.log("ici");
-
     let browser = 'chrome';
 
     this.dataSource.forEach((data: any) => {
@@ -84,6 +115,6 @@ export class UiTestCasesComponent implements OnInit {
       }
     });
 
-    this.microService.executeTest(browser, this.dataSource).subscribe();
+    this.microService.executeTest(browser, this.createJson()).subscribe();
   }
 }
