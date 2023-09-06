@@ -1,0 +1,52 @@
+.title {
+  text-align: center;
+  margin: 20px 0px;
+  font-size: x-large;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card-title {
+  color: white;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  transform: scale(6);
+  color: white;
+}
+
+mat-card {
+  width: 300px;
+  height: 300px;
+  margin: 16px;
+  background-color: #343a40;
+  cursor: pointer;
+}
+
+.mat-button-toggle-checked {
+  color: white;
+  background-color: #343a40;
+}
+
+.card-hover-animation {
+  transition: transform 0.3s ease-out;
+  transform: translateY(0);
+}
+
+.card-hover-animation:hover {
+  transform: translateY(-10px);
+}

@@ -1,0 +1,21 @@
+table {
+  width: 100%;
+}
+
+.mat-header-cell {
+  text-align: center;
+}
+
+.run-button {
+  background-color: green;
+  color: white;
+}
+.mat-cell {
+  border-bottom: none;
+}
+
+.title {
+  border: 1px solid #f8f9fa;
+  border-radius: 5px;
+  padding: 5px;
+}
