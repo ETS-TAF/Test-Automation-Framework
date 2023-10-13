@@ -1,33 +1,6 @@
-<div *ngIf="isLoggedIn">
-
-<table mat-table [dataSource]="dataSource"  class="mat-elevation-z8">
-
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Nom </th>
-    <td mat-cell *matCellDef="let project"> {{project.name}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="description">
-    <th mat-header-cell *matHeaderCellDef> Description </th>
-    <td mat-cell *matCellDef="let project"> {{project.description}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="startDate">
-    <th mat-header-cell *matHeaderCellDef> Date de D&eacute;but </th>
-    <td mat-cell *matCellDef="let project"> {{project.startDate|date:'yyyy-MM-dd'}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="endDate">
-    <th mat-header-cell *matHeaderCellDef> Date de Fin </th>
-    <td mat-cell *matCellDef="let project"> {{project.endDate|date:'yyyy-MM-dd'}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="owner">
-    <th mat-header-cell *matHeaderCellDef> Responsable </th>
-    <td mat-cell *matCellDef="let project"> {{project.owner.fullName}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+<div class="container">
+  <header class="jumbotron">
+    <h3>Bonjour!</h3>
+    <p>{{ content }}</p>
+  </header>
 </div>

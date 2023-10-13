@@ -1,0 +1,26 @@
+{
+  "name": "application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "server": "node ./server/api.js",
+    "client": "cd ./client && npm start",
+    "start": "concurrently --kill-others \"npm:server\" \"npm:client\"",
+    "all": "concurrently \"yarn run server\" \"yarn run client\"",
+    "dev": "concurrently --kill-others \"yarn run start-watch\" \"yarn run wp-server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlphaBryan/ProjetMGL805.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlphaBryan/ProjetMGL805/issues"
+  },
+  "homepage": "https://github.com/AlphaBryan/ProjetMGL805#readme",
+  "devDependencies": {
+    "concurrently": "^7.5.0"
+  }
+}

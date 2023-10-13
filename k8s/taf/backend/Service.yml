@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: taf-backend-service
+  labels:
+    appClass: taf-backend
+  namespace: taf
+spec:
+  type: LoadBalancer
+  selector:
+    appClass: taf-backend
+  ports:
+  - port: 9000
+    targetPort: http

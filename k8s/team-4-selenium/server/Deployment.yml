@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-selenium-team-4
+  namespace: taf
+  labels:
+    appClass: server-selenium-team-4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      appClass: server-selenium-team-4
+  template:
+    metadata:
+      labels:
+        appClass: server-selenium-team-4
+    spec:
+      containers:
+      - name: server-selenium-team-4
+        image: <TO UPDATE>
+        env:
+          - name: SELENIUM_SERVER
+            value: <TO UPDATE>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - name: http
+          containerPort: 3001

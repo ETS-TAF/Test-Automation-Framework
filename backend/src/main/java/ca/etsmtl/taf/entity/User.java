@@ -39,7 +39,7 @@ public class User {
 
   @NotBlank
   @Size(max = 20)
-  private String userName;
+  private String username;
 
   @NotBlank
   @Size(max = 50)
@@ -61,7 +61,7 @@ public class User {
 
   public User(String fullName, String username, String email, String password) {
 	  this.fullName = fullName;
-    this.userName = username;
+    this.username = username;
     this.email = email;
     this.password = password;
   }

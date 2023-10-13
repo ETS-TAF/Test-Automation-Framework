@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MatTableModule } from '@angular/material/table'
-import {MaterialModule} from './material.module';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -15,11 +14,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { ProjectComponent } from './project/project.component';
-import { TestComponent } from './test/test.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UiTestCasesComponent } from './ui-test-cases/ui-test-cases.component';
-import { UiTestCasesPageComponent } from './ui-test-cases-page/ui-test-cases-page.component';
-
+import { TestApiComponent } from './interface-test-api/test-api/test-api.component';
 
 @NgModule({
   declarations: [
@@ -31,17 +26,13 @@ import { UiTestCasesPageComponent } from './ui-test-cases-page/ui-test-cases-pag
     BoardAdminComponent,
     BoardUserComponent,
     ProjectComponent,
-    TestComponent,
-    UiTestCasesComponent,
-    UiTestCasesPageComponent
+    TestApiComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    MaterialModule,
-    BrowserAnimationsModule
+    HttpClientModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

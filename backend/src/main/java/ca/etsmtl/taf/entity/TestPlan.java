@@ -37,7 +37,7 @@ public class TestPlan {
     private String description;
     
     @ManyToOne
-    private User responsable;
+    private TestUser responsable;
 	
 	@Column(name = "created_date", nullable = false, updatable = false)
     @CreatedDate

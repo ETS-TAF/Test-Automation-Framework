@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Projet d’automatisation de test avec selenium",
+  "main": "main.js",
+  "scripts": {
+    "start": "node api.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlphaBryan/ProjetMGL805.git"
+  },
+  "author": "team4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlphaBryan/ProjetMGL805/issues"
+  },
+  "homepage": "https://github.com/AlphaBryan/ProjetMGL805#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mocha": "^10.1.0",
+    "selenium-webdriver": "^4.5.0"
+  }
+}

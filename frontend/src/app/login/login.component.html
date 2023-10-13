@@ -13,12 +13,12 @@
       novalidate
     >
       <div class="form-group">
-        <label for="userName">Nom d'utilisateur</label>
+        <label for="username">Nom d'utilisateur</label>
         <input
           type="text"
           class="form-control"
-          name="userName"
-          [(ngModel)]="form.userName"
+          name="username"
+          [(ngModel)]="form.username"
           required
           #username="ngModel"
         />
@@ -63,13 +63,13 @@
           role="alert"
           *ngIf="f.submitted && isLoginFailed"
         >
-           chec de connexion: {{ errorMessage }}
+          Echec de connexion: {{ errorMessage }}
         </div>
       </div>
     </form>
 
     <div class="alert alert-success" *ngIf="isLoggedIn">
-      Connect&eacute; en tant que {{ currentUser }}.
+      Connecté en tant que {{ currentUser }}.
     </div>
   </div>
 </div>

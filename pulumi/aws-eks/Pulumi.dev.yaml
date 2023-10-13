@@ -1,0 +1,11 @@
+config:
+  aws-eks:TAF_DB_Password:
+    secure: AAABAIlNPwbkVqH34ZkJ1gD2OvMeaRzSyRre44klGCbszxaB9DAL3P5bqMvNaOQ=
+  aws-eks:TAF_DB_Username: nostr321_taf
+  aws:region: ca-central-1
+  eks_ts:desiredClusterSize: "2"
+  eks_ts:eksNodeInstanceType: t3a.small
+  eks_ts:maxClusterSize: "2"
+  eks_ts:minClusterSize: "1"
+  eks_ts:vpcNetworkCidr: 10.0.0.0/16
+  testapi:bindedPort: 8082

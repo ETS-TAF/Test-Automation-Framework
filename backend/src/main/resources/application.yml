@@ -4,11 +4,10 @@ spring:
     url: jdbc:mysql://nostrasoft.com:3306/nostr321_taf-db
     username: nostr321_taf
     password: JKaVLX75iHwtrHc
-      
   jpa:
     defer-datasource-initialization: true
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
       dialect : ${spring.jpa.properties.hibernate.dialect}
     properties:
       hibernate:
@@ -18,9 +17,11 @@ spring:
     encoding: ISO-8859-1
   sql:
     init:
-     mode: always    
-     platform: mysql
+      mode: always
+      platform: mysql
 taf:
   app:
     jwtSecret: bezKoderSecretKey
     jwtExpirationMs: 86400000
+    testAPI_url: http://localhost
+    testAPI_port: 8082

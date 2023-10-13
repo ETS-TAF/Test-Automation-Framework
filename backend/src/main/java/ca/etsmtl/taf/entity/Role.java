@@ -12,8 +12,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "roles", indexes = {
-		  @Index(name = "uniqueRoleName", columnList = "name", unique = true)
-		})
+        @Index(name = "uniqueRoleName", columnList = "name", unique = true)
+})
 public class Role {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

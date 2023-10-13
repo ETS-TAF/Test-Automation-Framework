@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: testapi-service
+  labels:
+    appClass: testapi
+  namespace: taf
+spec:
+  type: ClusterIP
+  selector:
+    appClass: testapi
+  ports:
+    - port: 8082
+      targetPort: testapi-port

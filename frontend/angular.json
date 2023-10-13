@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "./target/frontend",
+            "outputPath": "dist/frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,7 +31,6 @@
               "src/assets"
             ],
             "styles": [
-              "src/custom-theme.scss",
               "src/styles.less"
             ],
             "scripts": []
@@ -108,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "taf-ui"
+  "defaultProject": "taf-ui",
+  "cli": {
+    "analytics": false
+  }
 }

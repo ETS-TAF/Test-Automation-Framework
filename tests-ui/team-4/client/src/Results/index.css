@@ -1,0 +1,112 @@
+:root {
+    --gradient: linear-gradient(135deg, #72edf2 10%, #5151e5 100%);
+    --bg-color: #343d4b;
+    --bg-color--card: #222831;
+    --main-text-color: #ffffff;
+    --main-border-radius: 25px;
+    --secondary-border-radius: 15px;
+    --width: 80%;
+}
+
+div[type="H1"] {
+    margin: 0 auto;
+    border-radius: var(--main-border-radius);
+    -webkit-box-shadow: 6 9 4px 7px rgba(9, 089, 0, 0.9);
+    box-shadow: 6 9 4px 7px rgba(9, 089, 0, 0.9);
+    background-color: var(--bg-color--card);
+    color: var(--main-text-color);
+    width: var(--width);
+    max-width: 50%;
+    max-height: 0px;
+}
+
+.heading {
+    border-radius: var(--main-border-radius);
+    padding: 2rem;
+    text-align: center;
+    font-weight: 900;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.light {
+    font-weight: 100;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+h1 {
+    color: whitesmoke;
+    background-color: #1c2833;
+}
+
+h2 {
+    color: whitesmoke;
+}
+
+input[type="text"] {
+    text-align: center;
+    padding: 5px 10px;
+    background: white;
+    border-radius: 20px;
+    border: none;
+    padding: 0.55rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    border: none;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    padding: 0.55rem;
+    margin-top: 1rem;
+    background-image: var(--gradient);
+    color: var(--bg-color);
+    font-size: 110%;
+    font-weight: 600;
+    box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    line-height: initial;
+    width: 40%;
+    height: 4.5vh;
+}
+
+button:hover {
+    color: var(--main-text-color);
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    border: 0.5px solid #ffffff;
+}
+
+div[type="text"] {
+    text-align: center;
+    padding: 5px 5px;
+    padding-top: 2.5%;
+    padding-bottom: 5%;
+    background: rgb(12, 12, 94);
+    border-radius: 20px;
+    margin: 0 auto;
+    border-radius: var(--main-border-radius);
+    -webkit-box-shadow: 0 0 24px 7px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 24px 7px rgba(0, 0, 0, 0.2);
+    background-color: #222831;
+    color: var(--main-text-color);
+    width: 100%;
+}
+
+.input {
+    background-image: 'red';
+    width: 60%;
+    height: 90%;
+    font-size: 150%;
+    font-weight: 650;
+    color: royalblue;
+}
