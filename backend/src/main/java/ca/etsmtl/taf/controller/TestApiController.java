@@ -31,6 +31,7 @@ public class TestApiController {
     @PostMapping("/checkApi")
     public ResponseEntity<String> testApi(@Valid @RequestBody TestApiRequest testApiRequest) throws URISyntaxException, IOException, InterruptedException {
         var uri = new URI(Test_API_microservice_url+":"+Test_API_microservice_port+"/microservice/testapi/checkApi");
+        uri.toString().trim();
         ObjectMapper objectMapper = new ObjectMapper();
 
         String requestBody = objectMapper

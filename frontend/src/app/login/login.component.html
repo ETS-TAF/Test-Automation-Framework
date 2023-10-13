@@ -48,7 +48,7 @@
         >
           <div *ngIf="password.errors['required']">Mot de passe requis</div>
           <div *ngIf="password.errors['minlength']">
-            Mot de passe doit contenir 6 caractères
+            Mot de passe doit contenir 6 caract res
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@
           role="alert"
           *ngIf="f.submitted && isLoginFailed"
         >
-          Échec de connexion: {{ errorMessage }}
+          Echec de connexion: {{ errorMessage }}
         </div>
       </div>
     </form>

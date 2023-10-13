@@ -8,14 +8,13 @@
       novalidate
     >
       <div class="form-group">
-        <label for="method">Méthode<span class="required">*</span></label>
+        <label for="method">Méthode</label>
         <select
         class="form-control"
         required
         [(ngModel)]="form.method"
         name="method"
         #method="ngModel"
-        required
         >
           <option value="default">----</option>
           <option *ngFor="let method of methods" [value]="method.id">
@@ -32,7 +31,7 @@
       </div>
 
       <div class="form-group">
-        <label for="apiUrl">Url de l'api<span class="required">*</span></label>
+        <label for="apiUrl">Url de l'api</label>
         <input
           type="input"
           class="form-control"
@@ -51,7 +50,7 @@
       </div>
 
       <div class="form-group">
-        <label for="statusCode">Code de retour attendu<span class="required">*</span></label>
+        <label for="statusCode">Code de retour attendu</label>
         <input
           type="number"
           min="100"
@@ -104,7 +103,6 @@
   </div>
   <div class="alert alert-success" *ngIf="isResponse && answer">
     Le test a été réussi.
-      {{statusCode}}
   </div>
   <div class="alert alert-danger"  *ngIf="isResponse && !answer">
     Le test a été raté.

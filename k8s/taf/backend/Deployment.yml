@@ -18,10 +18,6 @@ spec:
       containers:
         - name: taf-backend
           image: <TO UPDATE>
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
           ports:
             - name: http
               containerPort: 8080
@@ -50,23 +46,3 @@ spec:
                 secretKeyRef:
                   key: password
                   name: taf-backend-secret
-            - name: GATLING_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: microservices-config-map
-                  key: gatling_url
-            - name: GATLING_PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: microservices-config-map
-                  key: gatling_port
-            - name: JMETER_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: microservices-config-map
-                  key: JMETER_url
-            - name: JMETER_PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: microservices-config-map
-                  key: jmeter_port

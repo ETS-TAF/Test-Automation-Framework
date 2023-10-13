@@ -3,7 +3,6 @@ FROM openjdk:17-jdk as builder
 WORKDIR /code
 COPY . .
 
-RUN chmod 777 ./mvnw
 RUN ./mvnw package -D maven.test.skip
 
 

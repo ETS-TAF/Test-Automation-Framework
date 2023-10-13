@@ -12,7 +12,7 @@ export class TestApiComponent implements OnInit {
     method: "get",
     apiUrl: "",
     input: "",
-    exceptedOutput: "",
+    expectedOutput: "",
     statusCode:200
   };
 
@@ -28,7 +28,7 @@ export class TestApiComponent implements OnInit {
 
   answer ="";
   isResponse =false;
-  statusCode = "";
+  statusCode :any;
 
 
   constructor(
@@ -39,14 +39,12 @@ export class TestApiComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const { method, apiUrl, statusCode, input, exceptedOutput } = this.form;
-    this.testApiService.execute(method, apiUrl, statusCode, input, exceptedOutput).subscribe({
+    const { method, apiUrl, statusCode, input, expectedOutput } = this.form;
+    this.testApiService.execute(method, apiUrl, statusCode, input, expectedOutput).subscribe({
       next: data => {
-        console.log(data.statusCode);
         this.isResponse = true;
         this.answer = data.answer;
         this.statusCode = JSON.stringify(data.statusCode);
-        console.log(this.statusCode);
       },
       error: err => {
       }

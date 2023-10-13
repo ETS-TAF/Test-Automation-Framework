@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.6.6</version>
-        <relativePath/>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 	<groupId>ca.etsmtl</groupId>
 	<artifactId>taf</artifactId>
@@ -24,7 +24,5 @@
     <modules>
         <module>backend</module>
         <module>frontend</module>
-        <module>jmeter</module>
-        <module>gatling</module>
     </modules>
 </project>

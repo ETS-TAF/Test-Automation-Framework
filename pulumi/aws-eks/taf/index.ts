@@ -1,15 +1,14 @@
 import * as pulumi from "@pulumi/pulumi";
+import * as aws from "@pulumi/aws";
 import * as awsx from "@pulumi/awsx";
 import * as k8s from "@pulumi/kubernetes";
 import * as path from "path";
 import {readK8sDefinition} from "../utils/k8s-definitions";
 import {eksCluster, k8sNamespace} from "../eks-cluster";
-import {team_6_url} from "../team-6_testapi";
-import { gatling_url, jmeter_url } from "../team-5";
+import {microserviceConfigMapResource} from "../team-6_testapi";
 
 // Grab some values from the Pulumi configuration (or use default values)
 const config = new pulumi.Config();
-const testapi_binded_port = config.requireNumber("bindedPort");
 
 // Build and publish to an ECR registry.
 const repo_front = new awsx.ecr.Repository("taf-front");
@@ -48,19 +47,6 @@ const backendSecret = new k8s.core.v1.Secret('taf-backend-secret', backendSecret
     provider: eksCluster.provider,
     dependsOn: [k8sNamespace]
 });
-
-const microservicesConfigMapDefinition = readK8sDefinition('microservices-config-map.yml')
-microservicesConfigMapDefinition.data.testapi_url = team_6_url;
-microservicesConfigMapDefinition.data.testapi_port = testapi_binded_port.toString();
-microservicesConfigMapDefinition.data.gatling_url = gatling_url;
-microservicesConfigMapDefinition.data.gatling_port = '4021';
-microservicesConfigMapDefinition.data.jmeter_url = jmeter_url;
-microservicesConfigMapDefinition.data.jmeter_port = '4020';
-
-const microserviceConfigMapResource = new k8s.core.v1.ConfigMap("microservices-config-map", microservicesConfigMapDefinition, {
-    provider: eksCluster.provider,
-    dependsOn: [k8sNamespace]
-})
 
 const backendDeploymentDefinition = readK8sDefinition('taf/backend/Deployment.yml');
 backendDeploymentDefinition.spec.template.spec.containers[0].image = image_back;

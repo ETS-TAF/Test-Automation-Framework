@@ -33,3 +33,4 @@ la branche principale de développement est develop, elle sert à faire les merg
 Chacun, part sa propre branche à partir de la branche develop.
 Aucun commit ne doit être fait directement dans la branche develop.
 Mohammed Hilali, s'occupe de faire les merges à partir des Pull Request que vous allez adresser à partir de votre branche chacun vers la branche develop.
+

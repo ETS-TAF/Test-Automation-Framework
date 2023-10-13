@@ -17,6 +17,7 @@ export class TestApiService {
   constructor(private http: HttpClient) { }
 
   execute(method:string, apiUrl:string, statusCode:number, input:string, expectedOutput:string): Observable<any> {
+  console.log(expectedOutput);
     return this.http.post(AUTH_API + 'checkApi', {
          method: method,
          apiUrl: apiUrl,
