@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jmeter-service
+  labels:
+    appClass: jmeter-service
+  namespace: taf
+spec:
+  type: ClusterIP
+  selector:
+    appClass: jmeter
+  ports:
+  - port: 4020
+    targetPort: 4020

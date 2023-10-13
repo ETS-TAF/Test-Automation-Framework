@@ -1,0 +1,112 @@
+<div class="col-md-12">
+  <div class="card card-container">
+
+    <form
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+      <div class="form-group">
+        <label for="method">Méthode<span class="required">*</span></label>
+        <select
+        class="form-control"
+        required
+        [(ngModel)]="form.method"
+        name="method"
+        #method="ngModel"
+        required
+        >
+          <option value="default">----</option>
+          <option *ngFor="let method of methods" [value]="method.id">
+              {{method.name}}
+          </option>
+        </select>
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="method.errors && f.submitted"
+        >
+          Une méthode est requise
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="apiUrl">Url de l'api<span class="required">*</span></label>
+        <input
+          type="input"
+          class="form-control"
+          name="apiUrl"
+          [(ngModel)]="form.apiUrl"
+          required
+          #apiUrl="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="apiUrl.errors && f.submitted"
+        >
+         Une url est requise
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="statusCode">Code de retour attendu<span class="required">*</span></label>
+        <input
+          type="number"
+          min="100"
+          max="600"
+          class="form-control"
+          name="statusCode"
+          [(ngModel)]="form.statusCode"
+          required
+          #statusCode="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="statusCode.errors && f.submitted"
+        >
+          Une code retour est requis
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="input">Données d'entrée</label>
+        <textarea
+          type="input"
+          class="form-control"
+          name="input"
+          [(ngModel)]="form.input"
+          #input="ngModel"
+        >
+        </textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="expectedOutput">Données attendues</label>
+        <textarea
+          type="input"
+          class="form-control"
+          name="expectedOutput"
+          [(ngModel)]="form.expectedOutput"
+          #expectedOutput="ngModel"
+        >
+        </textarea>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary btn-block">
+          Soumettre
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="alert alert-success" *ngIf="isResponse && answer">
+    Le test a été réussi.
+      {{statusCode}}
+  </div>
+  <div class="alert alert-danger"  *ngIf="isResponse && !answer">
+    Le test a été raté.
+  </div>
+</div>

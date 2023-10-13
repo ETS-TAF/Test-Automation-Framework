@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testapi
+  namespace: taf
+  labels:
+    appClass: testapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      appClass: testapi
+  template:
+    metadata:
+      labels:
+        appClass: testapi
+    spec:
+      containers:
+        - name: testapi
+          image: <TO UPDATE>
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - name: testapi-port
+              containerPort: <TO_UPDATE>

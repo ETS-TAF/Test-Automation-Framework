@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  selenium-node:
+    image: selenium/node-chrome:4.6.0
+    networks:
+      - taf-selenium
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    depends_on:
+      - selenium-hub
+  selenium-hub:
+    container_name: selenium-hub
+    image: selenium/hub:4.6.0
+    networks:
+      - taf-selenium
+    ports:
+      - 4444:4444
+
+networks:
+  taf-selenium:

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taf-frontend
+  namespace: taf
+  labels:
+    appClass: taf-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      appClass: taf-frontend
+  template:
+    metadata:
+      labels:
+        appClass: taf-frontend
+    spec:
+      containers:
+        - name: taf-frontend
+          image: <TO UPDATE>
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - name: http
+              containerPort: 80

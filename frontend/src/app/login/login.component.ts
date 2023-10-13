@@ -9,7 +9,7 @@ import { TokenStorageService } from '../_services/token-storage.service';
 })
 export class LoginComponent implements OnInit {
   form: any = {
-    userName: null,
+    username: null,
     password: null
   };
   isLoggedIn = false;
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   currentUser  = '';
 
-  constructor( private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -29,9 +29,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const { userName, password } = this.form;
+    const { username, password } = this.form;
 
-    this.authService.login(userName, password).subscribe({
+    this.authService.login(username, password).subscribe({
       next: data => {
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-		this.reloadPage();
+        this.reloadPage();
       },
       error: err => {
         this.errorMessage = err.error.message;

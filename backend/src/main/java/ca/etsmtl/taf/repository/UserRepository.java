@@ -9,9 +9,9 @@ import ca.etsmtl.taf.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-  Optional<User> findByUserName(String username);
+  Optional<User> findByUsername(String username);
 
-  Boolean existsByUserName(String userName);
+  Boolean existsByUsername(String username);
 
   Boolean existsByEmail(String email);
 }

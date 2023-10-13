@@ -13,12 +13,12 @@
       novalidate
     >
       <div class="form-group">
-        <label for="userName">Nom d'utilisateur</label>
+        <label for="username">Nom d'utilisateur</label>
         <input
           type="text"
           class="form-control"
-          name="userName"
-          [(ngModel)]="form.userName"
+          name="username"
+          [(ngModel)]="form.username"
           required
           #username="ngModel"
         />
@@ -48,7 +48,7 @@
         >
           <div *ngIf="password.errors['required']">Mot de passe requis</div>
           <div *ngIf="password.errors['minlength']">
-            Mot de passe doit contenir 6 caract res
+            Mot de passe doit contenir 6 caractères
           </div>
         </div>
       </div>
@@ -63,13 +63,13 @@
           role="alert"
           *ngIf="f.submitted && isLoginFailed"
         >
-           chec de connexion: {{ errorMessage }}
+          Échec de connexion: {{ errorMessage }}
         </div>
       </div>
     </form>
 
     <div class="alert alert-success" *ngIf="isLoggedIn">
-      Connect&eacute; en tant que {{ currentUser }}.
+      Connecté en tant que {{ currentUser }}.
     </div>
   </div>
 </div>

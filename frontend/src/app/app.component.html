@@ -5,14 +5,14 @@
       <li class="nav-item">
         <a href="/home" class="nav-link" routerLink="home">Accueil </a>
       </li>
+      <li class="nav-item">
+        <a href="/test-api" class="nav-link" routerLink="test-api">Test API </a>
+      </li>
       <li class="nav-item" *ngIf="showAdminBoard">
         <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
       </li>
       <li class="nav-item">
         <a href="/project" class="nav-link" *ngIf="isLoggedIn" routerLink="project">Nouveau Projet</a>
-      </li>
-      <li class="nav-item">
-        <a href="/test" class="nav-link" *ngIf="isLoggedIn" routerLink="test">Test</a>
       </li>
     </ul>
 
@@ -23,6 +23,12 @@
       <li class="nav-item">
         <a href="/login" class="nav-link" routerLink="login">Connexion</a>
       </li>
+      <li class="nav-item">
+        <a href="/jmeter" class="nav-link" routerLink="jmeter">Jmeter</a>
+      </li>
+      <li class="nav-item">
+        <a href="/gatling" class="nav-link" routerLink="gatling">Gatling</a>
+      </li>
     </ul>
 
     <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
@@ -30,7 +36,7 @@
         <a href="/profile" class="nav-link" routerLink="profile">{{ fullName }}</a>
       </li>
       <li class="nav-item">
-        <a href class="nav-link" (click)="logout()">D&eacute;connexion</a>
+        <a href class="nav-link" (click)="logout()">Déconnexion</a>
       </li>
     </ul>
   </nav>

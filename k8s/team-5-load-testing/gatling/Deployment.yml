@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gatling
+  namespace: taf
+  labels:
+    appClass: gatling
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      appClass: gatling
+  template:
+    metadata:
+      labels:
+        appClass: gatling
+    spec:
+      containers:
+      - name: gatling
+        image: <TO UPDATE>
+        ports:
+          - containerPort: 4021
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

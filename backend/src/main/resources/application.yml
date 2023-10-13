@@ -1,14 +1,13 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://nostrasoft.com:3306/nostr321_taf-db
-    username: nostr321_taf
-    password: JKaVLX75iHwtrHc
-      
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
   jpa:
     defer-datasource-initialization: true
     hibernate:
-      ddl-auto: validate
+      ddl-auto: create
       dialect : ${spring.jpa.properties.hibernate.dialect}
     properties:
       hibernate:
@@ -18,9 +17,15 @@ spring:
     encoding: ISO-8859-1
   sql:
     init:
-     mode: always    
-     platform: mysql
+      mode: always
+      platform: mysql
 taf:
   app:
     jwtSecret: bezKoderSecretKey
     jwtExpirationMs: 86400000
+    testAPI_url: ${TEST_API_SERVICE_URL}
+    testAPI_port: ${TEST_API_SERVICE_PORT}
+    gatling_url: ${GATLING_URL}
+    gatling_port: ${GATLING_PORT}
+    jmeter_url: ${JMETER_URL}
+    jmeter_port: ${JMETER_PORT}

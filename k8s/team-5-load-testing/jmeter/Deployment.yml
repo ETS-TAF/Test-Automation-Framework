@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jmeter
+  namespace: taf
+  labels:
+    appClass: jmeter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      appClass: jmeter
+  template:
+    metadata:
+      labels:
+        appClass: jmeter
+    spec:
+      containers:
+      - name: jmeter
+        image: <TO UPDATE>
+        ports:
+          - containerPort: 4020
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

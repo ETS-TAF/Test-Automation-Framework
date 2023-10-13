@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: selenium-hub
+  namespace: taf
+  labels:
+    appClass: selenium-hub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      appClass: selenium-hub
+  template:
+    metadata:
+      labels:
+        appClass: selenium-hub
+    spec:
+      containers:
+      - name: selenium-hub
+        image: <TO UPDATE>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 4444

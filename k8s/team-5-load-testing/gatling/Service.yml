@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gatling-service
+  labels:
+    appClass: gatling-service
+  namespace: taf
+spec:
+  type: ClusterIP
+  selector:
+    appClass: gatling
+  ports:
+  - port: 4021
+    targetPort: 4021
