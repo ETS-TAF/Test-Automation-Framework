@@ -5,7 +5,6 @@ COPY . .
 
 RUN ./mvnw package -D maven.test.skip
 
-
 FROM openjdk:17-jdk-alpine as runner
 
 WORKDIR /code
