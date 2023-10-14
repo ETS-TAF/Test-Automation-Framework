@@ -12,7 +12,8 @@ services:
     image: back
     container_name: back
     build:
-      context: ./backend
+      context: ./
+      dockerfile: ./backend/Dockerfile
     ports:
       - "9000:80"
     env_file:
