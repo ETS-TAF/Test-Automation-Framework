@@ -3,6 +3,7 @@ FROM openjdk:17-jdk as builder
 WORKDIR /code
 COPY . .
 
+RUN chlmod +x ./mvnw
 RUN ./mvnw package -D maven.test.skip
 
 FROM openjdk:17-jdk-alpine as runner
