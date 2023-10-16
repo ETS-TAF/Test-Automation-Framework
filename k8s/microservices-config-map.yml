@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: microservices-config-map
+  namespace: taf
+data:
+  # property-like keys; each key maps to a simple value
+  testapi_url: <TO UPDATE>
+  testapi_port: <TO_UPDATE>
+immutable: false

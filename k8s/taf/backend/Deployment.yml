@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taf-backend
+  namespace: taf
+  labels:
+    appClass: taf-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      appClass: taf-backend
+  template:
+    metadata:
+      labels:
+        appClass: taf-backend
+    spec:
+      containers:
+        - name: taf-backend
+          image: <TO UPDATE>
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: <TO UPDATE>
+            - name: TEST_API_SERVICE_URL
+              valueFrom:
+                configMapKeyRef:
+                  # The ConfigMap containing the value you want to assign to SPECIAL_LEVEL_KEY
+                  name: microservices-config-map
+                  # Specify the key associated with the value
+                  key: testapi_url
+            - name: TEST_API_SERVICE_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: microservices-config-map
+                  key: testapi_port
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: username
+                  name: taf-backend-secret
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: password
+                  name: taf-backend-secret

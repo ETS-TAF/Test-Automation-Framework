@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: selenium-node
+  namespace: taf
+  labels:
+    appClass: selenium-node
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      appClass: selenium-node
+  template:
+    metadata:
+      labels:
+        appClass: selenium-node
+    spec:
+      containers:
+      - name: selenium-node
+        image: <TO UPDATE>
+        ports:
+          - containerPort: 5555
+        env:
+          - name: SE_EVENT_BUS_HOST 
+            value: selenium-server-service
+          - name: SE_EVENT_BUS_PUBLISH_PORT
+            value: "4442"
+          - name: SE_EVENT_BUS_SUBSCRIBE_PORT
+            value: "4443"

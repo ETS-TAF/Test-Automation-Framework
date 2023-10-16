@@ -1,0 +1,5 @@
+config:
+  gcp:project: euphoric-drive-365518
+  google-cloud:gcp-project: euphoric-drive-365518
+  google-cloud:db-user-password:
+    secure: AAABANriACBX2/UP79gXzSIuE4nWOk/CEq0klYY7uS++69xFMdyefoupu8OA0q0vfp9eCYfS0FDr9wWT/sSnWPMus1A4vaKA

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-selenium-team-4-service
+  labels:
+    appClass: client-selenium-team-4
+  namespace: taf
+spec:
+  type: LoadBalancer
+  selector:
+    appClass: client-selenium-team-4
+  ports:
+  - port: 3000
+    targetPort: http
