@@ -18,4 +18,8 @@ jobs:
       with:
         compose-file: "./docker-compose.yml"
       env:
-        CUSTOM_VARIABLE: "test"
+        TEST_API_SERVICE_URL: ${{ secrets.TEST_API_SERVICE_URL }}
+        TEST_API_SERVICE_PORT: ${{ secrets.TEST_API_SERVICE_PORT }}
+        SPRING_DATASOURCE_URL: ${{ secrets.SPRING_DATASOURCE_URL }}
+        SPRING_DATASOURCE_USERNAME: ${{ secrets.SPRING_DATASOURCE_USERNAME }}
+        SPRING_DATASOURCE_PASSWORD: ${{ secrets.SPRING_DATASOURCE_PASSWORD }}
