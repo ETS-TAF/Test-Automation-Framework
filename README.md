@@ -27,6 +27,7 @@ Run the following command to start all the dockers using docker-compose by speci
 docker compose --env-file .docker_config.env up
 ```
 
+
 ## Branches
 
 la branche principale de développement est develop, elle sert à faire les merges de toutes les branches de travail en cours.
