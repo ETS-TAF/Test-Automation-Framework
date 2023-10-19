@@ -6,7 +6,7 @@ Dernière mise à jour : 16/10/2023
 ## TypeScript - Framework Angular
 - Noms des fonctions et variables en CamelCase : `thisIsAVariable`
 - Constantes en MAJUSCULE avec le mot clé `readonly` : `readonly VARIABLE_CONSTANTE: string = "const";`
-- Commentaires : `// + phrase en anglais` → `// Ceci est un commentaire`
+- Commentaires : `// + phrase en anglais` → `// this is a comment`
 - Code typé strictement
 - Appels API définis dans les services
 - Suivre les standards Angular : [Lien vers le guide de style Angular](https://angular.io/guide/styleguide)
@@ -16,7 +16,7 @@ Dernière mise à jour : 16/10/2023
 - Utiliser le modèle MVC proposé par Spring (controller, services, repositories etc)
 - Noms des fonctions et variables en CamelCase : `thisIsAVariable`
 - Noms des classes, interfaces et énumérations en PascalCase : `ThisIsAClass`
-- Commentaires : `// + phrase en anglais` → `// Ceci est un commentaire`
+- Commentaires : `// + phrase en anglais` → `// this is a comment`
 - Constantes en MAJUSCULE avec le mot clé `final` : `final String VARIABLE_CONSTANTE = "const";`
 - Injection de dépendances de Spring, éviter d'utiliser 'new' pour instancier des dépendances
 - Suivre les conventions de programmation Java et Spring
@@ -24,7 +24,7 @@ Dernière mise à jour : 16/10/2023
 
 ## GIT Flow
 - Message de commit sous la forme : "Action verb + élément concerné" écrit en anglais
-- Utiliser en majorité ces action verbs : Add, Fix, Remove, Update, Improve
+- Utiliser en majorité ces action verbs : Add, Fix, Remove, Update, Improve (toujours au présent)
   -> `git commit -m "Add color enumeration"`
 - Un commit par changement
 - 3 types de branches :
