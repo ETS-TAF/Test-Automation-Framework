@@ -1,6 +1,9 @@
-![Logo taf](./logo_taf.png)
+Dernière mise à jour : 19/10/2023
+---
 
+![Logo taf](./logo_taf.png)
 # Test Automation Framework
+
 TAF est un projet de R&amp;D de cadriciel d’automatisation de test
 
 
@@ -37,5 +40,5 @@ ng serve --o
 ## Contribuer au projet
 
 La démarche pour contribuer au projet est disponible dans le document [CONTRIBUTING.md](./CONTRIBUTING.md).  
-La programmation en JS/TS et Java font usage de conventions précise disponibles dans le fichier [à compléter](./CONTRIBUTING.md).
+La programmation en JS/TS et Java font usage de conventions précise disponibles dans le fichier [CONVENTIONS.md](./documentation/CONVENTIONS.md).
 
