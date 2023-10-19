@@ -2,6 +2,7 @@ Dernière mise à jour : 19/10/2023
 ---
 
 ![Logo taf](./logo_taf.png)
+
 # Test Automation Framework
 
 TAF est un projet de R&amp;D de cadriciel d’automatisation de test
