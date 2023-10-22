@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title">Add Test Action</h5>
+            <h5 class="modal-title">New Action</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -24,8 +24,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Add Action</button>
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" (click)="submitAction()">Add Action</button>
         </div>
         </div>
     </div>
@@ -50,28 +50,18 @@
             </tr>
         </thead>
         <tbody class="table-group-divider">
-            <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
+            <tr *ngFor="let action of actions">
+                <td>{{action.action}}</td>
+                <td>{{action.object}}</td>
+                <td>{{action.input}}</td>
+                <td>{{action.target}}</td>
                 <td>
                     <button type="button" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                     Delete
                     </button>
                 </td>
             </tr>
-            <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@fat</td>
-                <td>
-                    <button type="button" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                    Delete
-                    </button>
-                </td>
-            </tr>
+            
         </tbody>
     </table><br><br>
 </div>
