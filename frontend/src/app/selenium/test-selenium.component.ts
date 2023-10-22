@@ -6,14 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./test-selenium.component.css']
 })
 export class TestSeleniumComponent {
-    counter: number=1;
-    actions: {
+    counterAction: number=1;
+    counterCase: number=0;
+    cases : {
         id: number;
-        action: string;
-        object: string;
-        input: string;
-        target: string;
+        caseName: string;
+        actions: {
+            id: number;
+            action: string;
+            object: string;
+            input: string;
+            target: string;
+        }[] ;
     }[] = [];
+
 
     
     actionChose(): void {
@@ -38,21 +44,58 @@ export class TestSeleniumComponent {
             object.disabled = false;
         }
     }
+    submitCase(){
+        this.counterCase++;
+        let caseName = (document.getElementById('caseName') as HTMLSelectElement).value;
+        this.addCase({ id: this.counterCase, caseName: caseName, actions: [] });
+        (document.getElementById('caseName') as HTMLInputElement).value = '';
+        (document.getElementById('close2') as HTMLButtonElement).click();
+        this.counterAction=1;
+        const addActionButton = document.getElementById('addActionButton') as HTMLInputElement;
+        addActionButton.disabled = false;
+    }
+    
+    
+    public getCase(id: number) {
+        return this.cases.find(obj => obj.id === id);
+    }
+    deleteCase(id: number) {
+        this.cases = this.cases.filter(item => item.id !== id);
+    }
+
+    public addCase(obj: { id: number, caseName: string, actions: { id: number, action: string, object: string, input: string, target: string }[] }) {
+        this.cases.push(obj);
+    }
+
     submitAction(){
         let action = (document.getElementById('action') as HTMLSelectElement).value;
         let object = (document.getElementById('object') as HTMLInputElement).value;
         let input = (document.getElementById('input') as HTMLInputElement).value;
         let target = (document.getElementById('target') as HTMLInputElement).value;
-        this.addJsonObject({ id: this.counter, action: action, object: object, input: input, target: target, });
-        console.log(this.getJsonObjectById(this.counter));
-        this.counter++;
+        this.addAction({ id: this.counterAction, action: action, object: object, input: input, target: target, });
+        console.log(this.getAction(this.counterAction));
+        this.counterAction++;
+        
+        // Clear the input fields
+        (document.getElementById('object') as HTMLInputElement).value = '';
+        (document.getElementById('input') as HTMLInputElement).value = '';
+        (document.getElementById('target') as HTMLInputElement).value = '';
+        (document.getElementById('close') as HTMLButtonElement).click();
     }
-    public addJsonObject(obj: { id: number,action: string,object: string,input: string,target: string }) {
-        this.actions.push(obj);
+    public addAction(obj: { id: number,action: string,object: string,input: string,target: string }) {
+        this.getCase(this.counterCase)?.actions.push(obj);
     }
     
-    public getJsonObjectById(id: number) {
-        return this.actions.find(obj => obj.id === id);
+    public getAction(id: number) {
+        return this.getCase(this.counterCase)?.actions.find(obj => obj.id === id);
     }
+    deleteAction(caseId: number,actionId:number) {
+        const currentCase = this.getCase(caseId);
+
+        if (currentCase && currentCase.actions) {
+            currentCase.actions = currentCase.actions.filter(item => item.id !== actionId);
+        }
+    }
+    
     
 }
