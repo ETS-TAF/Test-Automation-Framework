@@ -1,10 +1,9 @@
-FROM openjdk:17-jdk as builder
+FROM maven:3.9.5-sapmachine-17 as builder
 
 WORKDIR /code
 COPY . .
 
-RUN chmod +x ./mvnw
-RUN ./mvnw package -D maven.test.skip
+RUN mvn package -D maven.test.skip
 
 FROM openjdk:17-jdk-alpine as runner
 
