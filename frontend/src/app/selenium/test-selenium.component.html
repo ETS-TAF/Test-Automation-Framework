@@ -64,6 +64,11 @@
     <div class="container" *ngFor="let case of cases">
 
         <h4>Case #{{case.id}} : {{case.caseName}}</h4>
+        <span>
+            <button type="button" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" (click)="deleteCase(case.id)">
+                Delete
+            </button>
+        </span>
         <table class="table table-hover">
             <thead>
                 <tr>
