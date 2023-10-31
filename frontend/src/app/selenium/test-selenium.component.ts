@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-test-selenium',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./test-selenium.component.css']
 })
 export class TestSeleniumComponent {
+    constructor(private http: HttpClient) { }
+
     counterAction: number=1;
     counterCase: number=0;
     cases : {
@@ -20,7 +23,18 @@ export class TestSeleniumComponent {
         }[] ;
     }[] = [];
 
-
+    runMethod(cases: any) {
+        const apiUrl = '/api/testselenium';
+        this.http.get(apiUrl, cases).subscribe(
+        (response) => {
+            console.log('tested successfully:', response);
+            // on vas ecrire le code ici 
+        },
+        (error) => {
+            console.error('Error test:', error);
+        }
+        );
+    }
     
     actionChose(): void {
         const action = (document.getElementById('action') as HTMLSelectElement).value;

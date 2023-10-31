@@ -59,7 +59,7 @@
         <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addAction" id="addActionButton" disabled>
             Add New Action
         </button>
-        <button type="button" class="btn btn-success">Run</button>
+        <button type="button" class="btn btn-success" (click)="runMethod(cases)">Run</button>
     </div><br><br>
     <div class="container" *ngFor="let case of cases">
 
