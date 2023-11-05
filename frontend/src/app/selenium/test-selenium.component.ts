@@ -12,11 +12,12 @@ export class TestSeleniumComponent {
     counterAction: number=1;
     counterCase: number=0;
     cases : {
-        id: number;
+        case_id: number;
         caseName: string;
         actions: {
-            id: number;
-            action: string;
+            action_id: number;
+            action_type_id:number;
+            action_type_name: string;
             object: string;
             input: string;
             target: string;
@@ -28,7 +29,7 @@ export class TestSeleniumComponent {
         this.http.get(apiUrl, cases).subscribe(
         (response) => {
             console.log('tested successfully:', response);
-            // on vas ecrire le code ici 
+            
         },
         (error) => {
             console.error('Error test:', error);
@@ -37,7 +38,7 @@ export class TestSeleniumComponent {
     }
     
     actionChose(): void {
-        const action = (document.getElementById('action') as HTMLSelectElement).value;
+        const action = (document.getElementById('action') as HTMLSelectElement).innerText;
         const object = document.getElementById('object') as HTMLInputElement;
         const input = document.getElementById('input') as HTMLInputElement;
         const target = document.getElementById('target') as HTMLInputElement;
@@ -61,7 +62,7 @@ export class TestSeleniumComponent {
     submitCase(){
         this.counterCase++;
         let caseName = (document.getElementById('caseName') as HTMLSelectElement).value;
-        this.addCase({ id: this.counterCase, caseName: caseName, actions: [] });
+        this.addCase({ case_id: this.counterCase, caseName: caseName, actions: [] });
         (document.getElementById('caseName') as HTMLInputElement).value = '';
         (document.getElementById('close2') as HTMLButtonElement).click();
         this.counterAction=1;
@@ -71,22 +72,23 @@ export class TestSeleniumComponent {
     
     
     public getCase(id: number) {
-        return this.cases.find(obj => obj.id === id);
+        return this.cases.find(obj => obj.case_id === id);
     }
     deleteCase(id: number) {
-        this.cases = this.cases.filter(item => item.id !== id);
+        this.cases = this.cases.filter(item => item.case_id !== id);
     }
 
-    public addCase(obj: { id: number, caseName: string, actions: { id: number, action: string, object: string, input: string, target: string }[] }) {
+    public addCase(obj: { case_id: number, caseName: string, actions: {action_id: number,action_type_id:number,action_type_name: string, object: string, input: string, target: string }[] }) {
         this.cases.push(obj);
     }
 
     submitAction(){
-        let action = (document.getElementById('action') as HTMLSelectElement).value;
+        let action_id = parseInt((document.getElementById('action') as HTMLSelectElement).value);
+        let action = (document.getElementById('action') as HTMLSelectElement).innerText;
         let object = (document.getElementById('object') as HTMLInputElement).value;
         let input = (document.getElementById('input') as HTMLInputElement).value;
         let target = (document.getElementById('target') as HTMLInputElement).value;
-        this.addAction({ id: this.counterAction, action: action, object: object, input: input, target: target, });
+        this.addAction({ action_id: this.counterAction,action_type_id: action_id, action_type_name: action, object: object, input: input, target: target, });
         console.log(this.getAction(this.counterAction));
         this.counterAction++;
         
@@ -96,18 +98,18 @@ export class TestSeleniumComponent {
         (document.getElementById('target') as HTMLInputElement).value = '';
         (document.getElementById('close') as HTMLButtonElement).click();
     }
-    public addAction(obj: { id: number,action: string,object: string,input: string,target: string }) {
+    public addAction(obj: { action_id: number,action_type_id:number,action_type_name: string, object: string,input: string,target: string }) {
         this.getCase(this.counterCase)?.actions.push(obj);
     }
     
     public getAction(id: number) {
-        return this.getCase(this.counterCase)?.actions.find(obj => obj.id === id);
+        return this.getCase(this.counterCase)?.actions.find(obj => obj.action_id === id);
     }
     deleteAction(caseId: number,actionId:number) {
         const currentCase = this.getCase(caseId);
 
         if (currentCase && currentCase.actions) {
-            currentCase.actions = currentCase.actions.filter(item => item.id !== actionId);
+            currentCase.actions = currentCase.actions.filter(item => item.action_id !== actionId);
         }
     }
     
