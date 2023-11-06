@@ -15,6 +15,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { ProjectComponent } from './project/project.component';
 import { TestApiComponent } from './interface-test-api/test-api/test-api.component';
+import { TestSeleniumComponent } from './selenium/test-selenium.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TestApiComponent } from './interface-test-api/test-api/test-api.compone
     BoardAdminComponent,
     BoardUserComponent,
     ProjectComponent,
-    TestApiComponent
+    TestApiComponent,
+    TestSeleniumComponent
   ],
   imports: [
     BrowserModule,
