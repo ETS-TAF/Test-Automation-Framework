@@ -1,4 +1,4 @@
-package ca.etsmtl.requests;
+package ca.etsmtl.selenium.requests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,26 +16,40 @@ import org.springframework.web.bind.annotation.*;
 public class useSelenium {
     @GetMapping("/test")
     public String firstTest() {
-		WebDriver driver = new ChromeDriver();
+        try {
+            WebDriver driver = new ChromeDriver();
 
-        driver.get("https://www.selenium.dev/selenium/web/web-form.html");
+            try {
 
-        driver.getTitle();
+                driver.get("https://www.selenium.dev/selenium/web/web-formm.html");
+    
+                driver.getTitle();
+    
+                driver.manage().timeouts().implicitlyWait(1,TimeUnit.SECONDS);
+    
+                WebElement textBox = driver.findElement(By.name("my-text"));
+                WebElement submitButton = driver.findElement(By.cssSelector("button"));
+    
+                textBox.sendKeys("Selenium");
+                submitButton.click();
+    
+                WebElement message = driver.findElement(By.id("message"));
+                message.getText();
+    
+                driver.quit();
+    
+                return "test completed";
+            }
+    
+            catch(Exception e) {
+                driver.quit();
+                return "error on test";
+            }
+        }
 
-        driver.manage().timeouts().implicitlyWait(1,TimeUnit.SECONDS);
-
-        WebElement textBox = driver.findElement(By.name("my-text"));
-        WebElement submitButton = driver.findElement(By.cssSelector("button"));
-
-        textBox.sendKeys("Selenium");
-        submitButton.click();
-
-        WebElement message = driver.findElement(By.id("message"));
-        message.getText();
-
-        driver.quit();
-
-        return "test completed";
+        catch(Exception e) {
+            return "error with the web driver";
+        }
 	}
 
     @GetMapping("/all")

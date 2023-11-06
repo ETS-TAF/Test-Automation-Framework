@@ -24,5 +24,6 @@
     <modules>
         <module>backend</module>
         <module>frontend</module>
+        <module>selenium</module>
     </modules>
 </project>
