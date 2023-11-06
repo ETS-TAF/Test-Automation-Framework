@@ -8,6 +8,7 @@ services:
     ports:
       # TEST_API_SERVICE_PORT is defined as env variable in .docker_config.env
       - "${TEST_API_SERVICE_PORT}:${TEST_API_SERVICE_PORT}"
+
   backend:
     image: back
     container_name: back
@@ -19,6 +20,7 @@ services:
     env_file:
       # Specifying the env file with necessaries values
       - .docker_config.env
+
   frontend:
     image: front
     container_name: front
@@ -28,3 +30,11 @@ services:
       - "4200:80"
     depends_on:
       - backend
+  
+  selenium:
+    image: selenium
+    container_name: selenium
+    build:
+      context: ./selenium
+    ports:
+      - "8090:8090"

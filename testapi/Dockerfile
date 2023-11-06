@@ -3,5 +3,5 @@ WORKDIR /testapi
 COPY pom.xml ./
 COPY ./src ./src
 RUN mvn clean install
-EXPOSE 8082
+EXPOSE 8090
 ENTRYPOINT ["mvn", "spring-boot:run" ]
