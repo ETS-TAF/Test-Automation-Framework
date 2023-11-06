@@ -3,5 +3,5 @@ WORKDIR /selenium
 COPY pom.xml ./
 COPY ./src ./src
 RUN mvn clean install
-EXPOSE 8083
-ENTRYPOINT ["mvn", "exec:java", "-Dexec.mainClass='ca.etsmtl.Main'" ]
+EXPOSE 8090
+ENTRYPOINT ["mvn", "spring-boot:run" ]
