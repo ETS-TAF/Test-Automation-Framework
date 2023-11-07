@@ -42,7 +42,7 @@ La programmation en JS/TS et Java font usage de conventions précises disponible
 
 ## Contact
 
-En cas de questions, vous pouvez rejoindre [le discord TAF (lien non fonctionnel)](). Veilliez à ce qu'uniquement 1 ou 2 personnes de votre équipe le rejoigne afin de limiter le nombres de personnes et de faciliter la communication.
+En cas de questions, vous pouvez rejoindre [le discord TAF](https://discord.gg/TYrqTdHEqk). Veilliez à ce qu'uniquement 1 ou 2 personnes de votre équipe le rejoigne afin de limiter le nombres de personnes et de faciliter la communication.
 
 ---
 Dernière mise à jour : 19/10/2023
