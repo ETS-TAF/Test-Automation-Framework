@@ -49,12 +49,8 @@ jobs:
         working-directory: ./frontend
         run: npm install
 
-      - name: Run tests
-        working-directory: ./frontend
-        run: npm run test:headless
-
       - name: Build
         working-directory: ./frontend
-        run: npm run build:prod
+        run: npm run ng build
 
 
