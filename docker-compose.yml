@@ -35,6 +35,7 @@ services:
     image: selenium
     container_name: selenium
     build:
-      context: ./selenium
+      context: ./
+      dockerfile: ./selenium/Dockerfile
     ports:
       - "8090:8090"

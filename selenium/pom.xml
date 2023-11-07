@@ -48,6 +48,13 @@
             <artifactId>selenium-java</artifactId>
             <version>3.9.1</version>
         </dependency>
+
+        <dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
