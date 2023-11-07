@@ -63,9 +63,9 @@
     </div><br><br>
     <div class="container" *ngFor="let case of cases">
 
-        <h4>Case #{{case.id}} : {{case.caseName}}</h4>
+        <h4>Case #{{case.case_id}} : {{case.caseName}}</h4>
         <span>
-            <button type="button" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" (click)="deleteCase(case.id)">
+            <button type="button" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" (click)="deleteCase(case.case_id)">
                 Delete
             </button>
         </span>
@@ -81,12 +81,12 @@
             </thead>
             <tbody class="table-group-divider">
                 <tr *ngFor="let action of case.actions">
-                    <td>{{action.action}}</td>
+                    <td>{{action.action_type_name}}</td>
                     <td>{{action.object}}</td>
                     <td>{{action.input}}</td>
                     <td>{{action.target}}</td>
                     <td>
-                        <button type="button" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" (click)="deleteAction(case.id,action.id)">
+                        <button type="button" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" (click)="deleteAction(case.case_id,action.action_id)">
                         Delete
                         </button>
                     </td>
