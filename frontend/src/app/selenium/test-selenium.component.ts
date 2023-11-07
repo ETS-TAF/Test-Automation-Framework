@@ -26,7 +26,7 @@ export class TestSeleniumComponent {
 
     runMethod(cases: any) {
         const apiUrl = '/api/testselenium';
-        this.http.get(apiUrl, cases).subscribe(
+        this.http.post(apiUrl, cases).subscribe(
         (response) => {
             console.log('tested successfully:', response);
             
@@ -38,7 +38,8 @@ export class TestSeleniumComponent {
     }
     
     actionChose(): void {
-        const action = (document.getElementById('action') as HTMLSelectElement).innerText;
+        const action2 = (document.getElementById('action') as HTMLSelectElement);
+        const action =action2.options[action2.selectedIndex].text;
         const object = document.getElementById('object') as HTMLInputElement;
         const input = document.getElementById('input') as HTMLInputElement;
         const target = document.getElementById('target') as HTMLInputElement;
@@ -84,7 +85,8 @@ export class TestSeleniumComponent {
 
     submitAction(){
         let action_id = parseInt((document.getElementById('action') as HTMLSelectElement).value);
-        let action = (document.getElementById('action') as HTMLSelectElement).innerText;
+        let action2 = (document.getElementById('action') as HTMLSelectElement);
+        let action =action2.options[action2.selectedIndex].text;
         let object = (document.getElementById('object') as HTMLInputElement).value;
         let input = (document.getElementById('input') as HTMLInputElement).value;
         let target = (document.getElementById('target') as HTMLInputElement).value;
