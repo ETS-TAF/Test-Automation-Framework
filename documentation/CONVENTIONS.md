@@ -1,7 +1,4 @@
 # TAF - Conventions d'écriture
-Dernière mise à jour : 16/10/2023
-
----
 
 ## TypeScript - Framework Angular
 - Noms des fonctions et variables en CamelCase : `thisIsAVariable`
