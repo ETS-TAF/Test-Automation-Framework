@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Maven package
+name: Build, test and package backend
 
 on:
   push:
@@ -27,7 +27,12 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
+    - name: Build and test with Maven
       run: mvn -B package --file pom.xml
+    - name: Upload .jar file
+      uses: actions/upload-artifact@v3
+      with:
+        name: TAF package
+        path: backend/target/backend-1.0.0-SNAPSHOT.jar
 
 
