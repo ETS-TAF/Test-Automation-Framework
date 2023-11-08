@@ -20,22 +20,6 @@ import ca.etsmtl.selenium.requests.payload.request.*;
 @RestController
 @RequestMapping("/microservice/selenium")
 public class useSelenium {
-
-    @PostMapping("/test")
-    public String testWithSelenium(@RequestBody String seleniumActions) {
-        System.out.println("seleniumActions");
-        System.out.println(seleniumActions);
-        String response = "{\n" +
-                "   \"case_id\":1,\n" +
-                "   \"caseName\":\"test\",\n" +
-                "   \"time_taken\":300,\n" +
-                "   \"isSuccessfull\":1,\n" +
-                "   \"additionalMessage\":\"\"\n" +
-                "}";
-        return response;
-    }
-
-    /*
     @PostMapping("/test")
     public SeleniumResponse testWithSelenium(@RequestBody List<SeleniumAction> seleniumActions) {
         SeleniumResponse seleniumResponse = new SeleniumResponse();
@@ -117,7 +101,6 @@ public class useSelenium {
 
         return seleniumResponse;
     }
-    */
 
     @GetMapping("/all")
     public String allAccess() {

@@ -1,6 +1,7 @@
 package ca.etsmtl.taf.controller;
 
 import ca.etsmtl.taf.dto.SeleniumCaseDto;
+import ca.etsmtl.taf.entity.SeleniumCaseResponse;
 import ca.etsmtl.taf.service.SeleniumService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,8 +21,8 @@ public class TestSeleniumController {
     }
 
     @PostMapping("/testselenium")
-    public ResponseEntity<List<String>> runTests(@RequestBody List<SeleniumCaseDto> seleniumCases) throws URISyntaxException, IOException, InterruptedException {
-        List<String> response = seleniumService.sendTestCases(seleniumCases);
+    public ResponseEntity<List<SeleniumCaseResponse>> runTests(@RequestBody List<SeleniumCaseDto> seleniumCases) throws URISyntaxException, IOException, InterruptedException {
+        List<SeleniumCaseResponse> response = seleniumService.sendTestCases(seleniumCases);
         return ResponseEntity.ok(response);
     }
 }

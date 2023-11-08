@@ -1,6 +1,7 @@
 package ca.etsmtl.taf.apiCommunication;
 
 import ca.etsmtl.taf.entity.SeleniumActionRequest;
+import ca.etsmtl.taf.entity.SeleniumCaseResponse;
 import ca.etsmtl.taf.entity.SeleniumTestCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -20,12 +21,12 @@ public class SeleniumServiceRequester {
         this.webClient = webClient;
     }
 
-    public Mono<String> sendTestCase(List<SeleniumActionRequest> testCase) {
+    public Mono<SeleniumCaseResponse> sendTestCase(List<SeleniumActionRequest> testCase) {
         return webClient.post()
                 .uri("/microservice/selenium/test")
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .body(Mono.just(testCase), SeleniumTestCase.class)
                 .retrieve()
-                .bodyToMono(String.class);
+                .bodyToMono(SeleniumCaseResponse.class);
     }
 }

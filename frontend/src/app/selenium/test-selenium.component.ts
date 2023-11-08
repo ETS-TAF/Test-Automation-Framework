@@ -26,23 +26,24 @@ export class TestSeleniumComponent {
 
     runMethod(cases: any) {
         const apiUrl = '/api/testselenium';
-        this.http.get(apiUrl, cases).subscribe(
+        console.log(cases);
+        this.http.post(apiUrl, cases).subscribe(
         (response) => {
             console.log('tested successfully:', response);
-            
+
         },
         (error) => {
             console.error('Error test:', error);
         }
         );
     }
-    
+
     actionChose(): void {
         const action = (document.getElementById('action') as HTMLSelectElement).value;
         const object = document.getElementById('object') as HTMLInputElement;
         const input = document.getElementById('input') as HTMLInputElement;
         const target = document.getElementById('target') as HTMLInputElement;
-    
+
         object.disabled = true;
         input.disabled = true;
         target.disabled = true;
@@ -50,11 +51,11 @@ export class TestSeleniumComponent {
         if (action === "1" || action === "2") {
             input.disabled = false;
         }
-    
+
         if (action === "3" || action === "4") {
             target.disabled = false;
         }
-    
+
         if (action === "5" || action === "6" || action === "7" || action === "2") {
             object.disabled = false;
         }
@@ -69,8 +70,8 @@ export class TestSeleniumComponent {
         const addActionButton = document.getElementById('addActionButton') as HTMLInputElement;
         addActionButton.disabled = false;
     }
-    
-    
+
+
     public getCase(id: number) {
         return this.cases.find(obj => obj.case_id === id);
     }
@@ -91,7 +92,7 @@ export class TestSeleniumComponent {
         this.addAction({ action_id: this.counterAction,action_type_id: action_id, action_type_name: action, object: object, input: input, target: target, });
         console.log(this.getAction(this.counterAction));
         this.counterAction++;
-        
+
         // Clear the input fields
         (document.getElementById('object') as HTMLInputElement).value = '';
         (document.getElementById('input') as HTMLInputElement).value = '';
@@ -101,7 +102,7 @@ export class TestSeleniumComponent {
     public addAction(obj: { action_id: number,action_type_id:number,action_type_name: string, object: string,input: string,target: string }) {
         this.getCase(this.counterCase)?.actions.push(obj);
     }
-    
+
     public getAction(id: number) {
         return this.getCase(this.counterCase)?.actions.find(obj => obj.action_id === id);
     }
@@ -112,7 +113,7 @@ export class TestSeleniumComponent {
             currentCase.actions = currentCase.actions.filter(item => item.action_id !== actionId);
         }
     }
-    
-    
-    
+
+
+
 }
