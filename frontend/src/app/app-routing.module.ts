@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { TestApiComponent } from './interface-test-api/test-api/test-api.component';
+import { TestSeleniumComponent } from './selenium/test-selenium.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: 'test-api', component: TestApiComponent },
+  { path: 'test-selenium', component: TestSeleniumComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
