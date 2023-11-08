@@ -37,3 +37,6 @@ bin
 # local config
 application-local.yml
 node_modules
+
+# PDFs
+*.pdf

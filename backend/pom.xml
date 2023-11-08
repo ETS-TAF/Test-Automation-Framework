@@ -9,12 +9,6 @@
 	<artifactId>backend</artifactId>
 	<dependencies>
 		<dependency>
-			<groupId>ca.etsmtl</groupId>
-			<artifactId>frontend</artifactId>
-			<version>${project.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
