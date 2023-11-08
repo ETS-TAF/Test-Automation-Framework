@@ -38,7 +38,7 @@ export class TestSeleniumComponent {
     }
     
     actionChose(): void {
-        const action = (document.getElementById('action') as HTMLSelectElement).innerText;
+        const action = (document.getElementById('action') as HTMLSelectElement).value;
         const object = document.getElementById('object') as HTMLInputElement;
         const input = document.getElementById('input') as HTMLInputElement;
         const target = document.getElementById('target') as HTMLInputElement;
@@ -46,16 +46,16 @@ export class TestSeleniumComponent {
         object.disabled = true;
         input.disabled = true;
         target.disabled = true;
-    
-        if (action === "GoToUrl" || action === "FillField") {
+
+        if (action === "1" || action === "2") {
             input.disabled = false;
         }
     
-        if (action === "GetAttribute" || action === "GetPageTitle") {
+        if (action === "3" || action === "4") {
             target.disabled = false;
         }
     
-        if (action === "Clear" || action === "Click" || action === "IsDisplayed" || action === "FillField") {
+        if (action === "5" || action === "6" || action === "7" || action === "2") {
             object.disabled = false;
         }
     }
