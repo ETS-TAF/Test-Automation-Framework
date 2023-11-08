@@ -1,8 +1,8 @@
 package ca.etsmtl.selenium.requests.payload.request;
 
-import lombok.Getter;
+import lombok.Data;
 
-@Getter
+@Data
 public class SeleniumAction {
     int action_id;
     int action_type_id;
