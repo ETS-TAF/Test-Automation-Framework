@@ -21,8 +21,12 @@ import ca.etsmtl.selenium.requests.payload.request.*;
 @RequestMapping("/microservice/selenium")
 public class useSelenium {
     @PostMapping("/test")
-    public SeleniumResponse testWithSelenium(@RequestBody List<SeleniumAction> seleniumActions) {
+    public SeleniumResponse testWithSelenium(@RequestBody SeleniumCase seleniumCase) {
+        List<SeleniumAction> seleniumActions = seleniumCase.getSeleniumActions();
+
         SeleniumResponse seleniumResponse = new SeleniumResponse();
+        seleniumResponse.setCase_id(seleniumCase.getCase_id());
+        seleniumResponse.setCase_name(seleniumCase.getCase_name());
         seleniumResponse.setSeleniumActions(seleniumActions);
         long currentTimestamp = (new Timestamp(System.currentTimeMillis())).getTime();
         seleniumResponse.setTimestamp(currentTimestamp/1000);
