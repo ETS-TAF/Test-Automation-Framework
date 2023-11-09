@@ -22,8 +22,8 @@ public class SeleniumService {
     public List<SeleniumCaseResponse> sendTestCases(List<SeleniumCaseDto> seleniumCases) throws URISyntaxException, IOException, InterruptedException {
         List<SeleniumCaseResponse> testResults = new ArrayList<>();
         for(SeleniumCaseDto seleniumCaseDto : seleniumCases) {
-            List<SeleniumActionRequest> seleniumActions = seleniumCaseDto.getActions();
-            SeleniumCaseResponse testCaseResult = seleniumServiceRequester.sendTestCase(seleniumActions).block();
+
+            SeleniumCaseResponse testCaseResult = seleniumServiceRequester.sendTestCase(seleniumCaseDto).block();
             testResults.add(testCaseResult);
         }
         return testResults;

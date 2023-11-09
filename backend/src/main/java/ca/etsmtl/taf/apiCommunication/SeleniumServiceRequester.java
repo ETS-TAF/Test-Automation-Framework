@@ -1,5 +1,6 @@
 package ca.etsmtl.taf.apiCommunication;
 
+import ca.etsmtl.taf.dto.SeleniumCaseDto;
 import ca.etsmtl.taf.entity.SeleniumActionRequest;
 import ca.etsmtl.taf.entity.SeleniumCaseResponse;
 import ca.etsmtl.taf.entity.SeleniumTestCase;
@@ -21,11 +22,11 @@ public class SeleniumServiceRequester {
         this.webClient = webClient;
     }
 
-    public Mono<SeleniumCaseResponse> sendTestCase(List<SeleniumActionRequest> testCase) {
+    public Mono<SeleniumCaseResponse> sendTestCase(SeleniumCaseDto testCase) {
         return webClient.post()
                 .uri("/microservice/selenium/test")
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .body(Mono.just(testCase), SeleniumTestCase.class)
+                .body(Mono.just(testCase), SeleniumCaseDto.class)
                 .retrieve()
                 .bodyToMono(SeleniumCaseResponse.class);
     }

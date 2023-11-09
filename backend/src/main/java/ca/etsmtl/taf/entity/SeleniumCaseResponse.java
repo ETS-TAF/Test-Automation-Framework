@@ -7,6 +7,8 @@ import java.util.List;
 
 @Data
 public class SeleniumCaseResponse implements Serializable {
+    int case_id;
+    String caseName;
     public List<SeleniumActionRequest> seleniumActions;
     public boolean success;
     public long timestamp;
