@@ -40,9 +40,10 @@ public class useSelenium {
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--window-size=1920x1080");
             WebDriver driver = new ChromeDriver(options);
-               
+            
+            long startTime = System.currentTimeMillis();
+
             try {
-                long startTime = System.currentTimeMillis();
                 for (SeleniumAction seleniumAction : seleniumActions) {
                     System.out.println("action type name : " + seleniumAction.getAction_type_name());
 
@@ -89,6 +90,11 @@ public class useSelenium {
         
             catch(Exception e) {
                 driver.quit();
+
+                long endTime = System.currentTimeMillis();
+                long totalTime = endTime - startTime;
+                seleniumResponse.setDuration(totalTime);
+                
                 seleniumResponse.setSuccess(false);
                 seleniumResponse.setOutput(e.getMessage());
                 return seleniumResponse;
