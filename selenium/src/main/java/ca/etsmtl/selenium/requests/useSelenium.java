@@ -22,7 +22,7 @@ import ca.etsmtl.selenium.requests.payload.request.*;
 public class useSelenium {
     @PostMapping("/test")
     public SeleniumResponse testWithSelenium(@RequestBody SeleniumCase seleniumCase) {
-        List<SeleniumAction> seleniumActions = seleniumCase.getSeleniumActions();
+        List<SeleniumAction> seleniumActions = seleniumCase.getActions();
 
         SeleniumResponse seleniumResponse = new SeleniumResponse();
         seleniumResponse.setCase_id(seleniumCase.getCase_id());
