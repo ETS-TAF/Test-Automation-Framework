@@ -45,9 +45,9 @@ public class GatlingApiController {
         } catch (IOException e) {
             return "Error: " + e.getMessage();
         } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
+            return "Error: " + e.getMessage();
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            return "Error: " + e.getMessage();
         }
     }
 }
