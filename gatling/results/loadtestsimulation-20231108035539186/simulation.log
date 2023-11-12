@@ -1,0 +1,4 @@
+RUN	ca.etsmtl.LoadTestSimulation	loadtestsimulation	1699415739186	 	3.9.5
+USER	games	START	1699415740751
+REQUEST		Mouahaha	1699415740748	1699415750772	KO	i.n.c.ConnectTimeoutException: connection timed out: videogamedb.uk/46.101.16.10:443
+USER	games	END	1699415750804

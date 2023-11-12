@@ -1,0 +1,88 @@
+<div class="container">
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h2>Résultat de test(notez qu'à la fin, il y a le lien vers de rapport de test)</h2>
+      </div>
+      <div class="modal-body">
+        <p *ngFor="let value of testResult">{{value}}</p>
+      </div>
+      <div class="modal-footer">
+        <button mat-raised-button  color="primary" (click)="closeModal()">Fermer</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="sidebar-content">
+      <div class="sidebar-title"><h1>Gatling</h1></div>
+      <div class="description"><p>
+        Gatling est un outil de test de performance open-source qui évalue la réactivité des applications web et des API. Pour lancer un test avec Gatling, vous avez besoin de définir la configuration de l'application à tester.
+        <br><br><b>Url :</b> L'URL de base de l'application à tester, pour indiquer l'emplacement précis de l'application ou de l'API à tester.
+
+        <br><br><b>Paramètres de requête :</b> Les paramètres que l'on inclut dans une URL pour transmettre des données.
+
+        <br><br><b>Type de requête :</b> Le type de requête que vous souhaitez tester,  définit le comportement de l'utilisateur virtuel dans le scénario de test.
+
+        <br><br><b>Nombre d'utilisateurs :</b> Le nombre d'utilisateurs simultanés, pour simuler des charges réalistes et évaluer les performances de l'application sous différents niveaux de trafic.
+
+
+      </p></div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="content">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-title">
+          <h1>Configuration du test</h1>
+        </div>
+        <div class="row">
+          <div class="form-group scenario">
+            <label for="baseUrl">Nom de sénario</label>
+            <input type="text" class="form-control" value="" id="scenarioName" [(ngModel)]="request.scenarioName" name="scenarioName" placeholder="Exemple">
+          </div>
+          <div class="form-group requestName">
+            <label for="baseUrl">Nom de la requête</label>
+            <input type="text" class="form-control" value="" id="requestName" [(ngModel)]="request.requestName" name="requestName" placeholder="Exemple">
+          </div>
+        </div>
+        <div class="form-group BaseUrl">
+          <label for="baseUrl">Url de base</label>
+          <input type="text" class="form-control" value="" id="baseUrl" [(ngModel)]="request.baseUrl" name="baseUrl" placeholder="https://exemple.api.domain">
+        </div>
+        <div class="form-group">
+          <label for="params">Paramètres de requête</label>
+          <input type="text" class="form-control" value="" id="params" [(ngModel)]="request.uri" name="uri" placeholder="/params?param=exemple&page=1">
+        </div>
+        <div class="row">
+          <div class="form-group typeRequete">
+            <label for="typeRequete">Type de requête</label>
+            <select class="form-control" id="typeRequete" [(ngModel)]="request.methodType" name="methodType" aria-placeholder="GET, POST...">
+              <option disabled selected value="">GET, POST...</option>
+              <option>GET</option>
+              <option>POST</option>
+              <option>PUT</option>
+              <option>DELETE</option>
+              <option>PATCH</option>
+            </select>
+          </div>
+          <div class="form-group nbrUsers">
+            <label for="exampleFormControlTextarea1">Nombre d'utilisateurs</label>
+            <input type="number" class="form-control" [(ngModel)]="request.usersNumber" name="userNumber" id="exampleFormControlTextarea1" rows="3">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Corps de la requête</label>
+          <textarea  class="form-control" [(ngModel)]="request.requestBody" name="requestBody" id="exampleFormControlTextarea1" rows="3"> </textarea>
+        </div>
+
+        <div class="row button-row">
+          <button mat-raised-button class="test-button" color="primary" (click)="onSubmit()">Tester</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

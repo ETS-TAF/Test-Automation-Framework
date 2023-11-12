@@ -17,6 +17,13 @@ import { ProjectComponent } from './project/project.component';
 import { TestApiComponent } from './interface-test-api/test-api/test-api.component';
 import { TestSeleniumComponent } from './selenium/test-selenium.component';
 
+import { PerformanceTestApiModule } from './performance-test-api/performance-test-api.module';
+import { PerformanceTestApiComponent } from './performance-test-api/performance-test-api.component';
+import { GatlingApiComponent } from './performance-test-api/gatling-api/gatling-api.component';
+import { JmeterApiComponent } from './performance-test-api/jmeter-api/jmeter-api.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,13 +35,18 @@ import { TestSeleniumComponent } from './selenium/test-selenium.component';
     BoardUserComponent,
     ProjectComponent,
     TestApiComponent,
-    TestSeleniumComponent
+    TestSeleniumComponent,
+    PerformanceTestApiComponent,
+    GatlingApiComponent,
+    JmeterApiComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    PerformanceTestApiModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

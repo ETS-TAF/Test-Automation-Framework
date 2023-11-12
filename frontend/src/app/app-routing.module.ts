@@ -10,6 +10,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { TestApiComponent } from './interface-test-api/test-api/test-api.component';
 import { TestSeleniumComponent } from './selenium/test-selenium.component';
+import { PerformanceTestApiComponent } from './performance-test-api/performance-test-api.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: 'test-api', component: TestApiComponent },
   { path: 'test-selenium', component: TestSeleniumComponent },
+  { path: 'performance-test-api', component: PerformanceTestApiComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
