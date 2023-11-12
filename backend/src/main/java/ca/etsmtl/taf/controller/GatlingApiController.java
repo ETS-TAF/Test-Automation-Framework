@@ -46,8 +46,7 @@ public class GatlingApiController {
 
             int exitCode = process.waitFor();
             return "Exit Code: " + exitCode + "\nOutput:\n" + output.toString();
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
+        } catch (IOException e) {
             return "Error: " + e.getMessage();
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
