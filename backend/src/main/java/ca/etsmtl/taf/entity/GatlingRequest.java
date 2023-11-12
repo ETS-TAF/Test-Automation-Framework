@@ -1,60 +1,67 @@
 package ca.etsmtl.taf.entity;
 
 public class GatlingRequest {
-    private String baseUrl;
-    private String scenarioName;
-    private String requestName;
-    private String uri;
+    private String testBaseUrl;
+    private String testScenarioName;
+    private String testRequestName;
+    private String testUri;
+    private String testRequestBody;
+    private String testMethodType;
+    private int testUsersNumber;
 
-    private String requestBody;
-
-    private String methodType;
-
-    public String getBaseUrl() {
-        return baseUrl;
+    public String getTestBaseUrl() {
+        return testBaseUrl;
     }
 
-    public void setBaseUrl(String baseUrl) {
-        this.baseUrl = baseUrl;
+    public void setTestBaseUrl(String testBaseUrl) {
+        this.testBaseUrl = testBaseUrl;
     }
 
-    public String getScenarioName() {
-        return scenarioName;
+    public String getTestScenarioName() {
+        return testScenarioName;
     }
 
-    public void setScenarioName(String scenarioName) {
-        this.scenarioName = scenarioName;
+    public void setTestScenarioName(String testScenarioName) {
+        this.testScenarioName = testScenarioName;
     }
 
-    public String getRequestName() {
-        return requestName;
+    public String getTestRequestName() {
+        return testRequestName;
     }
 
-    public void setRequestName(String requestName) {
-        this.requestName = requestName;
+    public void setTestRequestName(String testRequestName) {
+        this.testRequestName = testRequestName;
     }
 
-    public String getUri() {
-        return uri;
+    public String getTestUri() {
+        return testUri;
     }
 
-    public void setUri(String uri) {
-        this.uri = uri;
+    public void setTestUri(String testUri) {
+        this.testUri = testUri;
     }
 
-    public String getRequestBody() {
-        return requestBody;
+    public String getTestRequestBody() {
+        return testRequestBody;
     }
 
-    public void setRequestBody(String requestBody) {
-        this.requestBody = requestBody;
+    public void setTestRequestBody(String testRequestBody) {
+        this.testRequestBody = testRequestBody;
     }
 
-    public String getMethodType() {
-        return methodType;
+    public String getTestMethodType() {
+        return testMethodType;
     }
 
-    public void setMethodType(String methodType) {
-        this.methodType = methodType;
+    public void setTestMethodType(String testMethodType) {
+        this.testMethodType = testMethodType;
+    }
+
+    public int getTestUsersNumber() {
+        return testUsersNumber;
+    }
+
+    public void setTestUsersNumber(int testUsersNumber) {
+        this.testUsersNumber = testUsersNumber;
     }
 }

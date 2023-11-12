@@ -2,11 +2,7 @@ package ca.etsmtl.taf.controller;
 
 import ca.etsmtl.taf.entity.GatlingRequest;
 import ca.etsmtl.taf.provider.GatlingJarPathProvider;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,7 +21,7 @@ public class GatlingApiController {
         try {
             String gatlingJarPath = new GatlingJarPathProvider().getGatlingJarPath();
 
-            String testRequest = "{\\\"baseUrl\\\":\\\""+gatlingRequest.getBaseUrl()+"\\\",\\\"scenarioName\\\":\\\""+gatlingRequest.getScenarioName()+"\\\",\\\"requestName\\\":\\\""+gatlingRequest.getRequestName()+"\\\",\\\"uri\\\":\\\""+gatlingRequest.getUri()+"\\\",\\\"requestBody\\\":\\\""+gatlingRequest.getRequestBody()+"\\\",\\\"methodType\\\":\\\""+gatlingRequest.getMethodType()+"\\\"}";
+            String testRequest = "{\\\"baseUrl\\\":\\\""+gatlingRequest.getTestBaseUrl()+"\\\",\\\"scenarioName\\\":\\\""+gatlingRequest.getTestScenarioName()+"\\\",\\\"requestName\\\":\\\""+gatlingRequest.getTestRequestName()+"\\\",\\\"uri\\\":\\\""+gatlingRequest.getTestUri()+"\\\",\\\"requestBody\\\":\\\""+gatlingRequest.getTestRequestBody()+"\\\",\\\"methodType\\\":\\\""+gatlingRequest.getTestMethodType()+"\\\",\\\"usersNumber\\\":\\\""+gatlingRequest.getTestUsersNumber()+"\\\"}";
             //Construire une liste d'arguments de ligne de commande à transmettre à Gatling
             List<String> commandArgs = new ArrayList<>();
             commandArgs.add("java");
@@ -49,6 +45,8 @@ public class GatlingApiController {
         } catch (IOException e) {
             return "Error: " + e.getMessage();
         } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
