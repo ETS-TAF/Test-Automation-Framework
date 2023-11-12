@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/gatling")
 public class GatlingApiController {
-    @RequestMapping(value = "/runSimulation", method = RequestMethod.POST)
+    @PostMapping("/runSimulation")
     public String runSimulation(@RequestBody GatlingRequest gatlingRequest) {
         try {
             String gatlingJarPath = new GatlingJarPathProvider().getGatlingJarPath();

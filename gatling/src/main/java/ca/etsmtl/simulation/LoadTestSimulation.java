@@ -22,9 +22,7 @@ public class LoadTestSimulation extends Simulation {
             ObjectMapper objectMapper = new ObjectMapper();
             return objectMapper.readValue(requestJson, GatlingRequest.class);
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Error while parsing JSON: " + e.getMessage());
-            return null; // Replace with appropriate error handling
+            return null; 
         }
     }
     private HttpProtocolBuilder httpProtocol = http.baseUrl(gatlingRequest.getBaseUrl())
