@@ -7,6 +7,6 @@ import lombok.Data;
 @Data
 public class SeleniumCase {
     public int case_id;
-    public String case_name;
+    public String caseName;
     public List<SeleniumAction> actions;
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2, ElementRef  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./test-selenium.component.css']
 })
 export class TestSeleniumComponent {
-    constructor(private http: HttpClient) { }
-
+    constructor(private http: HttpClient,private renderer: Renderer2, private el: ElementRef) { }
+    testResult: any;
     counterAction: number=1;
     counterCase: number=0;
     cases : {
@@ -23,21 +23,48 @@ export class TestSeleniumComponent {
             target: string;
         }[] ;
     }[] = [];
+    percentage=0;
 
     runMethod(cases: any) {
-        const apiUrl = '/api/testselenium';
-        console.log(cases);
-        this.http.post(apiUrl, cases).subscribe(
+        let counterTrue=0;
+        const API_URL = 'http://localhost:8080/api/testselenium';
+        this.showResultModal();
+        this.showSpinner();
+        this.http.post(API_URL, cases).subscribe(
         (response) => {
             console.log('tested successfully:', response);
-
+            this.testResult=response;
+            // for calculate the percentage of the success cases
+            for(let result of  this.testResult){
+                if(result.success){
+                    counterTrue++;
+                }
+            }
+            this.percentage=(counterTrue / this.testResult.length) * 100;
+            this.hideSpinner();
         },
         (error) => {
             console.error('Error test:', error);
         }
         );
     }
-
+    showResultModal(): void {
+        const resultModal = this.el.nativeElement.querySelector('#modelResult');
+        this.renderer.removeClass(resultModal, 'hideIt');
+    }
+    hideResultModal(): void {
+        const resultModal = this.el.nativeElement.querySelector('#modelResult');
+        this.renderer.addClass(resultModal, 'hideIt');
+    }
+    showSpinner():void {
+        const resultModal = this.el.nativeElement.querySelector('#spinner');
+        this.renderer.removeClass(resultModal, 'hideIt');
+    }
+    hideSpinner():void {
+        const resultModal = this.el.nativeElement.querySelector('#spinner');
+        this.renderer.addClass(resultModal, 'hideIt');
+    }
+        // for enable and disable inputs needed in actions form
     actionChose(): void {
         const action = (document.getElementById('action') as HTMLSelectElement).value;
         const object = document.getElementById('object') as HTMLInputElement;
@@ -60,6 +87,7 @@ export class TestSeleniumComponent {
             object.disabled = false;
         }
     }
+    //add new case
     submitCase(){
         this.counterCase++;
         let caseName = (document.getElementById('caseName') as HTMLSelectElement).value;
@@ -83,9 +111,11 @@ export class TestSeleniumComponent {
         this.cases.push(obj);
     }
 
+    // add new action
     submitAction(){
         let action_id = parseInt((document.getElementById('action') as HTMLSelectElement).value);
-        let action = (document.getElementById('action') as HTMLSelectElement).innerText;
+        let action2 = (document.getElementById('action') as HTMLSelectElement);
+        let action = action2.options[action2.selectedIndex].text;
         let object = (document.getElementById('object') as HTMLInputElement).value;
         let input = (document.getElementById('input') as HTMLInputElement).value;
         let target = (document.getElementById('target') as HTMLInputElement).value;

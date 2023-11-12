@@ -26,7 +26,7 @@ public class useSelenium {
 
         SeleniumResponse seleniumResponse = new SeleniumResponse();
         seleniumResponse.setCase_id(seleniumCase.getCase_id());
-        seleniumResponse.setCase_name(seleniumCase.getCase_name());
+        seleniumResponse.setCaseName(seleniumCase.getCaseName());
         seleniumResponse.setSeleniumActions(seleniumActions);
         long currentTimestamp = (new Timestamp(System.currentTimeMillis())).getTime();
         seleniumResponse.setTimestamp(currentTimestamp/1000);

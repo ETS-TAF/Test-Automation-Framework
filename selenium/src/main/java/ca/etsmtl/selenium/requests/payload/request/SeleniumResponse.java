@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class SeleniumResponse implements Serializable {
     public int case_id;
-    public String case_name;
+    public String caseName;
     public List<SeleniumAction> seleniumActions;
     public boolean success;
     public long timestamp;
