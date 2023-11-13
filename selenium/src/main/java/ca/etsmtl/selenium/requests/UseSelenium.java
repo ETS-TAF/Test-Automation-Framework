@@ -19,7 +19,7 @@ import ca.etsmtl.selenium.requests.payload.request.*;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/microservice/selenium")
-public class useSelenium {
+public class UseSelenium {
     @PostMapping("/test")
     public SeleniumResponse testWithSelenium(@RequestBody SeleniumCase seleniumCase) {
         List<SeleniumAction> seleniumActions = seleniumCase.getActions();
