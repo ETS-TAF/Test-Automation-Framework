@@ -1,4 +1,4 @@
-package ca.etsmtl.taf.configuration;
+package ca.etsmtl.taf.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -8,7 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
-public class WebConfig {
+public class WebConfigSelenium {
 
     @Value("${taf.app.selenium_container_url}")
     String SELENIUM_CONTAINER_URL;
