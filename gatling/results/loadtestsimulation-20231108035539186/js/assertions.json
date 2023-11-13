@@ -1,0 +1,10 @@
+{
+  "simulation": "ca.etsmtl.LoadTestSimulation",
+  "simulationId": "loadtestsimulation-20231108035539186",
+  "start": 1699415740748,
+  "description": "",
+  "scenarios": ["games"],
+  "assertions": [
+
+  ]
+}
