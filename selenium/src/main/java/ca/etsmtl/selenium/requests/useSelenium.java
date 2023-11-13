@@ -59,10 +59,33 @@ public class useSelenium {
                             textBox.sendKeys(seleniumAction.getInput());
                             break;
                         case 3: //GetAttribute
+                            WebElement webElement = driver.findElement(By.name(seleniumAction.getTarget()));
+                            String pageAttribute = webElement.getAttribute(seleniumAction.getObject());
+                            if (!pageAttribute.equals(seleniumAction.getInput())) {
+                                seleniumResponse.setSuccess(false);
+                                seleniumResponse.setOutput("Attribute " + seleniumAction.getObject() + " of " + seleniumAction.getTarget() + " is " + pageAttribute + " instead of " + seleniumAction.getInput());
+                                driver.quit();
+                                long endTime = System.currentTimeMillis();
+                                long totalTime = endTime - startTime;
+                                seleniumResponse.setDuration(totalTime);
+                                return seleniumResponse;
+                            }
                             break;
                         case 4: //GetPageTitle
+                            String pageTitle = driver.getTitle();
+                            if (!pageTitle.equals(seleniumAction.getTarget())) {
+                                seleniumResponse.setSuccess(false);
+                                seleniumResponse.setOutput("Page title is " + pageTitle + " instead of " + seleniumAction.getTarget());
+                                driver.quit();
+                                long endTime = System.currentTimeMillis();
+                                long totalTime = endTime - startTime;
+                                seleniumResponse.setDuration(totalTime);
+                                return seleniumResponse;
+                            }
                             break;
                         case 5: //Clear
+                            WebElement textBoxToClear = driver.findElement(By.name(seleniumAction.getObject()));
+                            textBoxToClear.clear();
                             break;
                         case 6: //Click
                             WebElement submitButton = driver.findElement(By.name(seleniumAction.getObject()));
