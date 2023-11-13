@@ -1,0 +1,33 @@
+table {
+  width: 100%;
+}
+
+.form {
+  min-height: 56px;
+  max-height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 8px 24px 0;
+  font-size: 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid transparent;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.mat-form-field {
+  font-size: 14px;
+  flex-grow: 1;
+  margin-top: 8px;
+}
+
+.example-form-field {
+  width: 200px;
+}
+.download-button {
+  margin-left : 8px;
+  color: black;
+}
+
+

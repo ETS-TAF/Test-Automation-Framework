@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { RegisterComponent } from './register/register.component';
 import { ProjectComponent } from './project/project.component';
 import { LoginComponent } from './login/login.component';
@@ -8,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { JmeterComponent } from './jmeter/jmeter.component';
+import { GatlingComponent } from './gatling/gatling.component';
 import { TestApiComponent } from './interface-test-api/test-api/test-api.component';
 
 const routes: Routes = [
@@ -18,6 +19,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
   { path: 'admin', component: BoardAdminComponent },
+  { path : 'jmeter', component: JmeterComponent },
+  { path : 'gatling', component: GatlingComponent },
   { path: 'test-api', component: TestApiComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
