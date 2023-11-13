@@ -75,7 +75,7 @@ export class TestSeleniumComponent {
         input.disabled = true;
         target.disabled = true;
 
-        if (action === "1" || action === "2") {
+        if (action === "1" || action === "2" || action === "3") {
             input.disabled = false;
         }
 
@@ -83,7 +83,7 @@ export class TestSeleniumComponent {
             target.disabled = false;
         }
 
-        if (action === "5" || action === "6" || action === "7" || action === "2") {
+        if (action === "5" || action === "6" || action === "7" || action === "2" || action === "3") {
             object.disabled = false;
         }
     }
