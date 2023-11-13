@@ -1,4 +1,53 @@
 <br><br>
+<!-- model of results -->
+<div class="showModelResult hideIt" id="modelResult">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticModalLabel">Cases Result</h5>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="testResult">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" [style.width]="percentage + '%'" aria-valuenow="percentage" aria-valuemin="0" aria-valuemax="100">{{percentage}}%</div>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Case ID</th>
+                                <th scope="col">Case Name</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let result of testResult">
+                                <td>{{result.case_id}}</td>
+                                <td>{{result.caseName}}</td>
+                                <td>
+                                    <span class="badge bg-success" *ngIf="result.success==true">success</span>
+                                    <span class="badge bg-danger" *ngIf="result.success==false">failed</span>
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="" id="spinner">
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger"(click)="hideResultModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- model of new action -->
 <div class="modal fade" tabindex="-1" id="addAction" aria-labelledby="Add new Action" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
@@ -32,6 +81,7 @@
         </div>
     </div>
 </div>
+<!-- model of new Case -->
 <div class="modal fade" tabindex="-1" id="addCase" aria-labelledby="Add new Case" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -51,6 +101,7 @@
         </div>
     </div>
 </div>
+<!-- show the added cases and actions -->
 <div class="container">
     <div class="btn-group" role="group" aria-label="Basic outlined example">
         <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addCase">
@@ -59,7 +110,7 @@
         <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addAction" id="addActionButton" disabled>
             Add New Action
         </button>
-        <button type="button" class="btn btn-success" (click)="runMethod(cases)">Run</button>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#resultModal" (click)="runMethod(cases)">Run</button>
     </div><br><br>
     <div class="container" *ngFor="let case of cases">
 
