@@ -37,3 +37,9 @@ bin
 # local config
 application-local.yml
 node_modules
+
+#JMeter
+## Jmeter results
+./backend/src/main/resources/jmeter/results
+##Jmeter log
+jmeter.log

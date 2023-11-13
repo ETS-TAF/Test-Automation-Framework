@@ -1,0 +1,3 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1699890777591,1335,FTP Request,200,OK,Thread Group 1-1,,true,,0,0,1,1,ftp://ftp.dlptest.com//test.txt (Ascii)  <- C:/Users/safou/Downloads/jmeter.docx,301,0,0
+1699890779081,1087,FTP Request,200,OK,Thread Group 1-2,,true,,0,0,1,1,ftp://ftp.dlptest.com//test.txt (Ascii)  <- C:/Users/safou/Downloads/jmeter.docx,227,0,0
