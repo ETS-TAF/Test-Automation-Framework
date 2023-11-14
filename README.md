@@ -35,6 +35,9 @@ Il est aussi possible de lancer les applications côté serveur et côté client
 - Lancez l'application avec la ligne de commande
 `ng serve --o`.
 
+**Autres services :**  
+Pour les autres services, vous pouvez vous référer au Wiki ou contacter les équipes directement.
+
 ## Contribuer au projet
 
 La démarche pour contribuer au projet est disponible dans le document [CONTRIBUTING.md](./CONTRIBUTING.md).  
