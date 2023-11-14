@@ -15,6 +15,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { ProjectComponent } from './project/project.component';
 import { TestApiComponent } from './interface-test-api/test-api/test-api.component';
+
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -26,6 +27,16 @@ import { DeleteTestDialogComponent } from './interface-test-api/test-api/delete-
 import {MatCardModule} from "@angular/material/card";
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+
+import { TestSeleniumComponent } from './selenium/test-selenium.component';
+
+import { PerformanceTestApiModule } from './performance-test-api/performance-test-api.module';
+import { PerformanceTestApiComponent } from './performance-test-api/performance-test-api.component';
+import { GatlingApiComponent } from './performance-test-api/gatling-api/gatling-api.component';
+import { JmeterApiComponent } from './performance-test-api/jmeter-api/jmeter-api.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -39,7 +50,19 @@ import { MatSelectModule } from '@angular/material/select';
     ProjectComponent,
     TestApiComponent,
     AddTestDialogComponent,
-    DeleteTestDialogComponent
+    DeleteTestDialogComponent,
+    TestSeleniumComponent,
+    PerformanceTestApiComponent,
+    GatlingApiComponent,
+    JmeterApiComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    PerformanceTestApiModule
   ],
     imports: [
         BrowserModule,

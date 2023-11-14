@@ -10,6 +10,8 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { JmeterComponent } from './jmeter/jmeter.component';
 import { GatlingComponent } from './gatling/gatling.component';
 import { TestApiComponent } from './interface-test-api/test-api/test-api.component';
+import { TestSeleniumComponent } from './selenium/test-selenium.component';
+import { PerformanceTestApiComponent } from './performance-test-api/performance-test-api.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path : 'jmeter', component: JmeterComponent },
   { path : 'gatling', component: GatlingComponent },
   { path: 'test-api', component: TestApiComponent },
+  { path: 'test-selenium', component: TestSeleniumComponent },
+  { path: 'performance-test-api', component: PerformanceTestApiComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

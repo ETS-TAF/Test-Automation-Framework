@@ -1,0 +1,149 @@
+<br><br>
+<!-- model of results -->
+<div class="showModelResult hideIt" id="modelResult">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticModalLabel">Cases Result</h5>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="testResult">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" [style.width]="percentage + '%'" aria-valuenow="percentage" aria-valuemin="0" aria-valuemax="100">{{percentage}}%</div>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Case ID</th>
+                                <th scope="col">Case Name</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let result of testResult">
+                                <td>{{result.case_id}}</td>
+                                <td>{{result.caseName}}</td>
+                                <td>
+                                    <span class="badge bg-success" *ngIf="result.success==true">success</span>
+                                    <span class="badge bg-danger" *ngIf="result.success==false">failed</span>
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="" id="spinner">
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger"(click)="hideResultModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- model of new action -->
+<div class="modal fade" tabindex="-1" id="addAction" aria-labelledby="Add new Action" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">New Action</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form>
+        <div class="modal-body">
+            <div class="input-group mb-3">
+                <select class="form-select" id="action" (change)="actionChose();" required>
+                    <option value="" selected>Action</option>
+                    <option value="1">GoToUrl</option>
+                    <option value="2">FillField</option>
+                    <option value="3">GetAttribute</option>
+                    <option value="4">GetPageTitle</option>
+                    <option value="5">Clear</option>
+                    <option value="6">Click</option>
+                    <option value="7">IsDisplayed</option>
+                </select>
+                <input type="text" class="form-control" placeholder="Object" id="object" disabled/>
+                <input type="text" class="form-control" placeholder="Input" id="input" disabled/>
+                <input type="text" class="form-control" placeholder="Target" id="target" disabled/>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal" id="close">Close</button>
+            <input type="submit" class="btn btn-primary" (click)="submitAction()" value="Add Action"/>
+        </div>
+        </form>
+        </div>
+    </div>
+</div>
+<!-- model of new Case -->
+<div class="modal fade" tabindex="-1" id="addCase" aria-labelledby="Add new Case" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">New Case</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form>
+            <div class="modal-body">
+            <input type="text" class="form-control" placeholder="Case Name" id="caseName"/>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal" id="close2">Close</button>
+            <input type="submit" class="btn btn-primary" (click)="submitCase()" value="Add Case"/>
+        </div>
+        </form>
+        </div>
+    </div>
+</div>
+<!-- show the added cases and actions -->
+<div class="container">
+    <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addCase">
+            Add New Case
+        </button>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addAction" id="addActionButton" disabled>
+            Add New Action
+        </button>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#resultModal" (click)="runMethod(cases)">Run</button>
+    </div><br><br>
+    <div class="container" *ngFor="let case of cases">
+
+        <h4>Case #{{case.case_id}} : {{case.caseName}}</h4>
+        <span>
+            <button type="button" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" (click)="deleteCase(case.case_id)">
+                Delete
+            </button>
+        </span>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Action</th>
+                    <th scope="col">Object</th>
+                    <th scope="col">Input</th>
+                    <th scope="col">Target</th>
+                    <th scope="col" style="width: 70px !important;"></th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr *ngFor="let action of case.actions">
+                    <td>{{action.action_type_name}}</td>
+                    <td>{{action.object}}</td>
+                    <td>{{action.input}}</td>
+                    <td>{{action.target}}</td>
+                    <td>
+                        <button type="button" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" (click)="deleteAction(case.case_id,action.action_id)">
+                        Delete
+                        </button>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table><br><br>
+    </div>
+</div>

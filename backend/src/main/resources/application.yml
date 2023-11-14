@@ -25,3 +25,5 @@ taf:
     jwtExpirationMs: 86400000
     testAPI_url: http://localhost
     testAPI_port: 8082
+    selenium_container_url: http://selenium
+    selenium_container_port: 8090

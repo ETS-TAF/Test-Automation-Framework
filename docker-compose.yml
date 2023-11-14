@@ -1,13 +1,5 @@
 version: "3.9"
 services:
-  testapi:
-    image: testapi
-    container_name: testapi
-    build:
-      context: ./testapi
-    ports:
-      # TEST_API_SERVICE_PORT is defined as env variable in .docker_config.env
-      - "${TEST_API_SERVICE_PORT}:${TEST_API_SERVICE_PORT}"
   backend:
     image: back
     container_name: back
@@ -15,10 +7,11 @@ services:
       context: ./
       dockerfile: ./backend/Dockerfile
     ports:
-      - "9000:80"
+      - "8080:8080"
     env_file:
       # Specifying the env file with necessaries values
       - .docker_config.env
+
   frontend:
     image: front
     container_name: front
@@ -28,3 +21,12 @@ services:
       - "4200:80"
     depends_on:
       - backend
+  
+  selenium:
+    image: selenium
+    container_name: selenium
+    build:
+      context: ./
+      dockerfile: ./selenium/Dockerfile
+    ports:
+      - "8090:8090"

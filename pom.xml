@@ -20,9 +20,9 @@
         <spring-boot.version>2.6.6</spring-boot.version>
     </properties>
     <packaging>pom</packaging>
-
     <modules>
         <module>backend</module>
         <module>frontend</module>
+        <module>selenium</module>
     </modules>
 </project>
