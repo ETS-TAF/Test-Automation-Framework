@@ -27,6 +27,3 @@ taf:
     testAPI_port: 8082
     selenium_container_url: http://selenium
     selenium_container_port: 8090
-
-server:
-  port: 8083
