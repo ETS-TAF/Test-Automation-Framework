@@ -33,9 +33,9 @@ public  class JMeterRunner {
 
   public static String runJMeter( String testType) throws URISyntaxException {
     String jmxFilePath="";
-    if (testType=="http")
+    if (testType.equals("http"))
       jmxFilePath=  "backend/src/main/resources/jmeter/TestPlan.jmx";
-    else if (testType=="ftp")
+    else if (testType.equals("ftp"))
       jmxFilePath=  "backend/src/main/resources/jmeter/FTPTestPlan.jmx";
 
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");

@@ -95,7 +95,7 @@ public class JmeterController {
     }
     List<Map<String, String>> result=null;
     String resultPath = resultPathRef.get();
-    if (resultPath !="" && resultPath!=null){
+    if (!resultPath.equals("") && !resultPath.equals(null)){
       try {
         result =JMeterRunner.convertCSVtoJSON(resultPath);
       } catch (IOException e) {

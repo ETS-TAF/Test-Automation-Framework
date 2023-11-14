@@ -154,7 +154,7 @@ public class HttpTestPlan {
               .replace("$METHOD$", method)
               .replace("$LOOP_COUNTER$", loop);
       ;
-      if (data!=null && data !=""){
+      if (!data.equals(null) && !data.equals("")){
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
         Object jsonMap = objectMapper.readValue(data, Object.class);

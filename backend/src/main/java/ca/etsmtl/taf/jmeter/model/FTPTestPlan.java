@@ -103,7 +103,7 @@ public class FTPTestPlan {
   }
 
   public String getMethod() {
-    return method=="Retrive"? "false" : "true";
+    return method.equals("Retrive")? "false" : "true";
 
   }
 
