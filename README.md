@@ -1,36 +1,45 @@
-# Test-Framework
-Projet de R&amp;D de cadriciel (outil) d’automatisation de test
+![Logo taf](./logo_taf.png)
+
+# Test Automation Framework
+
+TAF est un projet de R&amp;D de cadriciel d’automatisation de test
 
 
-L'application comporte deux modules : backend et frontend
+Il permet l'utilisation de plusieurs outils de tests (Selenium, Gatling, ...) à travers une interface web unique.
 
-backend est comme son nom l'indique représente la partie serveur, c'est une application springboot
-frontend est la partie UI, c'est une application Angular.
+L'application côté serveur est une application Java utilisant Springboot.
+L'interface est une application web utilisant le framework Angular.
 
-## Build et lancement
+## Builder et lancer le projet
 
-Backend : build maven (mvn clean install), configurez l'application springboot dans votre ide (Eclipse, IntelliJ).
-Des outils sont disponibles dans ces ide pour lancer l'application.
+Pour lancer le projet, la méthode la plus simple est d'utiliser
 
-Frontend: lancer l'application avec automatique de la page d'accueil dans une fenêtre du brower, avec la ligne de commande
-ng serve --o
+### Avec docker :
 
-Pour le moment, il faut partir chacun des modules séparemment (en premier la backend près le frontend). Une prochaine version
-permettera de lancer toute l'application.
-
-## Build and Run using Docker
-
-*Prerequisites : Have Docker and docker-compose installed and running*
-
-Run the following command to start all the dockers using docker-compose by specifying the environment variables file.
-```shell
+- (Prérequis) Installez Docker ainsi que Docker Compose sur votre système
+- Exécutez la commande suivante :
+```bash
 docker compose --env-file .docker_config.env up
 ```
 
-## Branches
+### Sans docker :
 
-la branche principale de développement est develop, elle sert à faire les merges de toutes les branches de travail en cours.
-Chacun, part sa propre branche à partir de la branche develop.
-Aucun commit ne doit être fait directement dans la branche develop.
-Mohammed Hilali, s'occupe de faire les merges à partir des Pull Request que vous allez adresser à partir de votre branche chacun vers la branche develop.
+Il est aussi possible de lancer les applications côté serveur et côté client séparément. Cela n'est cependant pas recommandé, car cela est plus complexe, et le deviendra de plus en plus à mesure que de nouveaux services seront ajouté.
 
+**Backend :**
+- Installez maven sur votre système avec `mvn clean install`.
+- Configurez l'application Springboot dans votre ide (Eclipse, IntelliJ). Des outils sont disponibles dans ces IDEs pour lancer l'application.
+
+**Frontend :**
+- Installez des dépendances avec `npm install`.
+- Lancez l'application avec la ligne de commande
+`ng serve --o`.
+
+## Contribuer au projet
+
+La démarche pour contribuer au projet est disponible dans le document [CONTRIBUTING.md](./CONTRIBUTING.md).  
+La programmation en JS/TS et Java font usage de conventions précises disponibles dans le fichier [CONVENTIONS.md](./documentation/CONVENTIONS.md). La non-utilisation de ces normes pourrait mener à un refus de vos contributions.
+
+## Contact
+
+En cas de questions, vous pouvez rejoindre [le discord TAF](https://discord.gg/TYrqTdHEqk). Veilliez à ce qu'uniquement 1 ou 2 personnes de votre équipe le rejoigne afin de limiter le nombres de personnes et de faciliter la communication.

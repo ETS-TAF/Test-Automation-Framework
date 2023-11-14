@@ -1,0 +1,88 @@
+<h3 mat-dialog-title>Ajouter un test</h3>
+
+<mat-card>
+  <mat-card-content class="scrollable-content">
+    <form>
+      <!-- Champ pour la méthode avec menu déroulant -->
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Méthode</mat-label>
+        <mat-select [(ngModel)]="method" name="method" required>
+          <mat-option value="GET">GET</mat-option>
+          <mat-option value="POST">POST</mat-option>
+          <mat-option value="DELETE">DELETE</mat-option>
+          <mat-option value="PUT">PUT</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Champ pour l'URL de l'API -->
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>URL de l'API</mat-label>
+        <input matInput [(ngModel)]="apiUrl" name="apiUrl" required />
+      </mat-form-field>
+
+
+      <!-- Boucle pour les en-têtes -->
+      <p > liste des Headers </p>
+      <div *ngFor="let header of headerRequest; let j = index">
+        <mat-form-field appearance="outline" class="example-min-width">
+          <mat-label>Key</mat-label>
+          <input matInput id="key{{ j }}" [(ngModel)]="header.key" name="key{{ j }}" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="example-min-width">
+          <mat-label>Value</mat-label>
+          <input  matInput id="value{{ j }}" [(ngModel)]="header.value" name="value{{ j}}"
+          />
+        </mat-form-field>
+
+        <mat-icon mat-raised-button color="warn" (click)="deleteHeader(j)" >remove</mat-icon>
+        <br /><br />
+      </div>
+
+      <mat-icon mat-raised-button color="primary" (click)="addnewHeader()">add</mat-icon >
+      <br />
+
+
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Statut attendu</mat-label>
+          <input matInput  type="number" [(ngModel)]="statusCode"  name="statusCode" required  /> </mat-form-field>
+
+
+      <!-- Champs supplémentaires pour les autres propriétés du JSON -->
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Temps de réponse</mat-label>
+        <input matInput  type="number" [(ngModel)]="responseTime" name="responseTime" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Sortie attendue</mat-label>
+        <textarea matInput [(ngModel)]="expectedOutput"  name="expectedOutput" ></textarea>
+      </mat-form-field>
+
+      <!-- Boucle pour les en-têtes -->
+      <p > liste des expected Headers </p>
+      <div *ngFor="let expectedHeader of expectedHeaderRequest; let i = index">
+
+        <mat-form-field appearance="outline" class="example-min-width">
+          <mat-label>Key</mat-label>
+          <input  matInput  id="key{{ i }}"  [(ngModel)]="expectedHeader.key"  name="key{{ i }}"      />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="example-min-width">
+          <mat-label>Value</mat-label>
+          <input    matInput      id="value{{ i }}"     [(ngModel)]="expectedHeader.value"  name="value{{ i }}"   />
+        </mat-form-field>
+
+        <mat-icon mat-raised-button color="warn" (click)="deleteExpectedHeader(i)">remove</mat-icon>
+        <br /> <br />
+      </div>
+
+      <mat-icon mat-raised-button color="primary" (click)="addnewExpectedHeader()">add</mat-icon >
+      <br />
+      <button mat-raised-button color="accent" (click)="saveForm()" type="submit">  Soumettre  </button>
+      <button mat-raised-button (click)="closeDialog()" >fermer</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+

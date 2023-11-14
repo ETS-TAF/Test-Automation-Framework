@@ -1,6 +1,5 @@
 package org.requests;
 
-import org.requests.Method;
 import org.requests.payload.request.TestApiRequest;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,8 +12,7 @@ import java.io.Serializable;
 public class TestApiController {
     @PostMapping("/checkApi")
     public Serializable testApi(@Valid @RequestBody TestApiRequest testApiRequest) {
-        Serializable response = (redirectMethod(testApiRequest));
-        return response;
+        return (redirectMethod(testApiRequest));
     }
 
     public Serializable redirectMethod(TestApiRequest request) {

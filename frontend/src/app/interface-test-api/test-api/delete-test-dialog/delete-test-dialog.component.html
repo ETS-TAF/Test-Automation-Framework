@@ -1,0 +1,10 @@
+<mat-dialog-content class="mat-typography">
+  <h3 mat-dialog-title>voulez-vous vraiment supprimé ce test?</h3>
+  <p> Id :  {{test.id}}</p>
+  <p> URL :  {{test.apiUrl}}</p>
+</mat-dialog-content>
+
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="1" (click)="confirmDelete(test.id)">Delete</button>
+  <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+</div>
