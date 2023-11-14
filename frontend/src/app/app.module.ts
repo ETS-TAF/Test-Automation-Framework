@@ -17,7 +17,7 @@ import { ProjectComponent } from './project/project.component';
 import { TestApiComponent } from './interface-test-api/test-api/test-api.component';
 
 import { MatTableModule } from '@angular/material/table';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
@@ -56,14 +56,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GatlingApiComponent,
     JmeterApiComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    PerformanceTestApiModule
-  ],
+
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -71,6 +64,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         HttpClientModule,
         MatTableModule,
         BrowserAnimationsModule,
+        PerformanceTestApiModule,
         MatFormFieldModule,
         MatIconModule,
         MatButtonModule,
