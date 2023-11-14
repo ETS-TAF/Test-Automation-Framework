@@ -21,7 +21,7 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">2</stringProp>
+        <stringProp name="ThreadGroup.num_threads">5</stringProp>
         <stringProp name="ThreadGroup.ramp_time">2</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
@@ -33,7 +33,7 @@
           enabled="true">
           <stringProp name="FTPSampler.server">ftp.dlptest.com</stringProp>
           <stringProp name="FTPSampler.port"></stringProp>
-          <stringProp name="FTPSampler.filename">/test.txt</stringProp>
+          <stringProp name="FTPSampler.filename">/jmeter.docx</stringProp>
           <stringProp name="FTPSampler.localfilename">C:/Users/safou/Downloads/jmeter.docx</stringProp>
           <stringProp name="FTPSampler.inputdata"></stringProp>
           <boolProp name="FTPSampler.binarymode">false</boolProp>

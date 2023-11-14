@@ -137,7 +137,6 @@ public class HttpTestPlan {
         // Save the modified content back to the file
         Files.write(Paths.get(target), xmlContent.getBytes(StandardCharsets.UTF_8));
 
-        System.out.println("Variables replaced successfully.");
       } catch (IOException e) {
         e.printStackTrace();
       }

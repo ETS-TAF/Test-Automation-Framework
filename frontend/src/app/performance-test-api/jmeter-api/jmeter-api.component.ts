@@ -8,20 +8,31 @@ import { PerformanceTestApiService } from 'src/app/_services/performance-test-ap
 @Component({
   selector: 'app-jmeter-api',
   templateUrl: './jmeter-api.component.html',
-  styleUrls: ['../gatling-api/gatling-api.component.css'],
+  styleUrls: [
+    '../gatling-api/gatling-api.component.css',
+    './jmeter-api.component.css',
+  ],
 })
 export class JmeterApiComponent implements OnInit {
-  modal = document.getElementById('myModal');
-  span = document.getElementsByClassName('close')[0];
+  modal: HTMLElement | null = document.getElementById('myModal');
+  span: Element | null = document.getElementsByClassName('close')[0];
   testResult: any;
   testLog: String = '';
   reportFilePath: String = '';
 
   http_request: JMeterHttpRequest = new JMeterHttpRequest();
   ftp_request: JMeterFTPRequest = new JMeterFTPRequest();
+  http_description = document.getElementById(' http-description');
+  ftp_description = document.getElementById(' ftp-description');
 
   testResults: any[] = [];
-  result_table = document.getElementById('result_table');
+  result_table: HTMLElement | null = document.getElementById('result_table');
+  httpForm: HTMLElement | null = document.getElementById('http-form');
+  ftpForm: HTMLElement | null = document.getElementById('ftp-form');
+  switchLabel: HTMLElement | null = document.getElementById('switchLabel');
+  switchCheckbox: HTMLInputElement | null = document.getElementById(
+    'formSwitch'
+  ) as HTMLInputElement;
 
   constructor(private performanceTestApiService: PerformanceTestApiService) {}
 
@@ -29,6 +40,15 @@ export class JmeterApiComponent implements OnInit {
     this.modal = document.getElementById('myModal');
     this.span = document.getElementsByClassName('close')[0];
     this.result_table = document.getElementById('result_table');
+    this.httpForm = document.getElementById('http-form');
+    this.ftpForm = document.getElementById('ftp-form');
+    this.switchLabel = document.getElementById('switchLabel');
+    this.http_description = document.getElementById('http-description');
+    this.ftp_description = document.getElementById('ftp-description');
+
+    this.switchCheckbox = document.getElementById(
+      'formSwitch'
+    ) as HTMLInputElement;
   }
 
   onHttpSubmit() {
@@ -84,7 +104,40 @@ export class JmeterApiComponent implements OnInit {
         this.modal!.style.display = 'block';
       });
   }
+
   closeModal() {
     this.modal!.style.display = 'none';
+  }
+
+  toggleForms() {
+    if (
+      this.switchCheckbox?.checked &&
+      this.httpForm &&
+      this.ftpForm &&
+      this.switchLabel &&
+      this.ftp_description &&
+      this.http_description
+    ) {
+      // Show FTP form
+      this.httpForm.style.display = 'none';
+      this.ftpForm.style.display = 'block';
+      this.ftp_description.style.display = 'block';
+      this.http_description.style.display = 'none';
+      this.switchLabel.innerText = 'FTP';
+    } else if (
+      !this.switchCheckbox?.checked &&
+      this.httpForm &&
+      this.ftpForm &&
+      this.switchLabel &&
+      this.ftp_description &&
+      this.http_description
+    ) {
+      // Show HTTP form
+      this.httpForm.style.display = 'block';
+      this.ftpForm.style.display = 'none';
+      this.ftp_description.style.display = 'none';
+      this.http_description.style.display = 'block';
+      this.switchLabel.innerText = 'HTTP';
+    }
   }
 }

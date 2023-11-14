@@ -1,4 +1,5 @@
 <div class="container">
+
     <div id="myModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -64,7 +65,7 @@
             <div class="sidebar-title">
                 <h1>JMeter</h1>
             </div>
-            <div class="description">
+            <div class="description" id="http-description" style="display: block;">
                 <p>
                     Apache JMeter est un outil open-source de test de charge et de performance pour évaluer les
                     performances des applications web. Pour configurer un test avec JMeter, vous devez définir les
@@ -84,51 +85,88 @@
                     <br><br><b>Données :</b> Les données à inclure dans la requête.
                 </p>
             </div>
+            <div class="description" id="ftp-description" style="display: none;">
+                <p>
+                    JMeter FTP Request est un service destiné à gérer les requêtes variables FTP dans Apache JMeter, un
+                    outil open-source de test de charge et de performance utilisé pour évaluer les performances des
+                    applications web. Cette classe est conçue pour gérer différents paramètres nécessaires à la
+                    configuration des tests FTP, notamment :
+
+                    <br><br><b>Nombre d'utilisateurs :</b> Le nombre d'utilisateurs simultanés, simulant des charges
+                    réalistes pour évaluer les performances de l'application dans différentes conditions de trafic.
+                    <br><br><b>Temps de montée :</b> Le temps nécessaire pour augmenter progressivement le nombre
+                    d'utilisateurs simultanés.
+                    <br><br><b>Durée du test :</b> La durée totale du test.
+                    <br><br><b>Domaine :</b> Définit le domaine de l'application testée (URL du serveur FTP).
+                    <br><br><b>Port :</b> Spécifie le port utilisé pour la connexion FTP.
+                    <br><br><b>Méthode :</b> Indique la méthode FTP à utiliser (ex. : Get, Post).
+                    <br><br><b>Fichier distant :</b> Spécifie le chemin d'accès au fichier distant pour les opérations
+                    FTP.
+                    <br><br><b>Fichier local :</b> Définit le chemin d'accès au fichier local utilisé dans les
+                    interactions FTP.
+                    <br><br><b>Nom d'utilisateur :</b> Représente le nom d'utilisateur FTP pour l'authentification.
+                    <br><br><b>Mot de passe :</b> Spécifie le mot de passe FTP pour l'authentification.
+                    <br><br><b>Boucle :</b> Indique le nombre de fois que le test sera répété.
+                </p>
+            </div>
 
         </div>
     </div>
+
     <div class="main">
         <div class="content">
-            <form (ngSubmit)="onHttpSubmit()">
+            <div class="switch-container">
+                <label class="switch">
+                    <input type="checkbox" id="formSwitch" (change)="toggleForms()">
+                    <span class="slider"></span>
+                </label>
+                <span id="switchLabel">HTTP</span>
+            </div>
+            <form id="http-form" (ngSubmit)="onHttpSubmit()">
                 <div class="form-title">
                     <h1>Configuration du test</h1>
                 </div>
                 <div class="row">
-                    <div class="form-group">
+                    <div class="form-group col">
+                        <label for="loop">Nombre de boucles</label>
+                        <input type="text" class="form-control" [(ngModel)]="http_request.loop" name="loop"
+                            placeholder="Exemple">
+                    </div>
+                    <div class="form-group col">
                         <label for="nbThreads">Nombre d'utilisateurs</label>
                         <input type="text" class="form-control" [(ngModel)]="http_request.nbThreads" name="nbThreads"
                             placeholder="Exemple">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col">
                         <label for="rampTime">Temps de montée</label>
                         <input type="text" class="form-control" [(ngModel)]="http_request.rampTime" name="rampTime"
                             placeholder="Exemple">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col">
                         <label for="duration">Durée du test</label>
                         <input type="text" class="form-control" [(ngModel)]="http_request.duration" name="duration"
                             placeholder="Exemple">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="form-group">
+                    <div class="form-group col">
                         <label for="domain">Domaine</label>
                         <input type="text" class="form-control" [(ngModel)]="http_request.domain" name="domain"
                             placeholder="Exemple">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col">
                         <label for="port">Port</label>
                         <input type="text" class="form-control" [(ngModel)]="http_request.port" name="port"
                             placeholder="Exemple">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col">
                         <label for="protocol">Protocole</label>
                         <input type="text" class="form-control" [(ngModel)]="http_request.protocol" name="protocol"
                             placeholder="Exemple">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="form-group">
+                    <div class="form-group col">
                         <label for="path">Chemin</label>
                         <input type="text" class="form-control" [(ngModel)]="http_request.path" name="path"
                             placeholder="Exemple">
@@ -146,13 +184,9 @@
                             <option>PATCH</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="loop">Nombre de boucles</label>
-                        <input type="text" class="form-control" [(ngModel)]="http_request.loop" name="loop"
-                            placeholder="Exemple">
-                    </div>
+
                 </div>
-                <div class="form-group">
+                <div class="form-group col">
                     <label for="data">Données</label>
                     <input type="text" class="form-control" [(ngModel)]="http_request.data" name="data"
                         placeholder="Exemple">
@@ -170,90 +204,89 @@
         </div>
 
 
-        <div class="main">
-            <div class="content">
-                <form (ngSubmit)="onFtpSubmit()">
-                    <div class="form-title">
-                        <h1>Configuration du test</h1>
-                    </div>
-                    <div class="row">
-                        <div class="form-group">
-                            <label for="nbThreads">Nombre d'utilisateurs</label>
-                            <input type="text" class="form-control" [(ngModel)]="ftp_request.nbThreads" name="nbThreads"
-                                placeholder="Exemple">
-                        </div>
-                        <div class="form-group">
-                            <label for="rampTime">Temps de montée</label>
-                            <input type="text" class="form-control" [(ngModel)]="ftp_request.rampTime" name="rampTime"
-                                placeholder="Exemple">
-                        </div>
-                        <div class="form-group">
-                            <label for="duration">Durée du test</label>
-                            <input type="text" class="form-control" [(ngModel)]="ftp_request.duration" name="duration"
-                                placeholder="Exemple">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group">
-                            <label for="domain">Domaine</label>
-                            <input type="text" class="form-control" [(ngModel)]="ftp_request.domain" name="domain"
-                                placeholder="Exemple">
-                        </div>
-                        <div class="form-group">
-                            <label for="port">Port</label>
-                            <input type="text" class="form-control" [(ngModel)]="ftp_request.port" name="port"
-                                placeholder="Exemple">
-                        </div>
-                        <div class="form-group">
-                            <label for="method">Type de requête</label>
-                            <select class="form-control" id="typeRequete" [(ngModel)]="ftp_request.method"
-                                name="methodType">
-                                <option disabled selected value="">GET(Retrive), POST(Store)...</option>
-                                <option>Retrive </option>
-                                <option>Store</option>
 
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group">
-                            <label for="remotefile">Fichier distant</label>
-                            <input type="text" class="form-control" [(ngModel)]="ftp_request.remotefile"
-                                name="remotefile" placeholder="Exemple">
-                        </div>
-                        <div class="form-group">
-                            <label for="localfile">Fichier local</label>
-                            <input type="text" class="form-control" [(ngModel)]="ftp_request.localfile" name="localfile"
-                                placeholder="Exemple">
-                        </div>
-                        <div class="form-group">
-                            <label for="username">Nom d'utilisateur</label>
-                            <input type="text" class="form-control" [(ngModel)]="ftp_request.username" name="username"
-                                placeholder="Exemple">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group">
-                            <label for="password">Mot de passe</label>
-                            <input type="password" class="form-control" [(ngModel)]="ftp_request.password"
-                                name="password" placeholder="Exemple">
-                        </div>
-                        <div class="form-group">
-                            <label for="loop">Nombre de boucles</label>
-                            <input type="text" class="form-control" [(ngModel)]="ftp_request.loop" name="loop"
-                                placeholder="Exemple">
-                        </div>
-                    </div>
-
-
-                    <!-- Remove unused fields related to Gatling -->
-
-                    <div class="row button-row">
-                        <button mat-raised-button class="test-button" color="primary"
-                            (click)="onFtpSubmit()">Tester</button>
-                    </div>
-                </form>
+        <form id="ftp-form" (ngSubmit)="onFtpSubmit()" style="display: none;">
+            <div class="form-title">
+                <h1>Configuration du test</h1>
             </div>
-        </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label for="loop">Nombre de boucles</label>
+                    <input type="text" class="form-control" [(ngModel)]="ftp_request.loop" name="loop"
+                        placeholder="1,2,3.." required>
+                </div>
+                <div class="form-group col">
+                    <label for="nbThreads">Nombre d'utilisateurs</label>
+                    <input type="text" class="form-control" [(ngModel)]="ftp_request.nbThreads" name="nbThreads"
+                        placeholder="entrez nombre d'utilisateurs" required>
+                </div>
+                <div class="form-group col">
+                    <label for="rampTime">Temps de montée</label>
+                    <input type="text" class="form-control" [(ngModel)]="ftp_request.rampTime" name="rampTime"
+                        placeholder="entrez temps de montée">
+                </div>
+                <div class="form-group col">
+                    <label for="duration">Durée du test</label>
+                    <input type="text" class="form-control" [(ngModel)]="ftp_request.duration" name="duration"
+                        placeholder="ex 100 secondes">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label for="domain">Domaine</label>
+                    <input type="text" class="form-control" [(ngModel)]="ftp_request.domain" name="domain"
+                        placeholder="ex ftp.testserver.com" required>
+                </div>
+                <div class="form-group col">
+                    <label for="port">Port</label>
+                    <input type="text" class="form-control" [(ngModel)]="ftp_request.port" name="port"
+                        placeholder="ex 21">
+                </div>
+                <div class="form-group col">
+                    <label for="method">Type de requête</label>
+                    <select class="form-control" id="method" [(ngModel)]="ftp_request.method" name="methodType"
+                        required>
+                        <option disabled selected value="">GET(Retrive), POST(Store)...</option>
+                        <option>Retrive </option>
+                        <option>Store</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label for="remotefile">Fichier distant</label>
+                    <input type="text" class="form-control" [(ngModel)]="ftp_request.remotefile" name="remotefile"
+                        placeholder="jmeter.docx">
+                </div>
+                <div class="form-group col">
+                    <label for="localfile">Fichier local</label>
+                    <input type="text" class="form-control" [(ngModel)]="ftp_request.localfile" name="localfile"
+                        placeholder="C:/Users/mgl805/Downloads/jmeter.docx">
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input type="text" class="form-control" [(ngModel)]="ftp_request.username" name="username"
+                        placeholder="Exemple">
+                </div>
+                <div class="form-group col">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" class="form-control" [(ngModel)]="ftp_request.password" name="password"
+                        placeholder="Exemple">
+                </div>
+
+            </div>
+
+
+            <!-- Remove unused fields related to Gatling -->
+
+            <div class="row button-row">
+                <button mat-raised-button class="test-button" color="primary" (click)="onFtpSubmit()">Tester</button>
+            </div>
+        </form>
+
 
     </div>
