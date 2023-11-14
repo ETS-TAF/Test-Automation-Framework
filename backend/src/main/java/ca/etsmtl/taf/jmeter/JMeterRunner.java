@@ -1,14 +1,14 @@
 package ca.etsmtl.taf.jmeter;
 
-import com.fasterxml.jackson.databind.MappingIterator;
+import ca.etsmtl.taf.jmeter.provider.JmeterPathProvider;
+
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.fasterxml.jackson.databind.MappingIterator;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
+import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -31,30 +31,20 @@ public  class JMeterRunner {
     }
   }
 
-  public static String runJMeter( String testType) {
+  public static String runJMeter( String testType) throws URISyntaxException {
     String jmxFilePath="";
     if (testType=="http")
       jmxFilePath=  "backend/src/main/resources/jmeter/TestPlan.jmx";
     else if (testType=="ftp")
       jmxFilePath=  "backend/src/main/resources/jmeter/FTPTestPlan.jmx";
 
-    // Generate a timestamp for uniqueness
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
     String timestamp = dateFormat.format(new Date());
 
-    // Add the timestamp to the file name as the salt
     String resultsFilePath = "backend/src/main/resources/jmeter/results/result_"+timestamp +".csv";
-    //Please change to your JMETER Executable local path
     String osName = System.getProperty("os.name");
 
-    String jmeterExecutable="";
-    // Check if it's Windows
-    if (osName.toLowerCase().contains("win")) {
-      jmeterExecutable = "\"C:\\Users\\safou\\Downloads\\apache-jmeter-5.5\\bin\\jmeter.bat\"";
-    } else {
-      jmeterExecutable = "\"C:\\Users\\safou\\Downloads\\apache-jmeter-5.5\\bin\\jmeter.sh\"";
-    }
-    //String htmlReportPath="\"C:\\Users\\safou\\OneDrive\\Desktop\\result\"";
+    String jmeterExecutable= new JmeterPathProvider().getJmeterJarPath();
     try {
       String jmeterCommand = jmeterExecutable + " -n -t " + jmxFilePath + " -l " + resultsFilePath /*+" -e -o " + htmlReportPath */;
       // Run the command
@@ -82,7 +72,6 @@ public  class JMeterRunner {
     try (CSVReader reader = new CSVReader(new FileReader(csvFilePath))) {
       List<String[]> csvData = reader.readAll();
 
-      // Assuming the first row contains headers
       String[] headers = csvData.get(0);
 
       return csvData.stream()

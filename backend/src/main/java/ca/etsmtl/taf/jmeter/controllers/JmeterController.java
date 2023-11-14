@@ -4,12 +4,14 @@ package ca.etsmtl.taf.jmeter.controllers;
 import ca.etsmtl.taf.jmeter.JMeterRunner;
 import ca.etsmtl.taf.jmeter.model.FTPTestPlan;
 import ca.etsmtl.taf.jmeter.model.HttpTestPlan;
+import ca.etsmtl.taf.provider.GatlingJarPathProvider;
 import com.opencsv.exceptions.CsvException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -24,7 +26,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class JmeterController {
 
   @PostMapping("/http")
-  public ResponseEntity<?> getJmeterTestPlan(@RequestBody HttpTestPlan jmeterTestPlan) throws IOException, CsvException {
+  public ResponseEntity<?> getJmeterTestPlan(@RequestBody HttpTestPlan jmeterTestPlan) throws IOException, CsvException, URISyntaxException {
 
 
     jmeterTestPlan.generateTestPlan();
@@ -33,15 +35,18 @@ public class JmeterController {
     // Submit the task to the ExecutorService
     AtomicReference<String> resultPathRef = new AtomicReference<>();
     Future<?> future = executorService.submit(() -> {
-      String result = JMeterRunner.runJMeter("http");
+      String result = null;
+      try {
+        result = JMeterRunner.runJMeter("http");
+      } catch (URISyntaxException e) {
+        throw new RuntimeException(e);
+      }
       resultPathRef.set(result);
     });
     try {
       // Wait for the task to finish
       future.get();
     } catch (InterruptedException | ExecutionException e) {
-      // Handle exceptions if necessary
-      e.printStackTrace();
       return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred during task execution.");
     } finally {
       // Shutdown the ExecutorService to release resources
@@ -49,7 +54,6 @@ public class JmeterController {
     }
     List<Map<String, String>> result=null;
     String resultPath = resultPathRef.get();
-    System.out.println("Result Path: " + resultPath);
     if (resultPath !="" && resultPath!=null){
       try {
         result =JMeterRunner.convertCSVtoJSON(resultPath);
@@ -60,7 +64,6 @@ public class JmeterController {
       }
 
     }
-
        return (ResponseEntity<?>) ResponseEntity.ok(result);
   }
 
@@ -74,15 +77,17 @@ public class JmeterController {
     // Submit the task to the ExecutorService
     AtomicReference<String> resultPathRef = new AtomicReference<>();
     Future<?> future = executorService.submit(() -> {
-      String result = JMeterRunner.runJMeter("ftp");
+      String result = null;
+      try {
+        result = JMeterRunner.runJMeter("ftp");
+      } catch (URISyntaxException e) {
+        throw new RuntimeException(e);
+      }
       resultPathRef.set(result);
     });
     try {
-      // Wait for the task to finish
       future.get();
     } catch (InterruptedException | ExecutionException e) {
-      // Handle exceptions if necessary
-      e.printStackTrace();
       return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred during task execution.");
     } finally {
       // Shutdown the ExecutorService to release resources
@@ -90,7 +95,6 @@ public class JmeterController {
     }
     List<Map<String, String>> result=null;
     String resultPath = resultPathRef.get();
-    System.out.println("Result Path: " + resultPath);
     if (resultPath !="" && resultPath!=null){
       try {
         result =JMeterRunner.convertCSVtoJSON(resultPath);

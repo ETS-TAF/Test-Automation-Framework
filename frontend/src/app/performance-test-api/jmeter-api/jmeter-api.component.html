@@ -1,5 +1,5 @@
 <div class="container">
-
+  <div [ngBusy]="busy"></div>
   <div id="myModal" class="modal">
       <div class="modal-content">
           <div class="modal-header">
@@ -20,7 +20,7 @@
                               <th>Latency</th>
                               <th>Timestamp</th>
                               <th>Elapsed</th>
-                              <th>Success</th>
+                              <th>Status</th>
                               <th>Bytes</th>
                               <th>Response Message</th>
                               <th>Failure Message</th>
@@ -280,13 +280,12 @@
 
           </div>
 
-
-          <!-- Remove unused fields related to Gatling -->
-
           <div class="row button-row">
               <button mat-raised-button class="test-button" color="primary" (click)="onFtpSubmit()">Tester</button>
           </div>
+
       </form>
+
 
 
   </div>

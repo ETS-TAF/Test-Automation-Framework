@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { JMeterHttpRequest } from './jmeter-http-request';
 import { JMeterFTPRequest } from './jmeter-ftp-request';
-
+import { Subscription } from 'rxjs';
+import Swal from 'sweetalert2';
 import { PerformanceTestApiService } from 'src/app/_services/performance-test-api.service';
 
 @Component({
@@ -19,6 +20,7 @@ export class JmeterApiComponent implements OnInit {
   testResult: any;
   testLog: String = '';
   reportFilePath: String = '';
+  busy: Subscription | undefined;
 
   http_request: JMeterHttpRequest = new JMeterHttpRequest();
   ftp_request: JMeterFTPRequest = new JMeterFTPRequest();
@@ -52,7 +54,7 @@ export class JmeterApiComponent implements OnInit {
   }
 
   onHttpSubmit() {
-    this.performanceTestApiService
+    this.busy = this.performanceTestApiService
       .sendHttpJMeterRequest(this.http_request)
       .subscribe((response: any[]) => {
         this.testResults = response.map((result) => ({
@@ -74,12 +76,26 @@ export class JmeterApiComponent implements OnInit {
           failureMessage: result.failureMessage,
           sentBytes: result.sentBytes,
         }));
-        this.modal!.style.display = 'block';
+        if(response.length != 0){
+          this.modal!.style.display = 'block';
+        }else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Erreur',
+            text: "Le test a échoué, révisez votre configuration de test",
+          })
+        }
+      }, (error: any) =>{
+        Swal.fire({
+          icon: 'error',
+          title: 'Erreur',
+          text: "Le test a échoué, révisez votre configuration de test",
+        })
       });
   }
 
   onFtpSubmit() {
-    this.performanceTestApiService
+    this.busy = this.performanceTestApiService
       .sendFtpJMeterRequest(this.ftp_request)
       .subscribe((response: any[]) => {
         this.testResults = response.map((result) => ({
@@ -101,7 +117,22 @@ export class JmeterApiComponent implements OnInit {
           failureMessage: result.failureMessage,
           sentBytes: result.sentBytes,
         }));
-        this.modal!.style.display = 'block';
+        if(response.length != 0){
+          this.modal!.style.display = 'block';
+        }else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Erreur',
+            text: "Le test a échoué, révisez votre configuration de test",
+          })
+        }
+
+      }, (error: any) =>{
+        Swal.fire({
+          icon: 'error',
+          title: 'Erreur',
+          text: "Le test a échoué, révisez votre configuration de test",
+        })
       });
   }
 

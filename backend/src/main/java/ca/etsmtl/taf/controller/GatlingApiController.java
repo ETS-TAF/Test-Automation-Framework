@@ -47,7 +47,6 @@ public class GatlingApiController {
                 return new ResponseEntity<>(new MessageResponse(output.toString()), HttpStatus.INTERNAL_SERVER_ERROR);
             }
         } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
             return new ResponseEntity<>(new MessageResponse(e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);

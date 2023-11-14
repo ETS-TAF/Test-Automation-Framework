@@ -63,13 +63,13 @@ export class GatlingApiComponent implements OnInit {
         const arrayOfStrings = matches.map(matches => matches[0]);
         this.testResult = arrayOfStrings.filter(line => !excludedValues.includes(line));
 
-      }/*, (error: any) =>{
+      }, (error: any) =>{
         Swal.fire({
           icon: 'error',
           title: 'Erreur',
           text: "Le test a échoué, révisez votre configuration de test",
         })
-      }*/);
+      });
   }
 
   closeModal(){
