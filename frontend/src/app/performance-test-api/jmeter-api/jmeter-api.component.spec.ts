@@ -8,9 +8,8 @@ describe('JmeterApiComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ JmeterApiComponent ]
-    })
-    .compileComponents();
+      declarations: [JmeterApiComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

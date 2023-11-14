@@ -19,11 +19,11 @@
                     guiclass="LoopControlPanel" testclass="LoopController"
                     testname="Loop Controller"
                     enabled="true">
-                    <stringProp name="LoopController.loops">3</stringProp>
+                    <stringProp name="LoopController.loops">1</stringProp>
                     <boolProp name="LoopController.continue_forever">false</boolProp>
                 </elementProp>
-                <stringProp name="ThreadGroup.num_threads">10</stringProp>
-                <stringProp name="ThreadGroup.ramp_time">5</stringProp>
+                <stringProp name="ThreadGroup.num_threads">2</stringProp>
+                <stringProp name="ThreadGroup.ramp_time">2</stringProp>
                 <boolProp name="ThreadGroup.delayedStart">false</boolProp>
                 <boolProp name="ThreadGroup.scheduler">false</boolProp>
                 <stringProp name="ThreadGroup.duration"></stringProp>

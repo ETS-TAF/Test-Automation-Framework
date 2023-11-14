@@ -7,10 +7,7 @@ import ca.etsmtl.taf.jmeter.model.HttpTestPlan;
 import com.opencsv.exceptions.CsvException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,7 +19,8 @@ import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicReference;
 
 @RestController
-@RequestMapping("/jmeter")
+@CrossOrigin(origins = "*", maxAge = 3600)
+@RequestMapping("/api/jmeter")
 public class JmeterController {
 
   @PostMapping("/http")
