@@ -59,7 +59,10 @@ public  class JMeterRunner {
         return null;
       }
 
-    } catch (IOException | InterruptedException e) {
+    } catch (IOException e) {
+      return null;
+    } catch (InterruptedException e){
+      Thread.currentThread().interrupt();
       return null;
     }
   }

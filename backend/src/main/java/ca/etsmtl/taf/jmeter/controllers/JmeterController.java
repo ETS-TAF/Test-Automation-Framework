@@ -43,9 +43,13 @@ public class JmeterController {
     try {
       // Wait for the task to finish
       future.get();
-    } catch (InterruptedException | ExecutionException e) {
+    } catch (ExecutionException e) {
       return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error occurred during task execution.");
-    } finally {
+    } catch (InterruptedException e){
+      Thread.currentThread().interrupt();
+      return null;
+    }
+    finally {
       // Shutdown the ExecutorService to release resources
       executorService.shutdown();
     }
