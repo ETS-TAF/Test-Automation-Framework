@@ -1,3 +1,0 @@
-timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
-1700000959947,21119,FTP Request,000,java.net.ConnectException: Connection timed out: no further information,Thread Group 1-1,,false,,0,0,1,1,ftp://octoperf.com/ (Ascii)  <-,0,0,0
-1700000959940,21127,FTP Request,000,java.net.ConnectException: Connection timed out: no further information,Thread Group 1-1,,false,,0,0,1,1,ftp://octoperf.com/ (Ascii)  <-,0,0,0

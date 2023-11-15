@@ -1,5 +1,0 @@
-timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
-1700008367154,1050,FTP Request,553,"553 Could not create file.
-",Thread Group 1-1,,false,,0,569,1,1,ftp://ftp.dlptest.com/ (Ascii)  <- D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework\backend\src\main\resources\jmeter\Untitled-1.json,227,0,0
-1700008367142,1060,FTP Request,553,"553 Could not create file.
-",Thread Group 1-1,,false,,0,569,1,1,ftp://ftp.dlptest.com/ (Ascii)  <- D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework\backend\src\main\resources\jmeter\Untitled-1.json,234,0,0

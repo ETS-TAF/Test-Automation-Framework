@@ -1,3 +1,0 @@
-timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
-1700007549335,603,FTP Request,000,java.io.FileNotFoundException:  (The system cannot find the path specified),Thread Group 1-1,,false,,0,0,1,1,ftp://ftp.dlptest.com//test.txt (Ascii)  <-,228,0,0
-1700007549328,597,FTP Request,000,java.io.FileNotFoundException:  (The system cannot find the path specified),Thread Group 1-1,,false,,0,0,1,1,ftp://ftp.dlptest.com//test.txt (Ascii)  <-,231,0,0

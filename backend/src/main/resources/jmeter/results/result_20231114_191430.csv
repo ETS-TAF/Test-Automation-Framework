@@ -1,3 +1,0 @@
-timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
-1700007274753,1126,HTTP Request,200,OK,Thread Group 1-1,text,true,,10301,116,1,1,https://octoperf.com/,1112,0,911
-1700007274758,1124,HTTP Request,200,OK,Thread Group 1-1,text,true,,10300,116,1,1,https://octoperf.com/,1108,0,1006
