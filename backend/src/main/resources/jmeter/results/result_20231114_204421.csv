@@ -1,0 +1,3 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1700012665141,3111,FTP Request,200,OK,Thread Group 1-1,,true,,0,2787977,1,1,ftp://ftp.dlptest.com:21//test.txt (Ascii)  <- D:\Developpement\UQAM\verification_assurance_qualite\5-Les tests (été 2022).pdf,242,0,0
+1700012665136,4388,FTP Request,200,OK,Thread Group 1-1,,true,,0,2787977,1,1,ftp://ftp.dlptest.com:21//test.txt (Ascii)  <- D:\Developpement\UQAM\verification_assurance_qualite\5-Les tests (été 2022).pdf,232,0,0
