@@ -1,48 +1,48 @@
-2023-11-14 17:29:18,532 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
-2023-11-14 17:29:18,582 INFO o.a.j.JMeter: Loading user properties from: D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework\apache-jmeter\bin\user.properties
-2023-11-14 17:29:18,584 INFO o.a.j.JMeter: Loading system properties from: D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework\apache-jmeter\bin\system.properties
-2023-11-14 17:29:18,603 INFO o.a.j.JMeter: Copyright (c) 1998-2023 The Apache Software Foundation
-2023-11-14 17:29:18,603 INFO o.a.j.JMeter: Version 5.6.2
-2023-11-14 17:29:18,604 INFO o.a.j.JMeter: java.version=17.0.8.1
-2023-11-14 17:29:18,604 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
-2023-11-14 17:29:18,604 INFO o.a.j.JMeter: os.name=Windows 10
-2023-11-14 17:29:18,604 INFO o.a.j.JMeter: os.arch=amd64
-2023-11-14 17:29:18,604 INFO o.a.j.JMeter: os.version=10.0
-2023-11-14 17:29:18,605 INFO o.a.j.JMeter: file.encoding=Cp1252
-2023-11-14 17:29:18,605 INFO o.a.j.JMeter: java.awt.headless=true
-2023-11-14 17:29:18,605 INFO o.a.j.JMeter: Max memory     =1073741824
-2023-11-14 17:29:18,605 INFO o.a.j.JMeter: Available Processors =12
-2023-11-14 17:29:18,635 INFO o.a.j.JMeter: Default Locale=English (EN)
-2023-11-14 17:29:18,635 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
-2023-11-14 17:29:18,636 INFO o.a.j.JMeter: JMeterHome=D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework\apache-jmeter
-2023-11-14 17:29:18,636 INFO o.a.j.JMeter: user.dir  =D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework
-2023-11-14 17:29:18,637 INFO o.a.j.JMeter: PWD       =D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework
-2023-11-14 17:29:18,641 INFO o.a.j.JMeter: IP: 172.29.80.1 Name: LAPTOP-8EDTN73Q FullName: LAPTOP-8EDTN73Q.mshome.net
-2023-11-14 17:29:18,681 INFO o.a.j.s.FileServer: Default base='D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework'
-2023-11-14 17:29:18,684 INFO o.a.j.s.FileServer: Set new base='D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework\backend\src\main\resources\jmeter'
-2023-11-14 17:29:19,349 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
-2023-11-14 17:29:19,454 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
-2023-11-14 17:29:19,465 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
-2023-11-14 17:29:19,476 INFO o.a.j.s.SaveService: Loading file: backend\src\main\resources\jmeter\FTPTestPlan.jmx
-2023-11-14 17:29:19,610 INFO o.a.j.JMeter: Creating summariser <summary>
-2023-11-14 17:29:19,650 INFO o.a.j.e.StandardJMeterEngine: Running the test!
-2023-11-14 17:29:19,652 INFO o.a.j.s.SampleEvent: List of sample_variables: []
-2023-11-14 17:29:19,652 INFO o.a.j.s.SampleEvent: List of sample_variables: []
-2023-11-14 17:29:19,664 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
-2023-11-14 17:29:19,664 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
-2023-11-14 17:29:19,886 INFO o.a.j.JMeter: Running test (1700000959886)
-2023-11-14 17:29:19,917 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
-2023-11-14 17:29:19,918 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Thread Group.
-2023-11-14 17:29:19,918 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
-2023-11-14 17:29:19,918 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
-2023-11-14 17:29:19,930 INFO o.a.j.t.ThreadGroup: Started thread group number 1
-2023-11-14 17:29:19,930 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
-2023-11-14 17:29:19,934 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
-2023-11-14 17:29:19,944 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
-2023-11-14 17:29:19,944 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
-2023-11-14 17:29:19,944 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
-2023-11-14 17:29:19,944 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
-2023-11-14 17:29:41,097 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
-2023-11-14 17:29:41,097 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
-2023-11-14 17:29:41,097 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
-2023-11-14 17:29:41,100 INFO o.a.j.r.Summariser: summary =      1 in 00:00:21 =    0.0/s Avg: 21127 Min: 21127 Max: 21127 Err:     1 (100.00%)
+2023-11-14 19:21:26,072 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2023-11-14 19:21:26,149 INFO o.a.j.JMeter: Loading user properties from: D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework\apache-jmeter\bin\user.properties
+2023-11-14 19:21:26,150 INFO o.a.j.JMeter: Loading system properties from: D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework\apache-jmeter\bin\system.properties
+2023-11-14 19:21:26,181 INFO o.a.j.JMeter: Copyright (c) 1998-2023 The Apache Software Foundation
+2023-11-14 19:21:26,182 INFO o.a.j.JMeter: Version 5.6.2
+2023-11-14 19:21:26,182 INFO o.a.j.JMeter: java.version=17.0.8.1
+2023-11-14 19:21:26,182 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2023-11-14 19:21:26,182 INFO o.a.j.JMeter: os.name=Windows 10
+2023-11-14 19:21:26,182 INFO o.a.j.JMeter: os.arch=amd64
+2023-11-14 19:21:26,182 INFO o.a.j.JMeter: os.version=10.0
+2023-11-14 19:21:26,183 INFO o.a.j.JMeter: file.encoding=Cp1252
+2023-11-14 19:21:26,183 INFO o.a.j.JMeter: java.awt.headless=true
+2023-11-14 19:21:26,183 INFO o.a.j.JMeter: Max memory     =1073741824
+2023-11-14 19:21:26,183 INFO o.a.j.JMeter: Available Processors =12
+2023-11-14 19:21:26,211 INFO o.a.j.JMeter: Default Locale=English (EN)
+2023-11-14 19:21:26,212 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2023-11-14 19:21:26,212 INFO o.a.j.JMeter: JMeterHome=D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework\apache-jmeter
+2023-11-14 19:21:26,213 INFO o.a.j.JMeter: user.dir  =D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework
+2023-11-14 19:21:26,216 INFO o.a.j.JMeter: PWD       =D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework
+2023-11-14 19:21:26,219 INFO o.a.j.JMeter: IP: 172.29.80.1 Name: LAPTOP-8EDTN73Q FullName: LAPTOP-8EDTN73Q.mshome.net
+2023-11-14 19:21:26,264 INFO o.a.j.s.FileServer: Default base='D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework'
+2023-11-14 19:21:26,268 INFO o.a.j.s.FileServer: Set new base='D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework\backend\src\main\resources\jmeter'
+2023-11-14 19:21:26,852 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2023-11-14 19:21:26,926 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2023-11-14 19:21:26,932 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2023-11-14 19:21:26,940 INFO o.a.j.s.SaveService: Loading file: backend\src\main\resources\jmeter\FTPTestPlan.jmx
+2023-11-14 19:21:27,040 INFO o.a.j.JMeter: Creating summariser <summary>
+2023-11-14 19:21:27,075 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-11-14 19:21:27,076 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2023-11-14 19:21:27,076 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2023-11-14 19:21:27,088 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2023-11-14 19:21:27,088 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2023-11-14 19:21:27,287 INFO o.a.j.JMeter: Running test (1700007687287)
+2023-11-14 19:21:27,327 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2023-11-14 19:21:27,328 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Thread Group.
+2023-11-14 19:21:27,328 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2023-11-14 19:21:27,328 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2023-11-14 19:21:27,338 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2023-11-14 19:21:27,338 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2023-11-14 19:21:27,342 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2023-11-14 19:21:27,349 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2023-11-14 19:21:27,349 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2023-11-14 19:21:27,350 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2023-11-14 19:21:27,350 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2023-11-14 19:21:28,723 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2023-11-14 19:21:28,723 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2023-11-14 19:21:28,723 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-11-14 19:21:28,726 INFO o.a.j.r.Summariser: summary =      1 in 00:00:01 =    0.7/s Avg:  1344 Min:  1344 Max:  1344 Err:     0 (0.00%)

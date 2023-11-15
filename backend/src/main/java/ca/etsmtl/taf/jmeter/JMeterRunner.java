@@ -54,17 +54,14 @@ public  class JMeterRunner {
 
       // Check the exit code
       if (exitCode == 0) {
-        System.out.println("JMeter test executed successfully.");
         return resultsFilePath;
       } else {
-        System.err.println("JMeter test execution failed. Exit code: " + exitCode);
         return null;
       }
 
     } catch (IOException | InterruptedException e) {
-      e.printStackTrace();
+      return null;
     }
-    return resultsFilePath;
   }
 
 

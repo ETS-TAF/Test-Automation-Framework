@@ -31,16 +31,16 @@
       <hashTree>
         <FTPSampler guiclass="FtpTestSamplerGui" testclass="FTPSampler" testname="FTP Request"
           enabled="true">
-          <stringProp name="FTPSampler.server">octoperf.com</stringProp>
+          <stringProp name="FTPSampler.server">ftp.dlptest.com</stringProp>
           <stringProp name="FTPSampler.port"></stringProp>
-          <stringProp name="FTPSampler.filename"></stringProp>
-          <stringProp name="FTPSampler.localfilename"></stringProp>
+          <stringProp name="FTPSampler.filename">/test.txt</stringProp>
+          <stringProp name="FTPSampler.localfilename">D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework\backend\src\main\resources\jmeter\Untitled-1.json</stringProp>
           <stringProp name="FTPSampler.inputdata"></stringProp>
           <boolProp name="FTPSampler.binarymode">false</boolProp>
           <boolProp name="FTPSampler.saveresponse">false</boolProp>
           <boolProp name="FTPSampler.upload">true</boolProp>
-          <stringProp name="ConfigTestElement.username"></stringProp>
-          <stringProp name="ConfigTestElement.password"></stringProp>
+          <stringProp name="ConfigTestElement.username">dlpuser</stringProp>
+          <stringProp name="ConfigTestElement.password">rNrKYTX9g7z3RgJRmxWuGHbeu</stringProp>
         </FTPSampler>
         <hashTree />
       </hashTree>
