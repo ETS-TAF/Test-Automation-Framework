@@ -1,0 +1,2 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1700010395682,1296,FTP Request,200,OK,Thread Group 1-1,,true,,0,569,1,1,ftp://ftp.dlptest.com//test.txt (Ascii)  <- D:\Developpement\UQAM\verification_assurance_qualite\TAF\develop_branch\Test-Automation-Framework\backend\src\main\resources\jmeter\Untitled-1.json,223,0,0

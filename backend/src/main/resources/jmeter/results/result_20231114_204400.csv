@@ -1,0 +1,3 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1700012644458,43,FTP Request,000,java.net.ConnectException: Connection refused: no further information,Thread Group 1-1,,false,,0,0,1,1,ftp:////test.txt (Ascii)  <- D:\Developpement\UQAM\verification_assurance_qualite\5-Les tests (été 2022).pdf,0,0,0
+1700012644445,44,FTP Request,000,java.net.ConnectException: Connection refused: no further information,Thread Group 1-1,,false,,0,0,1,1,ftp:////test.txt (Ascii)  <- D:\Developpement\UQAM\verification_assurance_qualite\5-Les tests (été 2022).pdf,0,0,0

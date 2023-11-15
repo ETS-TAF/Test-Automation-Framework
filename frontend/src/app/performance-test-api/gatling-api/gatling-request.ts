@@ -1,19 +1,19 @@
 export class GatlingRequest {
-  baseUrl: string;
-  scenarioName: string;
-  requestName: string;
-  uri: string;
-  requestBody: string;
-  methodType: string;
-  usersNumber: Number;
+  testBaseUrl: string;
+  testScenarioName: string;
+  testRequestName: string;
+  testUri: string;
+  testRequestBody: string;
+  testMethodType: string;
+  testUsersNumber: Number;
 
   constructor() {
-    this.baseUrl = '';
-    this.scenarioName = '';
-    this.requestName = '';
-    this.uri = '';
-    this.requestBody = '';
-    this.methodType = '';
-    this.usersNumber = 1;
+    this.testBaseUrl = '';
+    this.testScenarioName = '';
+    this.testRequestName = '';
+    this.testUri = '';
+    this.testRequestBody = '';
+    this.testMethodType = '';
+    this.testUsersNumber = 1;
   }
 }

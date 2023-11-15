@@ -1,0 +1,2 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1700012762855,1227,FTP Request,200,OK,Thread Group 1-1,,true,,0,2052,1,1,ftp://ftp.dlptest.com:21//test.txt (Ascii)  <- C:\xampp\test_php.bat,236,0,0
