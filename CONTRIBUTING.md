@@ -20,3 +20,5 @@ Voici l'ensemble des règles à respecter lors de votre contribution à TAF. Si 
 - Le code réalisé doit être
   - Accompagné d'une documentation disponible sur le [Wiki.js](https://js.wiki/) du projet.
   - Testé. Bien que nous ne demandons pas un % de couverture fixe, un maximum des fonctions réalisées doivent être couverte par des tests unitaires.
+- Dans le cas de l'ajout d'un nouveau service, celui-ci doit pouvoir être build à l'aide du fichier Docker Compose. Il vous faut donc ajouter un fichier [`dockerfile`](https://docs.docker.com/engine/reference/builder/) spécifiant les étapes de build à votre service, et le référencer dans le fichier [`docker-compose.yml`](./docker-compose.yml)
+  - Le build et les tests doivent être ajouté au GitHub actions. Cela doit se faire en ajoutant une étape à la pipeleine [`build-test.yml`](./.github/workflows/build-test.yml)
