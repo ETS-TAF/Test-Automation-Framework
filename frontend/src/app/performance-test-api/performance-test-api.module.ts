@@ -24,6 +24,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {BusyConfig, NgBusyModule} from 'ng-busy';
 
 
 
@@ -55,7 +56,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatPaginatorModule,
     MatSortModule,
     MatMenuModule,
-    MatExpansionModule,
+    MatExpansionModule
   ]
 })
 export class PerformanceTestApiModule { }

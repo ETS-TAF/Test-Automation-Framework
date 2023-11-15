@@ -36,7 +36,7 @@ import { PerformanceTestApiComponent } from './performance-test-api/performance-
 import { GatlingApiComponent } from './performance-test-api/gatling-api/gatling-api.component';
 import { JmeterApiComponent } from './performance-test-api/jmeter-api/jmeter-api.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {BusyConfig, NgBusyModule} from 'ng-busy';
 
 
 @NgModule({
@@ -73,7 +73,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         MatCardModule,
         ReactiveFormsModule,
         MatInputModule,
-        MatSelectModule
+        MatSelectModule,
+        NgBusyModule.forRoot(new BusyConfig({
+          message: 'Veuillez patienter',
+        })),
     ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

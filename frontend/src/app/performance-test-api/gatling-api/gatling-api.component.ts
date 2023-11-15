@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { GatlingRequest } from './gatling-request';
 import { PerformanceTestApiService } from 'src/app/_services/performance-test-api.service';
-
+import { Subscription } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-gatling-api',
@@ -17,6 +18,8 @@ export class GatlingApiComponent implements OnInit {
   testLog: String = "";
   reportFilePath: String = "";
 
+  busy: Subscription | undefined;
+
   request: GatlingRequest = new GatlingRequest();
 
   constructor(private performanceTestApiService: PerformanceTestApiService) { }
@@ -27,8 +30,8 @@ export class GatlingApiComponent implements OnInit {
   }
 
   onSubmit(){
-    this.performanceTestApiService.sendGatlingRequest(this.request)
-      .subscribe(response => {
+    this.busy = this.performanceTestApiService.sendGatlingRequest(this.request)
+      .subscribe((response:any) => {
         this.modal!.style.display = "block";
         this.testLog = response.message;
 
@@ -60,6 +63,12 @@ export class GatlingApiComponent implements OnInit {
         const arrayOfStrings = matches.map(matches => matches[0]);
         this.testResult = arrayOfStrings.filter(line => !excludedValues.includes(line));
 
+      }, (error: any) =>{
+        Swal.fire({
+          icon: 'error',
+          title: 'Erreur',
+          text: "Le test a échoué, révisez votre configuration de test",
+        })
       });
   }
 
