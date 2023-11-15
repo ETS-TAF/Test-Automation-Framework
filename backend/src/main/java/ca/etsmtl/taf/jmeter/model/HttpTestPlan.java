@@ -14,10 +14,12 @@ public class HttpTestPlan  extends  TestPlanBase{
   private String path;
   private String data;
 
+  @Override
   public String getLoop() {
     return loop;
   }
 
+  @Override
   public void setLoop(String loop) {
     this.loop = loop;
   }
@@ -41,38 +43,47 @@ public class HttpTestPlan  extends  TestPlanBase{
     return nbThreads;
   }
 
+  @Override
   public void setNbThreads(String nbThreads) {
     this.nbThreads = nbThreads;
   }
 
+  @Override
   public String getRampTime() {
     return rampTime;
   }
 
+  @Override
   public void setRampTime(String rampTime) {
     this.rampTime = rampTime;
   }
 
+  @Override
   public String getDuration() {
     return duration;
   }
 
+  @Override
   public void setDuration(String duration) {
     this.duration = duration;
   }
 
+  @Override
   public String getDomain() {
     return domain;
   }
 
+  @Override
   public void setDomain(String domain) {
     this.domain = domain;
   }
 
+  @Override
   public String getPort() {
     return port;
   }
 
+  @Override
   public void setPort(String port) {
     this.port = port;
   }

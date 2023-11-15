@@ -14,10 +14,10 @@ public abstract class TestPlanBase {
     protected String method;
     protected String loop;
 
-    public TestPlanBase() {
+    protected TestPlanBase() {
     }
 
-    public TestPlanBase(String nbThreads, String rampTime, String duration, String domain, String port, String method, String loop) {
+    protected TestPlanBase(String nbThreads, String rampTime, String duration, String domain, String port, String method, String loop) {
         this.nbThreads = nbThreads;
         this.rampTime = rampTime;
         this.duration = duration;
@@ -82,7 +82,6 @@ public abstract class TestPlanBase {
             String xmlContent = new String(Files.readAllBytes(Paths.get(filePath)), StandardCharsets.UTF_8);
             xmlContent = replaceVariables(xmlContent, templateKey);
             Files.write(Paths.get(target), xmlContent.getBytes(StandardCharsets.UTF_8));
-            System.out.println("Variables replaced successfully.");
         } catch (IOException e) {
             e.printStackTrace();
         }
