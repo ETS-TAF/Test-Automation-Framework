@@ -1,0 +1,1943 @@
+{
+  "Defauts": [
+    {
+      "id": 1,
+      "Description": "Le système a planté lors de l'appel à l'API GET CLIENT INFO",
+      "execution_id": 2,
+      "category": "Erreur"
+    },
+    {
+      "id": 2,
+      "Description": "Résultat inccorect obtenu après execution de l'API GET CLIENT DATA",
+      "execution_id": 3,
+      "category": "Faute"
+    },
+    {
+      "id": 3,
+      "Description": "On rapporte une défaillance en production",
+      "execution_id": 4,
+      "category": "Défaillance du système"
+    },
+    {
+      "id": 4,
+      "Description": "On rapporte une défaillance en production liée à un problème de performance",
+      "execution_id": 9,
+      "category": "Défaillance du système"
+    },
+    {
+      "id": 5,
+      "Description": "Résultat erroné après exécution d'une fonctionnalité",
+      "execution_id": 14,
+      "category": "Faute"
+    },
+    {
+      "id": 6,
+      "Description": "Signalement d'une défaillance en production liée à une surcharge de la base de données",
+      "execution_id": 15,
+      "category": "Défaillance du système"
+    },
+    {
+      "id": 7,
+      "Description": "Le système a cessé de répondre lors de l'appel à l'API FETCH USER INFO ",
+      "execution_id": 16,
+      "category": "Erreur"
+    },
+    {
+      "id": 8,
+      "Description": "Le système a planté lors de l'appel à l'API UPDATE CLIENT DATA Erreur",
+      "execution_id": 18,
+      "category": "Erreur"
+    },
+    {
+      "id": 9,
+      "Description": "On rapporte une défaillance en production liée à un problème de sécurité",
+      "execution_id": 20,
+      "category": "Défaillance du système"
+    },
+    {
+      "id": 10,
+      "Description": "Erreur système lors de l'ajout d'un nouvel utilisateur",
+      "execution_id": 21,
+      "category": "Erreur"
+    },
+    {
+      "id": 11,
+      "Description": "Le système a cessé de répondre lors de la création d'un nouveau projet",
+      "execution_id": 24,
+      "category": "Erreur"
+    },
+    {
+      "id": 12,
+      "Description": "Signalement d'une défaillance en production liée à un débordement de mémoire",
+      "execution_id": 29,
+      "category": "Défaillance du système"
+    },
+    {
+      "id": 13,
+      "Description": "Signalement d'une défaillance en production liée à une erreur de configuration du pare-feu ",
+      "execution_id": 32,
+      "category": "Défaillance du système"
+    },
+    {
+      "id": 14,
+      "Description": "Le système a planté lors de la tentative de mise à jour de l'API INVENTORY",
+      "execution_id": 34,
+      "category": "Erreur"
+    },
+    {
+      "id": 15,
+      "Description": "Résultats de recherche incorrects obtenus après l'exécution de l'API SEARCH",
+      "execution_id": 42,
+      "category": "Faute"
+    },
+    {
+      "id": 16,
+      "Description": "defaut numero 16",
+      "execution_id": 44,
+      "category": "Défaillance du système"
+    },
+    {
+      "id": 17,
+      "Description": "Les résultats de l'analyse des données sont incorrects après l'exécution de l'API ANALYTICS",
+      "execution_id": 45,
+      "category": "Faute"
+    },
+    {
+      "id": 18,
+      "Description": "Erreur lors de la mise à jour du système d'exploitation, provoquant des incompatibilités logicielles",
+      "execution_id": 53,
+      "category": "Erreur"
+    }
+  ],
+  "executions": [
+    {
+      "id": 10,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:38",
+      "Date_de_fin": "2022-08-24;13:47:51",
+      "Temps_ecoule": "0000-00-00;00:02:13",
+      "Executeur": "Pierre D.",
+      "Environnement": "Opera",
+      "test_id": 34
+    },
+    {
+      "id": 70,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:38",
+      "Date_de_fin": "2022-08-24;13:47:51",
+      "Temps_ecoule": "0000-00-00;00:02:13",
+      "Executeur": "Jerry Saint-Preux.",
+      "Environnement": "Safari",
+      "test_id": 79
+    },
+    {
+      "id": 71,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:38",
+      "Date_de_fin": "2022-08-24;13:47:51",
+      "Temps_ecoule": "0000-00-00;00:02:13",
+      "Executeur": "Jean Louis Pierre.",
+      "Environnement": "Edge",
+      "test_id": 80
+    },
+    {
+      "id": 77,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:38",
+      "Date_de_fin": "2022-08-24;13:47:51",
+      "Temps_ecoule": "0000-00-00;00:02:13",
+      "Executeur": "Jean Pierre Joseph.",
+      "Environnement": "Opera",
+      "test_id": 81
+    },
+    {
+      "id": 11,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:41",
+      "Date_de_fin": "2022-08-24;13:47:57",
+      "Temps_ecoule": "0000-00-00;00:02:16",
+      "Executeur": "Jean M.",
+      "Environnement": "Safari",
+      "test_id": 4
+    },
+    {
+      "id": 13,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:42",
+      "Date_de_fin": "2022-08-24;13:47:59",
+      "Temps_ecoule": "0000-00-00;00:02:17",
+      "Executeur": "Marie H.",
+      "Environnement": "Chrome",
+      "test_id": 32
+    },
+    {
+      "id": 23,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:43",
+      "Date_de_fin": "2022-08-24;13:48:01",
+      "Temps_ecoule": "0000-00-00;00:02:18",
+      "Executeur": "Marie H.",
+      "Environnement": "Edge",
+      "test_id": 40
+    },
+    {
+      "id": 25,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:42",
+      "Date_de_fin": "2022-08-24;13:47:59",
+      "Temps_ecoule": "0000-00-00;00:02:17",
+      "Executeur": "Marie H.",
+      "Environnement": "Chrome",
+      "test_id": 38
+    },
+    {
+      "id": 26,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:38",
+      "Date_de_fin": "2022-08-24;13:47:51",
+      "Temps_ecoule": "0000-00-00;00:02:13",
+      "Executeur": "Pierre D.",
+      "Environnement": "Safari",
+      "test_id": 1
+    },
+    {
+      "id": 27,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:43",
+      "Date_de_fin": "2022-08-24;13:48:01",
+      "Temps_ecoule": "0000-00-00;00:02:18",
+      "Executeur": "Marie H.",
+      "Environnement": "Firefox",
+      "test_id": 24
+    },
+    {
+      "id": 28,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:40",
+      "Date_de_fin": "2022-08-24;13:47:55",
+      "Temps_ecoule": "0000-00-00;00:02:15",
+      "Executeur": "Jean M.",
+      "Environnement": "Chrome",
+      "test_id": 53
+    },
+    {
+      "id": 31,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:39",
+      "Date_de_fin": "2022-08-24;13:47:53",
+      "Temps_ecoule": "0000-00-00;00:02:14",
+      "Executeur": "Pierre D.",
+      "Environnement": "Firefox",
+      "test_id": 51
+    },
+    {
+      "id": 35,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:41",
+      "Date_de_fin": "2022-08-24;13:47:57",
+      "Temps_ecoule": "0000-00-00;00:02:16",
+      "Executeur": "Jean M.",
+      "Environnement": "Firefox",
+      "test_id": 54
+    },
+    {
+      "id": 36,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:40",
+      "Date_de_fin": "2022-08-24;13:47:55",
+      "Temps_ecoule": "0000-00-00;00:02:15",
+      "Executeur": "Jean M.",
+      "Environnement": "Chrome",
+      "test_id": 39
+    },
+    {
+      "id": 38,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:41",
+      "Date_de_fin": "2022-08-24;13:47:57",
+      "Temps_ecoule": "0000-00-00;00:02:16",
+      "Executeur": "Jean M.",
+      "Environnement": "Firefox",
+      "test_id": 18
+    },
+    {
+      "id": 39,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:40",
+      "Date_de_fin": "2022-08-24;13:47:55",
+      "Temps_ecoule": "0000-00-00;00:02:15",
+      "Executeur": "Jean M.",
+      "Environnement": "Chrome",
+      "test_id": 5
+    },
+    {
+      "id": 41,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:38",
+      "Date_de_fin": "2022-08-24;13:47:51",
+      "Temps_ecoule": "0000-00-00;00:02:13",
+      "Executeur": "Pierre D.",
+      "Environnement": "Chrome",
+      "test_id": 25
+    },
+    {
+      "id": 46,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:39",
+      "Date_de_fin": "2022-08-24;13:47:53",
+      "Temps_ecoule": "0000-00-00;00:02:14",
+      "Executeur": "Pierre D.",
+      "Environnement": "Firefox",
+      "test_id": 36
+    },
+    {
+      "id": 47,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:43",
+      "Date_de_fin": "2022-08-24;13:48:01",
+      "Temps_ecoule": "0000-00-00;00:02:18",
+      "Executeur": "Marie H.",
+      "Environnement": "Firefox",
+      "test_id": 21
+    },
+    {
+      "id": 49,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:39",
+      "Date_de_fin": "2022-08-24;13:47:53",
+      "Temps_ecoule": "0000-00-00;00:02:14",
+      "Executeur": "Pierre D.",
+      "Environnement": "Firefox",
+      "test_id": 2
+    },
+    {
+      "id": 54,
+      "Status": "EXECUTING",
+      "Date_de_debut": "2022-08-24;13:45:42",
+      "Date_de_fin": "2022-08-24;13:47:59",
+      "Temps_ecoule": "0000-00-00;00:02:17",
+      "Executeur": "Marie H.",
+      "Environnement": "Chrome",
+      "test_id": 43
+    },
+    {
+      "id": 2,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:34",
+      "Date_de_fin": "2022-08-24;13:47:43",
+      "Temps_ecoule": "0000-00-00;00:02:09",
+      "Executeur": "Jean M.",
+      "Environnement": "Chrome",
+      "test_id": 29
+    },
+    {
+      "id": 3,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:32",
+      "Date_de_fin": "2022-08-24;13:47:39",
+      "Temps_ecoule": "0000-00-00;00:02:07",
+      "Executeur": "Pierre D.",
+      "Environnement": "Chrome",
+      "test_id": 28
+    },
+    {
+      "id": 4,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:32",
+      "Date_de_fin": "2022-08-24;13:47:39",
+      "Temps_ecoule": "0000-00-00;00:02:07",
+      "Executeur": "Pierre D.",
+      "Environnement": "Chrome",
+      "test_id": 48
+    },
+    {
+      "id": 9,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:37",
+      "Date_de_fin": "2022-08-24;13:47:49",
+      "Temps_ecoule": "0000-00-00;00:02:12",
+      "Executeur": "Marie H.",
+      "Environnement": "Firefox",
+      "test_id": 22
+    },
+    {
+      "id": 14,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:36",
+      "Date_de_fin": "2022-08-24;13:47:47",
+      "Temps_ecoule": "0000-00-00;00:02:11",
+      "Executeur": "Marie H.",
+      "Environnement": "Chrome",
+      "test_id": 27
+    },
+    {
+      "id": 15,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:33",
+      "Date_de_fin": "2022-08-24;13:47:41",
+      "Temps_ecoule": "0000-00-00;00:02:08",
+      "Executeur": "Pierre D.",
+      "Environnement": "Firefox",
+      "test_id": 37
+    },
+    {
+      "id": 16,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:37",
+      "Date_de_fin": "2022-08-24;13:47:49",
+      "Temps_ecoule": "0000-00-00;00:02:12",
+      "Executeur": "Marie H.",
+      "Environnement": "Firefox",
+      "test_id": 3
+    },
+    {
+      "id": 18,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:37",
+      "Date_de_fin": "2022-08-24;13:47:49",
+      "Temps_ecoule": "0000-00-00;00:02:12",
+      "Executeur": "Marie H.",
+      "Environnement": "Firefox",
+      "test_id": 7
+    },
+    {
+      "id": 20,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:32",
+      "Date_de_fin": "2022-08-24;13:47:39",
+      "Temps_ecoule": "0000-00-00;00:02:07",
+      "Executeur": "Pierre D.",
+      "Environnement": "Chrome",
+      "test_id": 6
+    },
+    {
+      "id": 21,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:33",
+      "Date_de_fin": "2022-08-24;13:47:41",
+      "Temps_ecoule": "0000-00-00;00:02:08",
+      "Executeur": "Pierre D.",
+      "Environnement": "Firefox",
+      "test_id": 23
+    },
+    {
+      "id": 24,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:36",
+      "Date_de_fin": "2022-08-24;13:47:47",
+      "Temps_ecoule": "0000-00-00;00:02:11",
+      "Executeur": "Marie H.",
+      "Environnement": "Chrome",
+      "test_id": 33
+    },
+    {
+      "id": 29,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:35",
+      "Date_de_fin": "2022-08-24;13:47:45",
+      "Temps_ecoule": "0000-00-00;00:02:10",
+      "Executeur": "Jean M.",
+      "Environnement": "Firefox",
+      "test_id": 46
+    },
+    {
+      "id": 32,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:34",
+      "Date_de_fin": "2022-08-24;13:47:43",
+      "Temps_ecoule": "0000-00-00;00:02:09",
+      "Executeur": "Jean M.",
+      "Environnement": "Chrome",
+      "test_id": 44
+    },
+    {
+      "id": 34,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:35",
+      "Date_de_fin": "2022-08-24;13:47:45",
+      "Temps_ecoule": "0000-00-00;00:02:10",
+      "Executeur": "Jean M.",
+      "Environnement": "Firefox",
+      "test_id": 49
+    },
+    {
+      "id": 42,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:36",
+      "Date_de_fin": "2022-08-24;13:47:47",
+      "Temps_ecoule": "0000-00-00;00:02:11",
+      "Executeur": "Marie H.",
+      "Environnement": "Chrome",
+      "test_id": 16
+    },
+    {
+      "id": 44,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:33",
+      "Date_de_fin": "2022-08-24;13:47:41",
+      "Temps_ecoule": "0000-00-00;00:02:08",
+      "Executeur": "Pierre D.",
+      "Environnement": "Firefox",
+      "test_id": 10
+    },
+    {
+      "id": 45,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:35",
+      "Date_de_fin": "2022-08-24;13:47:45",
+      "Temps_ecoule": "0000-00-00;00:02:10",
+      "Executeur": "Jean M.",
+      "Environnement": "Firefox",
+      "test_id": 52
+    },
+    {
+      "id": 53,
+      "Status": "FAILED",
+      "Date_de_debut": "2022-08-24;13:45:34",
+      "Date_de_fin": "2022-08-24;13:47:43",
+      "Temps_ecoule": "0000-00-00;00:02:09",
+      "Executeur": "Jean M.",
+      "Environnement": "Chrome",
+      "test_id": 41
+    },
+    {
+      "id": 1,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:31",
+      "Date_de_fin": "2022-08-24;13:47:37",
+      "Temps_ecoule": "0000-00-00;00:02:06",
+      "Executeur": "Marie H.",
+      "Environnement": "Firefox",
+      "test_id": 9
+    },
+    {
+      "id": 5,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:28",
+      "Date_de_fin": "2022-08-24;13:47:31",
+      "Temps_ecoule": "0000-00-00;00:02:03",
+      "Executeur": "Jean M.",
+      "Environnement": "Chrome",
+      "test_id": 35
+    },
+    {
+      "id": 6,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:31",
+      "Date_de_fin": "2022-08-24;13:47:37",
+      "Temps_ecoule": "0000-00-00;00:02:06",
+      "Executeur": "Marie H.",
+      "Environnement": "Firefox",
+      "test_id": 42
+    },
+    {
+      "id": 7,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:26",
+      "Date_de_fin": "2022-08-24;13:47:27",
+      "Temps_ecoule": "0000-00-00;00:02:01",
+      "Executeur": "Pierre D.",
+      "Environnement": "Chrome",
+      "test_id": 17
+    },
+    {
+      "id": 8,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:30",
+      "Date_de_fin": "2022-08-24;13:47:35",
+      "Temps_ecoule": "0000-00-00;00:02:05",
+      "Executeur": "Marie H.",
+      "Environnement": "Chrome",
+      "test_id": 31
+    },
+    {
+      "id": 12,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:29",
+      "Date_de_fin": "2022-08-24;13:47:33",
+      "Temps_ecoule": "0000-00-00;00:02:04",
+      "Executeur": "Jean M.",
+      "Environnement": "Firefox",
+      "test_id": 47
+    },
+    {
+      "id": 17,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:27",
+      "Date_de_fin": "2022-08-24;13:47:29",
+      "Temps_ecoule": "0000-00-00;00:02:02",
+      "Executeur": "Pierre D.",
+      "Environnement": "Firefox",
+      "test_id": 8
+    },
+    {
+      "id": 19,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:26",
+      "Date_de_fin": "2022-08-24;13:47:27",
+      "Temps_ecoule": "0000-00-00;00:02:01",
+      "Executeur": "Pierre D.",
+      "Environnement": "Chrome",
+      "test_id": 19
+    },
+    {
+      "id": 22,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:28",
+      "Date_de_fin": "2022-08-24;13:47:31",
+      "Temps_ecoule": "0000-00-00;00:02:03",
+      "Executeur": "Jean M.",
+      "Environnement": "Chrome",
+      "test_id": 12
+    },
+    {
+      "id": 30,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:30",
+      "Date_de_fin": "2022-08-24;13:47:35",
+      "Temps_ecoule": "0000-00-00;00:02:05",
+      "Executeur": "Marie H.",
+      "Environnement": "Chrome",
+      "test_id": 50
+    },
+    {
+      "id": 33,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:29",
+      "Date_de_fin": "2022-08-24;13:47:33",
+      "Temps_ecoule": "0000-00-00;00:02:04",
+      "Executeur": "Jean M.",
+      "Environnement": "Firefox",
+      "test_id": 45
+    },
+    {
+      "id": 37,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:29",
+      "Date_de_fin": "2022-08-24;13:47:33",
+      "Temps_ecoule": "0000-00-00;00:02:04",
+      "Executeur": "Jean M.",
+      "Environnement": "Firefox",
+      "test_id": 26
+    },
+    {
+      "id": 40,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:31",
+      "Date_de_fin": "2022-08-24;13:47:37",
+      "Temps_ecoule": "0000-00-00;00:02:06",
+      "Executeur": "Marie H.",
+      "Environnement": "Firefox",
+      "test_id": 20
+    },
+    {
+      "id": 43,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:26",
+      "Date_de_fin": "2022-08-24;13:47:27",
+      "Temps_ecoule": "0000-00-00;00:02:01",
+      "Executeur": "Pierre D.",
+      "Environnement": "Chrome",
+      "test_id": 15
+    },
+    {
+      "id": 48,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:27",
+      "Date_de_fin": "2022-08-24;13:47:29",
+      "Temps_ecoule": "0000-00-00;00:02:02",
+      "Executeur": "Pierre D.",
+      "Environnement": "Firefox",
+      "test_id": 30
+    },
+    {
+      "id": 50,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:28",
+      "Date_de_fin": "2022-08-24;13:47:31",
+      "Temps_ecoule": "0000-00-00;00:02:03",
+      "Executeur": "Jean M.",
+      "Environnement": "Chrome",
+      "test_id": 13
+    },
+    {
+      "id": 51,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:27",
+      "Date_de_fin": "2022-08-24;13:47:29",
+      "Temps_ecoule": "0000-00-00;00:02:02",
+      "Executeur": "Pierre D.",
+      "Environnement": "Firefox",
+      "test_id": 11
+    },
+    {
+      "id": 52,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:30",
+      "Date_de_fin": "2022-08-24;13:47:35",
+      "Temps_ecoule": "0000-00-00;00:02:05",
+      "Executeur": "Marie H.",
+      "Environnement": "Chrome",
+      "test_id": 14
+    },
+    {
+      "id": 59,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:30",
+      "Date_de_fin": "2022-08-24;13:47:35",
+      "Temps_ecoule": "0000-00-00;00:02:05",
+      "Executeur": "Marie H.",
+      "Environnement": "Chrome",
+      "test_id": 54
+    },
+    {
+      "id": 60,
+      "Status": "PASSED",
+      "Date_de_debut": "2022-08-24;13:45:30",
+      "Date_de_fin": "2022-08-24;13:47:35",
+      "Temps_ecoule": "0000-00-00;00:02:05",
+      "Executeur": "Marie H.",
+      "Environnement": "Chrome",
+      "test_id": 58
+    }
+  ],
+  "exigences": [
+    {
+      "id": 1,
+      "Status": "OK",
+      "Description": "Exigence 1"
+    },
+    {
+      "id": 2,
+      "Status": "Signalement d'une défaillance en production liée à une surcharge de la base de donnéesOK",
+      "Description": "Exigence 2"
+    },
+    {
+      "id": 3,
+      "Status": "NOTRUN",
+      "Description": "Exigence 3"
+    }
+  ],
+  "tests": [
+    {
+      "id": 1,
+      "Status": "PASSED",
+      "Type": "Test API",
+      "Description": "test API 1",
+      "Priorite": 3,
+      "Version_correction": "1.1",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testAPI\" ",
+      "testtype": "Test API"
+    },
+    {
+      "id": 2,
+      "Status": "NOTRUN",
+      "Type": "Test API ",
+      "Description": "test API 2",
+      "Priorite": 3,
+      "Version_correction": "1.1",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testAPI\" ",
+      "testtype": "Test API"
+    },
+    {
+      "id": 3,
+      "Status": "NOTRUN",
+      "Type": "Test GUI",
+      "Description": "test GUI 1",
+      "Priorite": 3,
+      "Version_correction": "1.1",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testAPI\" ",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 4,
+      "Status": "NOTRUN",
+      "Type": "Test GUI",
+      "Description": "Test GUI 2",
+      "Priorite": 1,
+      "Version_correction": "1.2",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testGUI\" ",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 5,
+      "Status": "FAILED",
+      "Type": "Test Performance",
+      "Description": "Test Performance 1",
+      "Priorite": 2,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testPerformances\"",
+      "testtype": "Test Performances"
+    },
+    {
+      "id": 6,
+      "Status": "NOTRUN",
+      "Type": "Test performance",
+      "Description": "Test Performance 2",
+      "Priorite": 3,
+      "Version_correction": "1.2",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testGUI\"",
+      "testtype": "Test Performances"
+    },
+    {
+      "id": 7,
+      "Status": "NOTRUN",
+      "Type": "Test Performances",
+      "Description": "Test Performance 3",
+      "Priorite": 3,
+      "Version_correction": "1.2",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testPerformances\"",
+      "testtype": "Test Performances"
+    },
+    {
+      "id": 8,
+      "Status": "FAILED",
+      "Type": "Test GUI",
+      "Description": "Test Performance 2",
+      "Priorite": 3,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testGUI\"",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 9,
+      "Status": "FAILED",
+      "Type": "Test Performances",
+      "Description": "test Performance 3",
+      "Priorite": 1,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testPerformances\"",
+      "testtype": "Test Performances"
+    },
+    {
+      "id": 10,
+      "Status": "PASSED",
+      "Type": "Test API",
+      "Description": "test API",
+      "Priorite": 1,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testPerformances\"",
+      "testtype": "Test API"
+    },
+    {
+      "id": 11,
+      "Status": "PASSED",
+      "Type": "Test GUI",
+      "Description": "test GUI",
+      "Priorite": 1,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testPerformances\"",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 12,
+      "Status": "FAILED",
+      "Type": "Test API",
+      "Description": "test API 10",
+      "Priorite": 2,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testAPI\" ",
+      "testtype": "Test API"
+    },
+    {
+      "id": 13,
+      "Status": "PASSED",
+      "Type": "Test performance",
+      "Description": "test performance 6",
+      "Priorite": 3,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testAPI\" ",
+      "testtype": "Test performances"
+    },
+    {
+      "id": 14,
+      "Status": "PASSED",
+      "Type": "Test performances",
+      "Description": "test performance 7",
+      "Priorite": 2,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testPerformances\"",
+      "testtype": "Test performances"
+    },
+    {
+      "id": 15,
+      "Status": "PASSED",
+      "Type": "Test performances",
+      "Description": "test performances",
+      "Priorite": 2,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testGUI\"",
+      "testtype": "Test performances"
+    },
+    {
+      "id": 16,
+      "Status": "PASSED",
+      "Type": "Test API",
+      "Description": "test API 14",
+      "Priorite": 1,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testAPI\" ",
+      "testtype": "Test API"
+    },
+    {
+      "id": 17,
+      "Status": "PASSED",
+      "Type": "Test API",
+      "Description": "test API 15",
+      "Priorite": 3,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testGUI\"",
+      "testtype": "Test API"
+    },
+    {
+      "id": 18,
+      "Status": "FAILED",
+      "Type": "Test API",
+      "Description": "test API 16",
+      "Priorite": 1,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testAPI\" ",
+      "testtype": "Test API"
+    },
+    {
+      "id": 19,
+      "Status": "PASSED",
+      "Type": "Test performance",
+      "Description": "test performance 17",
+      "Priorite": 1,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testGUI\"",
+      "testtype": "Test performance"
+    },
+    {
+      "id": 20,
+      "Status": "NOTRUN",
+      "Type": "Test API",
+      "Description": "test API 18",
+      "Priorite": 1,
+      "Version_correction": "1.1",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testAPI\" ",
+      "testtype": "Test API"
+    },
+    {
+      "id": 21,
+      "Status": "PASSED",
+      "Type": "Test GUI",
+      "Description": "Test GUI 19",
+      "Priorite": 3,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testGUI\"",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 22,
+      "Status": "PASSED",
+      "Type": "Test Performances",
+      "Description": "test performances 20",
+      "Priorite": 2,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testPerformances\"",
+      "testtype": "Test Performances"
+    },
+    {
+      "id": 23,
+      "Status": "NOTRUN",
+      "Type": "Test API",
+      "Description": "test API 21",
+      "Priorite": 2,
+      "Version_correction": "1.1",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testAPI\" ",
+      "testtype": "Test API"
+    },
+    {
+      "id": 24,
+      "Status": "FAILED",
+      "Type": "Test GUI",
+      "Description": "test GUI 22",
+      "Priorite": 1,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testGUI\"",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 25,
+      "Status": "FAILED",
+      "Type": "Test GUI",
+      "Description": "test GUI 23",
+      "Priorite": 2,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testGUI\"",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 26,
+      "Status": "NOTRUN",
+      "Type": "Test Performances",
+      "Description": "test performances 24",
+      "Priorite": 1,
+      "Version_correction": "1.2",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testPerformances\"",
+      "testtype": "Test Performances"
+    },
+    {
+      "id": 27,
+      "Status": "NOTRUN",
+      "Type": "Test GUI",
+      "Description": "test GUI 25",
+      "Priorite": 2,
+      "Version_correction": "1.1",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testPerformances\"",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 28,
+      "Status": "PASSED",
+      "Type": "Test Performances",
+      "Description": "test performances 26",
+      "Priorite": 3,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testPerformances\"",
+      "testtype": "Test Performances"
+    },
+    {
+      "id": 29,
+      "Status": "FAILED",
+      "Type": "Test GUI",
+      "Description": "test GUI 27",
+      "Priorite": 3,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testGUI\"",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 30,
+      "Status": "FAILED",
+      "Type": "Test API",
+      "Description": "Test API 28",
+      "Priorite": 3,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testAPI\" ",
+      "testtype": "Test API"
+    },
+    {
+      "id": 31,
+      "Status": "FAILED",
+      "Type": "Test API",
+      "Description": "test API 29",
+      "Priorite": 2,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testGUI\"",
+      "testtype": "Test API"
+    },
+    {
+      "id": 32,
+      "Status": "PASSED",
+      "Type": "Test GUI",
+      "Description": "test numero 30",
+      "Priorite": 2,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testGUI\"",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 33,
+      "Status": "PASSED",
+      "Type": "Test API",
+      "Description": "test API 31",
+      "Priorite": 1,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testAPI\" ",
+      "testtype": "Test API"
+    },
+    {
+      "id": 34,
+      "Status": "NOTRUN",
+      "Type": "Test API",
+      "Description": "test API 32",
+      "Priorite": 1,
+      "Version_correction": "1.2",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testAPI\" ",
+      "testtype": "Test API"
+    },
+    {
+      "id": 35,
+      "Status": "FAILED",
+      "Type": "Test Performances",
+      "Description": "test performances 33",
+      "Priorite": 1,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testPerformances\"",
+      "testtype": "Test Performances"
+    },
+    {
+      "id": 36,
+      "Status": "NOTRUN",
+      "Type": "Test GUI",
+      "Description": "test GUI 34",
+      "Priorite": 1,
+      "Version_correction": "1.1",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testPerformances\"",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 37,
+      "Status": "PASSED",
+      "Type": "Test GUI",
+      "Description": "test GUI 35",
+      "Priorite": 1,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testGUI\"",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 38,
+      "Status": "NOTRUN",
+      "Type": "Test API",
+      "Description": "test API 36",
+      "Priorite": 1,
+      "Version_correction": "1.1",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testGUI\"",
+      "testtype": "Test API"
+    },
+    {
+      "id": 39,
+      "Status": "FAILED",
+      "Type": "Test API",
+      "Description": "test API 37",
+      "Priorite": 1,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testAPI\" ",
+      "testtype": "Test API"
+    },
+    {
+      "id": 40,
+      "Status": "NOTRUN",
+      "Type": "Test Performances",
+      "Description": "test performances 38",
+      "Priorite": 3,
+      "Version_correction": "1.1",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testPerformances\"",
+      "testtype": "Test Performances"
+    },
+    {
+      "id": 41,
+      "Status": "NOTRUN",
+      "Type": "Test GUI",
+      "Description": "test GUI 39",
+      "Priorite": 2,
+      "Version_correction": "1.1",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testGUI\"",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 42,
+      "Status": "NOTRUN",
+      "Type": "Test API",
+      "Description": "test API 40",
+      "Priorite": 2,
+      "Version_correction": "1.2",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testAPI\" ",
+      "testtype": "Test API"
+    },
+    {
+      "id": 43,
+      "Status": "FAILED",
+      "Type": "Test Performances",
+      "Description": "test performances 41",
+      "Priorite": 2,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testPerformances\"",
+      "testtype": "Test Performances"
+    },
+    {
+      "id": 44,
+      "Status": "PASSED",
+      "Type": "Test performance",
+      "Description": "test performances 42",
+      "Priorite": 2,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testAPI\" ",
+      "testtype": "Test performance"
+    },
+    {
+      "id": 45,
+      "Status": "FAILED",
+      "Type": "Test GUI",
+      "Description": "test GUI 43",
+      "Priorite": 3,
+      "Version_correction": "1.1",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testGUI\"",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 46,
+      "Status": "FAILED",
+      "Type": "Test API",
+      "Description": "test API 44",
+      "Priorite": 2,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testAPI\" ",
+      "testtype": "Test API"
+    },
+    {
+      "id": 47,
+      "Status": "PASSED",
+      "Type": "Test API",
+      "Description": "test API 45",
+      "Priorite": 3,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testAPI\" ",
+      "testtype": "Test API"
+    },
+    {
+      "id": 48,
+      "Status": "FAILED",
+      "Type": "Test Performances",
+      "Description": "test performances 46",
+      "Priorite": 3,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testPerformances\"",
+      "testtype": "Test Performances"
+    },
+    {
+      "id": 49,
+      "Status": "PASSED",
+      "Type": "Test GUI",
+      "Description": "test GUI 47",
+      "Priorite": 2,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testAPI\" ",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 50,
+      "Status": "PASSED",
+      "Type": "Test Performances",
+      "Description": "test Performances 48",
+      "Priorite": 3,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testPerformances\"",
+      "testtype": "Test Performances"
+    },
+    {
+      "id": 51,
+      "Status": "PASSED",
+      "Type": "Test GUI",
+      "Description": "test GUI 49",
+      "Priorite": 1,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testGUI\"",
+      "testtype": "Test GUI"
+    },
+    {
+      "id": 52,
+      "Status": "PASSED",
+      "Type": "Test Performances",
+      "Description": "test performances 50",
+      "Priorite": 3,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"passed\"tag:\"testPerformances\"",
+      "testtype": "Test Performances"
+    },
+    {
+      "id": 53,
+      "Status": "NOTRUN",
+      "Type": "Test Performances",
+      "Description": "test performances 51",
+      "Priorite": 2,
+      "Version_correction": "1.2",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testPerformances\"",
+      "testtype": "test performance"
+    },
+    {
+      "id": 54,
+      "Status": "UNCOVERED",
+      "Type": "Test API",
+      "Description": "test API 52",
+      "Priorite": 3,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"failed\"tag:\"testAPI\" ",
+      "testtype": "test API"
+    },
+    {
+      "id": 55,
+      "Status": "UNCOVERED",
+      "Type": "Test API",
+      "Description": "test API 53",
+      "Priorite": 3,
+      "Version_correction": "1.2",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testAPI\" ",
+      "testtype": "test API"
+    },
+    {
+      "id": 56,
+      "Status": "NOTRUN",
+      "Type": "Test API",
+      "Description": "test API 54",
+      "Priorite": 2,
+      "Version_correction": "1.2",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"notRun\"tag:\"testGUI\"",
+      "testtype": "test API"
+    },
+    {
+      "id": 57,
+      "Status": "UNCOVERED",
+      "Type": "Test GUI",
+      "Description": "test GUI 55",
+      "Priorite": 1,
+      "Version_correction": "1.1",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 1,
+      "exigence_id": 1,
+      "Etiquettes": "tag:\"uncovered\"tag:\"testGUI\"",
+      "testtype": "test GUI"
+    },
+    {
+      "id": 58,
+      "Status": "UNCOVERED",
+      "Type": "Test GUI",
+      "Description": "test GUI 56",
+      "Priorite": 1,
+      "Version_correction": "1.1",
+      "Progression": 0,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 3,
+      "Etiquettes": "tag:\"uncovered\"tag:\"testGUI\"",
+      "testtype": "test GUI"
+    },
+    {
+      "id": 59,
+      "Status": "UNCOVERED",
+      "Type": "Test API",
+      "Description": "test API 57",
+      "Priorite": 1,
+      "Version_correction": "1.2",
+      "Progression": 1,
+      "Totaux_exec_test": 1,
+      "Taux_succes": 0,
+      "exigence_id": 2,
+      "Etiquettes": "tag:\"uncovered\"tag:\"testPerformances\"",
+      "testtype": "Test API"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "key": "BOOK",
+      "name": "Book Store",
+      "description": "Book Store Web App",
+      "url": "https://www.getxray.app/",
+      "state": "createPending",
+      "visibility": "public",
+      "group_id": 1,
+      "version": "0.1",
+      "revision": "1.0",
+      "environment": "Windows 10 Pro",
+      "status": "Pending"
+    },
+    {
+      "id": 2,
+      "key": "MONEY",
+      "name": "Banking",
+      "description": "Financial Bank management",
+      "url": "https://www.yahoo.ca.app/",
+      "state": "new",
+      "visibility": "private",
+      "group_id": 2,
+      "version": "0.1",
+      "revision": "1.0",
+      "environment": "Linux Mint 11.5",
+      "status": "Executing"
+    },
+    {
+      "id": 3,
+      "key": "Test",
+      "name": "Financial",
+      "description": "Payment gateway",
+      "url": "https://www.stripe.com/",
+      "state": "new",
+      "visibility": "private",
+      "group_id": 3,
+      "version": "0.1",
+      "revision": "1.0",
+      "environment": "Windows 10 Pro",
+      "status": "Executing"
+    },
+    {
+      "id": 4,
+      "key": "MONEY",
+      "name": "Mobile Banking",
+      "description": "Financial Bank management",
+      "url": "https://www.yahoo.ca.app/",
+      "state": "new",
+      "visibility": "private",
+      "group_id": 2,
+      "version": "0.1",
+      "revision": "1.0",
+      "environment": "Linux Mint 11.5",
+      "status": "Executing"
+    },
+    {
+      "id": 5,
+      "key": "Sales",
+      "name": "Validate payment",
+      "description": "ecommerce",
+      "url": "https://www.yahoo.ca.app/",
+      "state": "new",
+      "visibility": "private",
+      "group_id": 2,
+      "version": "0.1",
+      "revision": "1.0",
+      "environment": "Windows server 2022",
+      "status": "Executing"
+    },
+    {
+      "id": 6,
+      "key": "School",
+      "name": "School Management",
+      "description": "School Management Application",
+      "url": "https://www.yahoo.ca.app/",
+      "state": "new",
+      "visibility": "private",
+      "group_id": 2,
+      "version": "0.1",
+      "revision": "1.0",
+      "environment": "Mac OS Lion Ventura",
+      "status": "Executing"
+    },
+    {
+      "id": 7,
+      "key": "School",
+      "name": "School Management",
+      "description": "School Management Application",
+      "url": "https://www.yahoo.ca.app/",
+      "state": "new",
+      "visibility": "private",
+      "group_id": 2,
+      "version": "0.1",
+      "revision": "1.0",
+      "environment": "Mac OS Lion Ventura",
+      "status": "Executing"
+    },
+    {
+      "id": 8,
+      "key": "School",
+      "name": "School Management",
+      "description": "School Management Application",
+      "url": "https://www.yahoo.ca.app/",
+      "state": "new",
+      "visibility": "private",
+      "group_id": 2,
+      "version": "0.1",
+      "revision": "1.0",
+      "environment": "Windows",
+      "status": "Pending"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "jmesidor",
+      "password": "password",
+      "fullname": "Jonathan Mesidor",
+      "email": "jonathan.mesidor.1@ens.etsmtl.ca",
+      "group_id": 1
+    },
+    {
+      "id": 2,
+      "username": "admin",
+      "password": "password",
+      "fullname": "Jerry Saint-Preux",
+      "email": "jerry.saint-preux.1@ens.etsmtl.ca",
+      "group_id": 2
+    },
+    {
+      "id": 3,
+      "username": "pjoseph",
+      "password": "password",
+      "fullname": "Pierre Joseph",
+      "email": "pierre.joseph.2@ens.etsmtl.ca",
+      "group_id": 1
+    },
+    {
+      "id": 4,
+      "username": "m.abdessemed",
+      "password": "password",
+      "fullname": "Mohamed Amine Abdessemed",
+      "email": "mohamed-amine.abdessemed.1@ens.etsmtl.ca",
+      "group_id": 1
+    },
+    {
+      "id": 5,
+      "username": "m.k.allaoui",
+      "password": "password",
+      "fullname": "Mohamed Khalil Allaoui",
+      "email": "mohamed-khalil.allaoui.1@ens.etsmtl.ca",
+      "group_id": 1
+    },
+    {
+      "id": 6,
+      "username": "wharkouk",
+      "password": "password",
+      "fullname": "Warda Harkouk",
+      "email": "warda.harkouk.1@ens.etsmtl.ca",
+      "group_id": 1
+    },
+    {
+      "id": 7,
+      "username": "amaalim",
+      "password": "password",
+      "fullname": "Abderraouf Maalim",
+      "email": "abderraouf.maalim.1@ens.etsmtl.ca",
+      "group_id": 1
+    },
+    {
+      "id": 8,
+      "username": "nmaouche",
+      "password": "password",
+      "fullname": "Nada Maouche",
+      "email": "nada.maouche.1@ens.etsmtl.ca",
+      "group_id": 1
+    },
+    {
+      "id": 9,
+      "username": "smerjaktane",
+      "password": "password",
+      "fullname": "Salim Merjaktane",
+      "email": "salim.merjaktane.1@ens.etsmtl.ca",
+      "group_id": 1
+    },
+    {
+      "id": 10,
+      "username": "hmoussa",
+      "password": "password",
+      "fullname": "Hanane Si Moussa",
+      "email": "hanane.si-moussa.1@ens.etsmtl.ca",
+      "group_id": 1
+    }
+  ],
+  "testcategory": [
+    {
+      "id": 1,
+      "testtype": "test GUI"
+    },
+    {
+      "id": 2,
+      "testtype": "test de performance"
+    },
+    {
+      "id": 3,
+      "testtype": "test API"
+    },
+    {
+      "id": 4,
+      "testtype": "Smoke test"
+    }
+  ],
+  "Env_exec": [
+    {
+      "id": 1,
+      "environment": "Windows"
+    },
+    {
+      "id": 2,
+      "environment": "Mac OS"
+    },
+    {
+      "id": 3,
+      "environment": "Linux"
+    }
+  ],
+  "message": [
+    {
+      "affichage": "Non",
+      "id": 1
+    },
+    {
+      "affichage": "Non",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "session_id": "3",
+      "affichage": "Oui"
+    },
+    {
+      "id": 4,
+      "session_id": "4",
+      "affichage": "Oui"
+    },
+    {
+      "id": 5,
+      "session_id": "5",
+      "affichage": "Oui"
+    },
+    {
+      "id": 6,
+      "session_id": "6",
+      "affichage": "Oui"
+    },
+    {
+      "id": 7,
+      "session_id": "7",
+      "affichage": "Oui"
+    },
+    {
+      "id": 8,
+      "session_id": "8",
+      "affichage": "Oui"
+    },
+    {
+      "id": 9,
+      "session_id": "9",
+      "affichage": "Oui"
+    },
+    {
+      "id": 10,
+      "session_id": "10",
+      "affichage": "Oui"
+    }
+  ],
+  "testCases": [
+    {
+      "id": 1,
+      "summary": "Execution of Test GUI",
+      "description": "This execution is automatically created when importing execution results from an external source",
+      "version": "v1.3",
+      "type": "FillField",
+      "Automation": "true",
+      "revision": "1.0.42134",
+      "startDate": "2014-08-30T11:47:35+01:00",
+      "finishDate": "2014-08-30T11:53:00+01:00",
+      "testPlanKey": "DEMO-100",
+      "testEnvironments": [
+        "Windows",
+        "chrome "
+      ],
+      "folder": "/Shopping Basket/Checkout",
+      "testPlan_id": 1,
+      "user": "Amine"
+    },
+    {
+      "id": 2,
+      "summary": "Execution of Test API",
+      "description": "This execution is automatically created when importing execution results from an external source",
+      "version": "v1.3",
+      "type": "Functional",
+      "Automation": "true",
+      "user": "Joseph",
+      "revision": "1.0.42134",
+      "startDate": "2014-08-30T11:47:35+01:00",
+      "finishDate": "2014-08-30T11:53:00+01:00",
+      "testPlanKey": "DEMO-100",
+      "testEnvironments": [
+        "Linux",
+        "Mozila"
+      ],
+      "folder": "/Search",
+      "testPlan_id": 4
+    },
+    {
+      "id": 3,
+      "summary": "Execution of Test Performances",
+      "description": "This execution is automatically created when importing execution results from an external source",
+      "version": "v1.3",
+      "type": "Regression",
+      "Automation": "false",
+      "user": "Jéremie",
+      "revision": "1.0.42134",
+      "startDate": "2014-08-30T11:47:35+01:00",
+      "finishDate": "2014-08-30T11:53:00+01:00",
+      "testPlanKey": "DEMO-100",
+      "testEnvironments": [
+        "iOS",
+        "Android"
+      ],
+      "folder": "/Account/Password Validation",
+      "testPlan_id": 2
+    },
+    {
+      "id": 6,
+      "summary": "Execution of Test API",
+      "description": "This execution is automatically created when importing execution results from an external source",
+      "version": "v1.3",
+      "type": "Regression",
+      "Automation": "false",
+      "user": "Jéremie",
+      "revision": "1.0.42134",
+      "startDate": "2014-08-30T11:47:35+01:00",
+      "finishDate": "2014-08-30T11:53:00+01:00",
+      "testPlanKey": "DEMO-100",
+      "testEnvironments": [
+        "Windows",
+        "Opera"
+      ],
+      "folder": "/Account/Password Validation",
+      "testPlan_id": 4
+    },
+    {
+      "id": 4,
+      "summary": "Execution of Test API",
+      "description": "This execution is automatically created when importing execution results from an external source",
+      "version": "v1.3",
+      "type": "Performance",
+      "Automation": "false",
+      "user": "Mohamed",
+      "revision": "1.0.42134",
+      "startDate": "2014-08-30T11:47:35+01:00",
+      "finishDate": "2014-08-30T11:53:00+01:00",
+      "testPlanKey": "DEMO-100",
+      "testEnvironments": [
+        "iOS",
+        "Android"
+      ],
+      "folder": "/Account/Password Validation",
+      "testPlan_id": 2
+    },
+    {
+      "id": 5,
+      "summary": "Execution of Test GUI",
+      "description": "This execution is automatically created when importing execution results from an external source",
+      "version": "v1.3",
+      "type": "GoToUrl",
+      "Automation": "false",
+      "user": "Caleb",
+      "revision": "1.0.42134",
+      "startDate": "2014-08-30T11:47:35+01:00",
+      "finishDate": "2014-08-30T11:53:00+01:00",
+      "testPlanKey": "DEMO-100",
+      "testEnvironments": [
+        "Windows",
+        "Edge"
+      ],
+      "folder": "/Account/Password Validation",
+      "testPlan_id": 2
+    }
+  ]
+}

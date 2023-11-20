@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+
+.wrapper {
+  width: 100%;
+  position: relative;
+}
+
+
+#sub {
+  font-size: 9px;
+  color: blue;
+}
